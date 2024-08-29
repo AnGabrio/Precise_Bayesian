@@ -1,0 +1,1485 @@
+---
+title: "**PRECISe trial: bayesian analysis**"
+subtitle: '**Secondary Outcome: duration of mechanical ventilation**'
+author: "Andrea Gabrio"
+date: ''
+format: 
+  html:
+    code-fold: true
+bibliography: report.bib
+csl: apa.csl
+---
+
+## PRECISe trial
+
+The PRECISe trial is an investigator-initiated pragmatic, binational multi-center, randomized controlled, quadruple-blinded study, designed to assess the effect of high protein enteral nutrition (target 2.0 g/kg/day) vs standard protein enteral nutrition (target 1.3 g/kg/day) on functional recovery at 30 days, 60 days, and 180 days following ICU admission, including health-related quality of life, measures of muscle strength, physical function, and mental. health. The trial's primary endpoint is health-related quality of life as measured by the Euro-QoL-5D-5-level (EQ-5D-5L) questionnaire Health Utility Score. Between-group differences of the primary and other sequential endpoints will be assessed over the three time points using linear mixed-effects models.
+
+### Enrolment Criteria and interventions
+
+Adult patients 18 years and above with an unplanned admission to the ICU, being mechanically ventilated within 24 h following ICU admission, and with an expected duration of mechanical ventilation of at least 3 days (i.e., indication for enteral nutrition support) were included. Exclusion criteria are; contraindication for enteral nutrition at the discretion of the treating physician, moribund or expected withholding of treatment, kidney failure without the possibility of dialysis, hepatic encephalopathy West Haven criteria 3e4, or a body mass index <18 kg/m2.
+
+Patients were randomized in a 1:1 ratio, using permuted block randomization with varying blocks of 4 or 6 patients per center, into one of the two intervention groups. One group received enteral nutrition with a high protein content of 8g/100 kcal (expected intake 1,6e2,0 g/kg/day), and the other group received enteral nutrition with a standard protein content of 5g/100 kcal (expected intake 0,8e1,25 g/kg/day).
+
+### Principles of Bayesian analysis
+
+A cornerstone of Bayesian inference is the incorporation of prior beliefs about an effect estimate (the prior) into the calculation of the posterior probability of that effect estimate (the posterior), following the emergence of novel evidence (the likelihood). This methodology resembles clinical reasoning, where one's strong belief (either enthusiastic or skeptical) towards a certain treatment, based on solid evidence or convincing clinical experience is less likely to be affected by new evidence than one's neutral attitude towards a specific treatment. In Bayesian inference, prior beliefs are either informative (based on evidence or clinical experience) or non-/weakly informative. Such a weakly informative prior aims to yield posterior probabilities that are influenced almost exclusively by the actual trial data. Given the potential influence of informed priors on posterior probability distributions, it is essential to define priors realistically and before trial results become available (@kruschke2021bayesian).
+
+Historically, clinical trials have been evaluated by the use of frequentist inference, by which the probability of the data is tested, assuming the null hypothesis (no difference). Such an approach heavily depends on the trial's power, which in turn is the result of the included sample size and the treatment effect. Clinical trials are often time- and resource-consuming, which has led investigators to base their sample size calculation on an (optimistic) expected treatment effect, rather than a clinically important treatment effect. When the null hypothesis is not rejected in these cases, this may be the consequence of a reduced power, and this might cause critical care physicians to abandon therapies that have a potentially clinically important benefit (@yarnell2021clinical). In contrast, the Bayesian frameworks allows the direct estimation of the posterior probability of any treatment effect, including the MCID. Finally, the incorporation of prior data may facilitate a more feasible sample size calculation, while the use of reference priors (such as enthusiastic and skeptical priors) can assess the robustness of the findings.
+
+This secondary analysis will assess several outcomes and subgroups that were deemed most relevant to the overall study aim. The following outcomes will be assessed: **EQ-5D-5L health utility score** (longitudinal analysis), **6-min walking test and handgrip strength** over the entire follow-up period (longitudinal analyses), **60-day mortality**, **duration of mechanical ventilation** as well as **EQ-5D-5L health utility scores at 30, 90 and 180 days** (cross-sectional analyses). Based on the available literature, **patients with acute renal failure, sepsis and non-sepsis, and severe multi-organ failure at ICU admission were identified as relevant subgroups**. Acute renal failure is determined using the Kidney Disease: Improving Global Outcome (KDIGO) criteria for acute kidney injury (AKI) as stage I or higher. Sepsis is defined according to the Sepsis III criteria. Severe multi-organ failure is assessed using the Sequential Organ Failure Assessment (SOFA) score, for which we will use the median value of the SOFA score in our patient population to dichotomize patients with severe multi-organ failure (severe multiorgan failure will be defined as patients with $\geq$ median SOFA score). Finally, Non-surviving patients will be assigned an EQ-5D-5L health utility score of 0, in agreement with the trial protocol.
+
+## Statistical Analysis
+
+The Bayesian analyses will be performed using dedicated software, including `R` (@r2013r) and `JASP` (@gronau2019informed), which rely on the freely-available Bayesian software `JAGS` (@plummer2004jags) to implement the models under a Bayesian framework via *Markov Chain Monte Carlo* methods (@brooks1998markov). Baseline data will be presented in the primary trial publication as specified elsewhere. If prior data from previous randomized trials is available to formulate an informative (literature-based) prior, such a prior will be incorporated. When no prior trial data are available, analyses will be performed under a weakly informative prior. In addition, skeptical and enthusiastic priors will be used to assess the robustness of the results. In the following sections, the components of the Bayesian analyses will be outlined.
+
+### Priors
+
+For each endpoint, an MCID is derived from the literature (@tbl-endpoint).
+
+| Outcome               | Effect size and Approach | Non-info (mean, sd) | Info (mean, sd) | MCID   |
+|---------------|---------------|---------------|---------------|---------------|
+| EQ-5D                 | MD, longitudinal         | (0,6)               |                 | 0.06   |
+| 6MWT                  | MD, longitudinal         | (0,1900)            |                 | 19     |
+| HGS                   | MD, longitudinal         | (0,500)             |                 | 5      |
+| Duration of MV        | MD, cross-sectional      | (0,100)             | (-0.42, 0.30)   | 1      |
+| 60-day mortality      | OR, cross-sectional      | (0, 3.0)            | (-0.02, 0.09)   | 5% ARD |
+| EQ-5D (30 days)       | MD, cross-sectional      | (0,6)               |                 | 0.06   |
+| EQ-5D (90 days)       | MD, cross-sectional      | (0,6)               |                 | 0.06   |
+| EQ-5D (180 days)      | MD, cross-sectional      | (0,6)               |                 | 0.06   |
+| EQ-5D (Sepsis yes/no) | MD, longitudinal         | (0,6)               |                 | 0.06   |
+| EQ-5D (AKI yes/no)    | MD, longitudinal         | (0,6)               |                 | 0.06   |
+| EQ-5D (Fail yes/no)   | MD, longitudinal         | (0,6)               |                 | 0.06   |
+
+: Prior distributions information and MCIDs {#tbl-endpoint}
+
+For all analyses, we will use weakly informative priors centered around ‘no effect’ (for example a mean difference MD of 0, or an odds ratio OR of 1 0 on the log OR scale). For the binary outcomes (ORs, denoted as the log of the OR), a mean of 0 will be applied for the weakly informative prior, while the standard deviation (SD) will be set to 3 on the log OR scale, to capture all credible effect sizes. For the continuous outcomes (on the MD scale), we aim to be consistent and reproducible, but will also allow the distributions to capture all plausible effect sizes. As such, the standard deviation (SD) will be based on a multiplication of the MCID (x100). @tbl-endpoint presents the numerical values of these weakly informative priors. Skeptical and enthusiastic priors are defined following a modification of the approach suggested by de Grooth and Elbers (@de2022pick). Skeptical priors will be centered at a mean difference (MD) or log OR of 0. The distribution will incorporate a $<10\%$ probability that the estimated treatment effect will exceed +1 MCID. Conversely, the enthusiastic priors are centered around an effect of +2 MCID, and will follow a similar distribution with a probability of $<10\%$ that estimated effect size will be lower than +1 MCID (@fig-priors).
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: fig-priors
+#| out-width: '80%'
+
+knitr::include_graphics('./skep_ent_priors.png')
+```
+
+For the cross-sectional endpoints “60-day mortality” and “duration of mechanical ventilation”, informative priors could be derived from a meta-analysis of randomized trials addressing the clinical effectiveness of high protein nutrition in critical illness, which has recently been updated by the same authors after the publication of the EFFORT Protein trial. Data from this updated meta-analysis that are relevant to the current Bayesian analysis protocol were kindly shared with us by the authors prior to publication. This meta-analysis also contains one study that reports on EQ-5D-5L, albeit on a survivors-only analysis. Since the PRECISe trial uses a complete-case analysis (including non-survivors), these data could not be used to formulate a reasonable literature based prior for the estimation of the treatment effect on this outcome. Therefore, cross-sectional and longitudinal analyses of EQ-5D-5L will be performed under weakly informative priors, skeptical priors, and enthusiastic priors.
+
+Finally, as all analyses will be performed with adjustment for the random center effect, a prior for this effect is uniformly formulated as well. These models incorporate random intercepts and the prior for these random effects follow a normal distribution with an effect centered around a mean of 0 and a large standard deviation, similar to the other priors. Posterior distributions will be presented as MDs or mean ARDs and median OR, accompanied by $95\%$ credible intervals (CrI), and reference to the used priors. Furthermore, full posterior probability distributions will be presented in dedicated grid plots.
+
+### Analysis methods and assumptions
+
+The primary outcome is the EQ-5D-5L health utility score over the first 180 days following ICU admission. A pre-planned interim safety analysis revealed a bimodal distribution for EQ-5D-5L since non-survivors (39% during interim analysis) were attributed with a health utility score of zero. Given this mixture distribution (the component of zero, and the component other than 0) we will specify separate priors per longitudinally assessed outcome. Consequently, we will specify a prior for the mean difference with an EQ-5D-5L other than 0, and a prior for the proportion of patients who have an EQ-5D-5L score of 0 (i.e., deceased patients). This longitudinal analysis will be performed with adjustment for center as a random effect. The results of the analyses for the components will be presented separately and as weighted averages.
+
+Secondary outcomes for which no prior evidence was available are the 6-min walking test and hand grip strength. As such, the posterior probabilities of these outcomes will be estimated under a weakly informative prior, in a model similar to the longitudinally assessed primary outcome, with adjustment for the random effect of center. Based on these probability distributions, the probability of clinically important benefit and harm will be estimated. Secondary binary outcomes, such as 60-day mortality, will be expressed in ORs and absolute risk differences (ARD). These binary outcomes will be analyzed in a binary mixed regression model (Bernoulli distribution) with an adjustment for the random center effect. Priors for these binary outcomes are specified on the log OR scale. Other secondary continuous outcomes, such as the duration of mechanical ventilation, will be reported in mean difference (MD) for the specific units of that endpoint. Also for these analyses, the posterior probabilities of a clinically meaningful benefit and clinically important harm will be estimated. Finally, the same mixture distribution (the component of zero, and the component other than 0) will be used for the EQ-5D-5L assessment at the cross-sectional time points, and separate priors will be formulated, similar to the primary outcome assessment.
+
+As outcome missing values are assumed to fully depend on the observed data, and in agreement with the protocol for the frequentist analysis of our study, for all analyses we rely on a missing at random (MAR) assumption about the mechanism responsible for the occurrence of missing values (@little2019statistical). We rely on linear mixed effects models to analyse the complete (missing and observed) data as they are typically considered appropriate to handle missingness under MAR.
+
+All Bayesian models for our analysis are implemented in `JAGS` using MCMC algorithms, and implemented via `R` through the `R2jags` package (@su2015package). Assessment of model convergence will be performed for key model parameters via potential scale reduction factors (Rhat) effective sample size (ESS), and other diagnostics such as density and trace plots. Model fit will be assessed in relative terms through the deviance information criterion (DIC and other criteria alike), and in absolute terms by use of posterior prediction checks (PPCs).
+
+## Data Description
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+
+#load packages needed for analysis
+library(foreign)
+library(data.table)
+library(kableExtra)
+library(bookdown)
+library(reshape)
+library(ggplot2)
+library(ggpubr)
+library(dplyr)
+library(plotrix)
+library(emmeans)
+library(nlme)
+library(lme4)
+library(lmerTest)
+library(readxl)
+library(tidyverse)
+library(gt)
+library(gtsummary)
+library(broom.mixed)
+library(mice)
+library(miceadds)
+library(mitml)
+library(boot)
+library(BCEA)
+
+#remove scientific notation for numbers
+options(scipen=999)
+
+#set local path to import data
+#setwd("C:/Users/andre/Documents/maastrict/consultancy/trials/precise/bayesian_analysis/analysis")
+
+#load dataset (935 observations on 27 variables)
+dataset <- read_excel("Database PRECISe for Andrea.xlsx", sheet = 1, col_names = TRUE, na = "NA")
+
+#define elements/variables for summary statistics/analysis
+#number of patients
+N <- dim(dataset)[1]
+#re-code id number of patients
+id <- seq(1:N)
+#use number of center and create factor variable
+center <- dataset$`INSTITUTION CODE`
+center_f <- factor(center)
+#re-code trt indicator (0=control,1=intervention)
+trt <- ifelse(dataset$`RANDOMIZATION GROUP`== "Group 1",0,1)
+trt_f <- factor(trt)
+#age (years)
+age <- dataset$AGE
+#re-code sex (0 = , 1 = )
+sex <- dataset$SEX
+sex_f <- factor(sex-1)
+#weight (Kg)
+weight <- dataset$WEIGT
+#height (cm)
+height <- dataset$HEIGHT
+#BMI
+bmi <- dataset$BMI
+#diabetes (0=no, 1=yes)
+diabete <- dataset$DIABETES
+diabete_f <- factor(diabete)
+#re-code admission type (0=,1=)
+admission <- dataset$`ADMISSION TYPE`
+admission_f <- factor(admission-1)
+#covid (0=no, 1=yes)
+covid <- dataset$COVID
+covid_f <- factor(covid)
+#AKI (0=no, 1=yes)
+aki <- dataset$AKI
+aki_f <- factor(aki)
+#sepsis (0=no, 1=yes)
+sepsis <- dataset$SEPSIS
+sepsis_f <- factor(sepsis)
+#organ failure (0=no, 1=yes)
+failure <- dataset$`ORGAN FAILURE`
+failure_f <- factor(failure)
+#qol baseline
+qol_base <- dataset$`QoL 0 days (proxy)`
+#qol 30 days
+qol_1 <- dataset$`QoL 30 days`
+#qol 90 days
+qol_2 <- dataset$`QoL 90 days`
+#qol 180 days
+qol_3 <- dataset$`QoL 180 days`
+#handgrip 30 days
+hand_1 <- dataset$`HANDGRIP 30`
+#handgrip 90 days
+hand_2 <- dataset$`HANDGRIP 90`
+#handgrip 180 days
+hand_3 <- dataset$`HANDGRIP 180`
+#smwt 30 days
+smwt_1 <- dataset$`SMWT 30`
+#smwt 90 days
+smwt_2 <- dataset$`SMWT 90`
+#smwt 180 days
+smwt_3 <- dataset$`SMWT 180`
+#mortality 60 days (0=alive,1=dead)
+mort60 <- dataset$`MORTALITY 60 days`
+mort60_f <- factor(mort60)
+#mv dur (days)
+mv_dur <- dataset$`MV duration (days)`
+
+#create new dataset with updated variables to create summary statistics
+data_descr <- data.frame(id,center_f,center,trt,trt_f,age,sex,sex_f,weight,height,bmi,diabete,diabete_f,admission,admission_f,covid,covid_f,aki,aki_f,sepsis,sepsis_f,failure,failure_f,qol_base,qol_1,qol_2,qol_3,hand_1,hand_2,hand_3,smwt_1,smwt_2,smwt_3,mort60,mort60_f,mv_dur)
+#data_descr <- data.table(data_descr)
+
+#summary statistics for baseline variables across arms
+gt_sum_baseline <-
+  tbl_summary(
+    data_descr,
+    type = list(trt ~ "categorical", center_f ~ "categorical", sex_f ~ "categorical", 
+                diabete_f ~ "categorical", admission_f ~ "categorical", covid_f ~ "categorical",
+                aki_f ~ "categorical",sepsis_f ~ "categorical",failure_f ~ "categorical",
+                weight ~ "continuous", height ~ "continuous", bmi ~ "continuous", qol_base ~ "continuous"
+                ),
+    include = c(trt, center_f, sex_f, diabete_f, admission_f, covid_f, aki_f, sepsis_f, failure_f, weight, height, bmi, qol_base),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})",
+      all_categorical() ~ "{n} ({p}%)"
+    ),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_baseline <- as_gt(gt_sum_baseline) 
+
+#summary statistics for baseline variables by arm
+
+gt_sum_baseline_arm <-
+  tbl_summary(by = trt,
+    data_descr,
+    type = list(center_f ~ "categorical", sex_f ~ "categorical", 
+                diabete_f ~ "categorical", admission_f ~ "categorical", covid_f ~ "categorical",
+                aki_f ~ "categorical",sepsis_f ~ "categorical",failure_f ~ "categorical",
+                weight ~ "continuous", height ~ "continuous", bmi ~ "continuous", qol_base ~ "continuous"),
+    include = c(center_f, sex_f, diabete_f, admission_f, covid_f, aki_f, sepsis_f, failure_f, weight, height, bmi, qol_base),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})",
+      all_categorical() ~ "{n} ({p}%)"
+    ),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_baseline_arm <- as_gt(gt_sum_baseline_arm) 
+
+
+#summary statistics for key follo-up outcome variables across arms
+gt_sum_fu <-
+  tbl_summary(
+    data_descr,
+    include = c(qol_1, qol_2, qol_3, hand_1, hand_2, hand_3, smwt_1, smwt_2, smwt_3, mort60_f, mv_dur),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})",
+      all_categorical() ~ "{n} ({p}%)"
+    ),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu <- as_gt(gt_sum_fu) 
+
+#summary statistics for baseline variables by arm
+
+gt_sum_fu_arm <-
+  tbl_summary(by = trt,
+    data_descr,
+    include = c(qol_1, qol_2, qol_3, hand_1, hand_2, hand_3, smwt_1, smwt_2, smwt_3, mort60_f, mv_dur),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})",
+      all_categorical() ~ "{n} ({p}%)"
+    ),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu_arm <- as_gt(gt_sum_fu_arm) 
+
+##############################
+#subgroup analyses
+
+#summary statistics for outcome variables at follow-up across arms by AKI status
+
+gt_sum_fu_aki <-
+  tbl_summary(by = aki,
+    data_descr,
+#    type = list(qol_1 ~ "continuous", qol_2 ~ #"continuous", qol_3 ~ "continuous"),
+    include = c(qol_1, qol_2, qol_3),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})"),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu_aki <- as_gt(gt_sum_fu_aki) 
+
+#summary statistics for outcome variables at follow-up by arms and by AKI status
+data_descr_aki0 <- data_descr[data_descr$aki==0,]
+data_descr_aki1 <- data_descr[data_descr$aki==1,]
+
+gt_sum_fu_aki0_trt <-
+  tbl_summary(by = trt,
+    data_descr_aki0,
+#    type = list(qol_1 ~ "continuous", qol_2 ~ #"continuous", qol_3 ~ "continuous"),
+    include = c(qol_1, qol_2, qol_3),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})"),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu_aki0_trt <- as_gt(gt_sum_fu_aki0_trt) 
+
+gt_sum_fu_aki1_trt <-
+  tbl_summary(by = trt,
+    data_descr_aki1,
+#    type = list(qol_1 ~ "continuous", qol_2 ~ #"continuous", qol_3 ~ "continuous"),
+    include = c(qol_1, qol_2, qol_3),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})"),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu_aki1_trt <- as_gt(gt_sum_fu_aki1_trt) 
+
+gt_sum_arm_gt_aki <- tbl_stack(list(gt_sum_fu_aki0_trt, gt_sum_fu_aki1_trt), group_header = c("trt=0", "trt=1"))
+gt_sum_arm_gt_aki_final <- as_gt(gt_sum_arm_gt_aki) 
+
+
+#summary statistics for outcome variables at follow-up across arms by sepsis status
+
+gt_sum_fu_sepsis <-
+  tbl_summary(by = sepsis,
+    data_descr,
+#    type = list(qol_1 ~ "continuous", qol_2 ~ #"continuous", qol_3 ~ "continuous"),
+    include = c(qol_1, qol_2, qol_3),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})"),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu_sepsis <- as_gt(gt_sum_fu_sepsis) 
+
+#summary statistics for outcome variables at follow-up by arms and by sepsis status
+data_descr_sepsis0 <- data_descr[data_descr$sepsis==0,]
+data_descr_sepsis1 <- data_descr[data_descr$sepsis==1,]
+
+gt_sum_fu_sepsis0_trt <-
+  tbl_summary(by = trt,
+    data_descr_sepsis0,
+#    type = list(qol_1 ~ "continuous", qol_2 ~ #"continuous", qol_3 ~ "continuous"),
+    include = c(qol_1, qol_2, qol_3),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})"),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu_sepsis0_trt <- as_gt(gt_sum_fu_sepsis0_trt) 
+
+gt_sum_fu_sepsis1_trt <-
+  tbl_summary(by = trt,
+    data_descr_sepsis1,
+#    type = list(qol_1 ~ "continuous", qol_2 ~ #"continuous", qol_3 ~ "continuous"),
+    include = c(qol_1, qol_2, qol_3),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})"),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu_sepsis1_trt <- as_gt(gt_sum_fu_sepsis1_trt) 
+
+gt_sum_arm_gt_sepsis <- tbl_stack(list(gt_sum_fu_sepsis0_trt, gt_sum_fu_sepsis1_trt), group_header = c("trt=0", "trt=1"))
+gt_sum_arm_gt_sepsis_final <- as_gt(gt_sum_arm_gt_sepsis) 
+
+
+#summary statistics for outcome variables at follow-up across arms by multi organ failure status
+
+gt_sum_fu_failure <-
+  tbl_summary(by = failure,
+    data_descr,
+#    type = list(qol_1 ~ "continuous", qol_2 ~ #"continuous", qol_3 ~ "continuous"),
+    include = c(qol_1, qol_2, qol_3),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})"),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu_failure <- as_gt(gt_sum_fu_failure) 
+
+#summary statistics for outcome variables at follow-up by arms and by failure status
+data_descr_failure0 <- data_descr[data_descr$failure==0,]
+data_descr_failure1 <- data_descr[data_descr$failure==1,]
+
+gt_sum_fu_failure0_trt <-
+  tbl_summary(by = trt,
+    data_descr_failure0,
+#    type = list(qol_1 ~ "continuous", qol_2 ~ #"continuous", qol_3 ~ "continuous"),
+    include = c(qol_1, qol_2, qol_3),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})"),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu_failure0_trt <- as_gt(gt_sum_fu_failure0_trt) 
+
+gt_sum_fu_failure1_trt <-
+  tbl_summary(by = trt,
+    data_descr_failure1,
+#    type = list(qol_1 ~ "continuous", qol_2 ~ #"continuous", qol_3 ~ "continuous"),
+    include = c(qol_1, qol_2, qol_3),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})"),
+    digits = all_continuous() ~ 2,
+    missing = "always" # don't list missing data separately
+  ) %>%
+  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  modify_header(label = "**Variable**") %>% # update the column header
+  bold_labels() 
+
+gt_sum_gt_fu_failure1_trt <- as_gt(gt_sum_fu_failure1_trt) 
+
+gt_sum_arm_gt_failure <- tbl_stack(list(gt_sum_fu_failure0_trt, gt_sum_fu_failure1_trt), group_header = c("trt=0", "trt=1"))
+gt_sum_arm_gt_failure_final <- as_gt(gt_sum_arm_gt_failure) 
+
+```
+
+@tbl-sum1 and @tbl-sum2 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for key variables collected in the study at baseline. These include: **center, sex (f/m), age (years), diabetes (y/n), admission type, covid (y/n), AKI (y/n), sepsis (y/n), multiple organ failure (y/n), weight (Kg), height (cm), BMI, EQ-5D utility score**. The summary statistics displayed for each baseline variable include: number of unobserved values (unknown), mean (sd) for continuous variables, and number of observed values ($\%$) for categorical variables.
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-sum1
+
+gt_sum_gt_baseline %>%
+tab_caption(caption = md("Summary statistics of key baseline variables in the study across arms."))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-sum2
+
+gt_sum_gt_baseline_arm %>%
+tab_caption(caption = md("Summary statistics of key baseline variables in the study by treatment arm (0=standard,1=intervention)."))
+```
+
+@tbl-sum3 and @tbl-sum4 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for key outcome variables collected in the study after baseline. These include: **EQ-5D utility score at 30, 90, 180 days, six-min walking test at 30, 90, 180 days, handgrip strength at 30, 90, 180 days, mortaility at 60 days, duration of mechanical ventilation**. The summary statistics displayed for each outcome variable include: number of unobserved values (unknown), mean (sd) for continuous variables, and number of observed values ($\%$) for categorical variables.
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-sum3
+
+gt_sum_gt_fu %>%
+tab_caption(caption = md("Summary statistics of key follo-up outcome variables in the study across arms."))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-sum4
+
+gt_sum_gt_fu_arm %>%
+tab_caption(caption = md("Summary statistics of key follow-up outcome variables in the study by treatment arm (0=standard,1=intervention)."))
+```
+
+### Descriptives by subgroups
+
+@tbl-sum5 and @tbl-sum6 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on AKI status (0=no,1=yes).
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-sum5
+
+gt_sum_gt_fu_aki %>%
+tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by AKI status (0=no,1=yes)."))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-sum6
+
+gt_sum_arm_gt_aki_final %>%
+tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes)."))
+```
+
+@tbl-sum7 and @tbl-sum8 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on sepsis status (0=no,1=yes).
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-sum7
+
+gt_sum_gt_fu_sepsis %>%
+tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by sepsis status (0=no,1=yes)."))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-sum8
+
+gt_sum_arm_gt_sepsis_final %>%
+tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and sepsis status (0=no,1=yes)."))
+```
+
+@tbl-sum9 and @tbl-sum10 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on multi organ failure status (0=no,1=yes).
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-sum9
+
+gt_sum_gt_fu_failure %>%
+tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by multi organ failure status (0=no,1=yes)."))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-sum10
+
+gt_sum_arm_gt_failure_final %>%
+tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure status (0=no,1=yes)."))
+```
+
+## Analysis of secondary outcome - duration of mechanical ventilation
+
+In this section the results from a cross-sectional analysis conducted on the DMV scores are reported. For this analysis, a linear mixed-effects regression model is used to estimate the average difference in DMV score between treatment arms, after controlling for the clustering effects at centres level. @fig-histdmv shows histograms of the observed distributions of DMV scores in the study.
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: fig-histdmv
+#| fig-cap: "Histograms of the empirical distributions of DMV score at each time point in the study."
+
+# plot
+ggplot(data_descr, aes(x=mv_dur)) +
+    geom_histogram(binwidth = 10) +
+    xlab("DMV") + ylab("count") +
+    scale_y_continuous(expand = c(0, 0), limits = c(0, 380)) +
+    theme(axis.title = element_text(face="bold"), panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), panel.background = element_blank(), 
+        axis.line = element_line(colour = "black"), plot.title = element_text(hjust = 0.5),
+        legend.position = "none")
+
+```
+
+When implemented to our DMV data, the mixed model is specified as:
+
+$$
+\text{dmv}_{ij} = \beta_0 + \beta_1 \times \text{trt}_i + \omega_{j} +\varepsilon_{ij},
+$$ 
+
+where $\text{dmv}_{ij}$ denotes the duration of mechanical ventilation score for patient $i$ in centre $j$, $\text{trt}_i$ the treatment arm indicator, while $\omega_{j}$ and $\varepsilon_{ij}$ the centre-specific random error term and the residual term, respectively associated with variance parameters $\sigma^2_{\omega}$ and $\sigma^2_{\varepsilon}$. Adjusted estimates of mean differences in scores between arms over time ($\Delta_\text{dmv}$) can be simply retrieved as the regression coefficient $\beta_1$.
+
+### Priors
+
+Priors on each parameters are elicited in accordance to the different types of analyses pre-specified in the protocol of this Bayesian analysis (@heuts2024impact), which are also summarised in @tbl-endpoint. The base-case analysis is implemented under weakly-informative priors for key parameters while, when available, an informative prior specification is additionally specified based on available evidence retrieved from the literature about the parameters of interest.
+
+Finally, two sensitivity analyses to prior specification are also conducted using either skeptical or enthusiastic priors, following the guidelines and principles outlined by @de2022pick.
+
+For example, taking as reference the prior specified on the regression parameters representing the mean difference in DMV score ($\beta_1$), the following priors are specified under each type of analysis:
+
+1.  Weakly-informative:
+
+$$
+\beta_1 \sim \text{Normal}(0,100);
+$$
+
+2.  Literature-based: 
+
+$$
+\beta_1 \sim \text{Normal}(-0.42,0.3);
+$$
+
+
+3.  Skeptical:
+
+$$
+\beta_1 \sim \text{Normal}(0,0.78);
+$$
+
+4.  Enthusiastic:
+
+$$
+\beta_1 \sim \text{Normal}(2,0.78);
+$$
+
+Note that for the skeptical and enthusiastic prior specifications, hyper prior values are chosen such that the respective prior probabilities $P(\beta_1>\text{MCID})=0.1$ and $P(\beta_1 < \text{MCID})=0.1$ are satisfied.
+
+### Results from base-case analysis (weakly informative priors)
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| cache-lazy: false
+
+#pre-process data
+
+#try frequentist
+#library(nlme)
+#fit_1 <- lme(mv_dur ~ trt, data = data_descr,
+#             na.action = na.omit,
+#             random = list(center = ~ 1))
+#summary(fit_1)
+
+
+
+#define each variable to be passed to JAGS
+dmv <- data_descr$mv_dur
+trt <- data_descr$trt
+N <- length(unique(data_descr$id))
+L <- 10 #number of centres
+center <- data_descr$center
+
+#hyper prior values
+prior_md_ms <- c(0,100) #means and sd for mean difference
+prior_md_mp <- c(0,1/100^2) #means and precision for mean difference
+
+#build model in JAGS
+model_mix_dmv <- "
+model{
+for(i in 1:N){
+ #dmv model 
+      dmv[i] ~ dnorm(mu.dmv[i], tau.dmv)
+            mu.dmv[i] <- b0[center[i]] + beta0 + beta1*trt[i]
+  }
+ #center random effects
+  for(l in 1:L){
+      b0[l] ~ dnorm(0, tau.b0)
+ }
+ 
+ #convert precision to sd
+ tau.dmv <- 1/var.dmv
+ var.dmv <- sd.dmv*sd.dmv
+ tau.b0 <- 1/var.b0
+ var.b0 <- sd.b0*sd.b0
+ 
+ #priors 
+ sd.dmv ~ dunif(0,10)
+ sd.b0 ~ dunif(0,10)
+ beta0 ~ dnorm(0, 0.001)
+ beta1 ~ dnorm(prior_md_mp[1],prior_md_mp[2])
+
+ #save log likelihood
+ for(i in 1:N){
+ log_lik_dmv[i] <- logdensity.norm(dmv[i], mu.dmv[i], tau.dmv)
+ #obtain replications for pcc
+ dmv_rep[i] ~ dnorm(mu.dmv[i], tau.dmv)
+ }
+ 
+ #save parameters of interest
+ coef[1] <- beta0
+ coef[2] <- beta1
+ 
+}
+
+"
+
+#save model file as txt
+writeLines(model_mix_dmv, "model.mixture.dmv.txt")
+
+
+#fit model
+library(R2jags)
+set.seed(3456)
+datalist<-list("N","L","dmv","trt","center","prior_md_mp") #list of data input
+inits <- function(){list()} #set default random initial values for all parameters
+params<-c("beta0","beta1","sd.b0","mu.dmv","sd.dmv","log_lik_dmv","dmv_rep","coef") #list of parameters to save
+filein <- "model.mixture.dmv.txt" #name of file with model
+n.iter <- 10000 #number of iterations
+n.chains <- 2 #number of chains
+n.thin <- 1 #thinning interval
+
+model_mixture_dmv <- jags(data=datalist,inits=inits,parameters.to.save=params,model.file=filein,n.chains=n.chains,n.iter=n.iter,n.thin=n.thin,DIC=TRUE)
+
+#load function to extract summary results for selected parameters
+source("jagsresults.R")
+
+model_mixture_dmv_sum <- round(jagsresults(x = model_mixture_dmv, params = c('mu.dmv', 'log_lik_dmv','deviance','dmv_rep','coef'), invert = TRUE), digits = 3)
+
+#look at summary results
+print(model_mixture_dmv_sum)
+```
+
+For all quantities of interest, convergence of the model does not appear to be a concern. This is indicated by values of the *potential scale reduction factor statistics* (R hat) being below pretty close to $1$ for every parameter, as well as values of the *effective sample sizes* being not too small and in many cases close to the total number of MCMC iterations ($`r n.iter`$). 
+
+Next, we examine additional diagnostics to check for potential issues in model convergence or fit to the observed data. This can be achieved, for example, by looking at visual diagnostics such as *posterior density* and *trace plots*.
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: fig-diagnostics1
+#| fig-cap: "Density plots to assess potential issues in convergence for the estimated mean difference in DMV score between groups."
+
+#diagnostics
+#check model convergence
+library(ggmcmc)
+library(mcmcr)
+#extract posterior samples for all model parameters and convert them into mcmc object for inspection
+jagsModel2_mcmcobject <- coda::as.mcmc(model_mixture_dmv)
+params_sel <- c("coef","sd.b0","sd.dmv")
+jagsModel2_mcmcsubset <- subset(jagsModel2_mcmcobject, pars = params_sel)
+jagsModel2_ggmcmc_object <- ggmcmc::ggs(jagsModel2_mcmcsubset)
+
+#density plots for key parameters
+gg1 <- ggmcmc::ggs_density(jagsModel2_ggmcmc_object, family = "coef")+theme_classic()
+
+gg1
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: fig-diagnostics2
+#| fig-cap: "Trace plots to assess potential issues in convergence for the estimated mean difference in DMV utility score between groups."
+
+#diagnostics
+#trace plots for key parameters
+gg2 <- ggmcmc::ggs_traceplot(jagsModel2_ggmcmc_object, family = "coef")+theme_classic()
+
+gg2
+```
+
+All visual diagnostics in @fig-diagnostics1 and @fig-diagnostics2 do not show any clear evidence of issues related to model convergence with relatively well-behaved densities and a good mixing of the MCMC chains for the parameter of interest. Next, we proceed to check model fit in absolute terms via *Posterior Predictive Checks* (PPCs), whose purpose is to check the plausibility of the predictions generated from the model with respect to the observed data. Although different ways to perform PPCs exist, we decided to rely on a visual comparison of model-based replicated outcome data and the original observed outcome data. The lack of deviations of the replicated data from the observed data provides some reassurance about the interpretability of the results from the model.
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: fig-ppcs
+#| fig-cap: "Posterior predictive checks based on the visual comparison of histograms of the original observed and model-based replicated DMV score data."
+
+#PPC
+#extract model replications
+dmv_rep <- model_mixture_dmv$BUGSoutput$sims.list$dmv_rep
+#remove all missing values from original data
+dmv_cc <- dmv[complete.cases(dmv)]
+#remove imputed replicated data
+dmv_rep_cc <- matrix(NA,n.iter,length(dmv_cc))
+for(i in 1:n.iter){
+dmv_rep_cc[i,] <- dmv_rep[i,complete.cases(dmv)]
+}
+
+#compare model fit via relative information criteria
+#library(loo)
+#log_lik_dmv <- model_mixture_dmv$BUGSoutput$sims.list$log_lik_dmv
+#ic_waic_dmv <- waic(log_lik_dmv)
+#ic_looic_dmv <- loo(log_lik_dmv)
+
+#check model fit
+library(bayesplot)
+
+#histogram between observed and (first 25) replicated outcome data
+ppc_hist(dmv_cc,dmv_rep_cc[1:15,])
+
+```
+
+Once model performance and fit have been assessed and no major issues in the model is identified, as suggested by @fig-ppcs, we can proceed to inspect the posterior results for the parameters of interest. More specifically, for this outcome, we are interested in the posterior distribution of the mean difference in 6MWT score between the treatment arms over time.
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+
+#obtain all quantities of interest from the posterior estimates of the model via Monte Carlo integration
+
+#compute marginal means qol for each trt and mean difference
+mu.dmv <- model_mixture_dmv$BUGSoutput$sims.list$mu.dmv
+sd.dmv <- model_mixture_dmv$BUGSoutput$sims.list$sd.dmv
+mu0.dmv <- mu.dmv[,trt==0]
+mu1.dmv <- mu.dmv[,trt==1]
+K <- 10000 #n replications to be used for MC integration
+mm0.dmv <- mm1.dmv <- c()
+#generate many samples and take expectation across replications at each MCMC iteration to approximate marginal parameter values 
+set.seed(3456)
+for(i in 1:n.iter){
+  mm0.dmv[i] <- mean(rnorm(K, mean = mu0.dmv[i,], sd = sd.dmv[i]))
+  mm1.dmv[i] <- mean(rnorm(K, mean = mu1.dmv[i,], sd = sd.dmv[i]))
+}
+#compute all other quantities desired
+MD.dmv <-  mm1.dmv - mm0.dmv
+
+#obtain summary statistics for all quantities (mean,sd,median,95%CI)
+library(HDInterval)
+#mean dmv in trt0 
+mean_dmv_trt0 <- round(mean(mm0.dmv), 3)
+sd_dmv_trt0 <- round(sd(mm0.dmv), 2)
+median_dmv_trt0 <- round(median(mm0.dmv), 3)
+CI95_dmv_trt0 <- round(hdi(mm0.dmv, credMass = 0.95), 3)
+#mean dmv in trt1 
+mean_dmv_trt1 <- round(mean(mm1.dmv), 3)
+sd_dmv_trt1 <- round(sd(mm1.dmv), 2)
+median_dmv_trt1 <- round(median(mm1.dmv), 3)
+CI95_dmv_trt1 <- round(hdi(mm1.dmv, credMass = 0.95), 3)
+#mean difference dmv
+mean_MD_dmv <- round(mean(MD.dmv), 3)
+sd_MD_dmv <- round(sd(MD.dmv), 2)
+median_MD_dmv <- round(median(MD.dmv), 3)
+CI95_MD_dmv <- round(hdi(MD.dmv, credMass = 0.95), 3)
+#posterior probabilities in terms of dmv MD across all
+#any benefit P(MD>0)
+prob_MD_dmv_any_benefit <- sum(MD.dmv > 0)/length(MD.dmv)
+#clinically important benefit P(MD>MCID)
+mcid_dmv <- 1
+prob_MD_dmv_MCID <- sum(MD.dmv > mcid_dmv)/length(MD.dmv)
+#clinically important harm P(MD> -MCID)
+prob_MD_dmv_harm <- sum(MD.dmv < -mcid_dmv)/length(MD.dmv)
+
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: fig-mdplot
+#| fig-cap: "Posterior probability of having a value equal or lower than a range of effect sizes (upper plot) and posterior density for the estimated effect size (lower plot)."
+
+#posterior distribution for adjusted mean difference in dmv between arms
+MD_dmv <- MD.dmv
+#convert into data frame for plotting
+MD_dmv.df <- data.frame(MD_dmv)
+
+#posterior density of mean difference
+#density estimation
+library(tidyverse)
+den <- density(MD_dmv, from = -2, to = 4)
+data_dens_plot <- tibble(x = den$x, y = den$y) %>% 
+    mutate(variable = case_when(
+      (x >= mcid_dmv) ~ "On",
+      TRUE ~ NA_character_))
+
+md_plot1 <- ggplot(data_dens_plot, aes(x, y)) + geom_line(col="gold") +
+  geom_area(data = filter(data_dens_plot, variable == 'On'), fill = 'gold') +
+  theme_classic() + geom_vline(xintercept=0, col="black") +
+  geom_vline(xintercept=mcid_dmv, col="black", lty = 3) + 
+  xlim(-2,4) + xlab("MD") + ylab("") +
+  annotate("text", x = mcid_dmv+0.1, y = 0.05, label = "MCID") + 
+  coord_cartesian(ylim = c(0, 0.6), clip = "off") + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+
+#construct probability plot for given effect sizes
+es <- seq(from=-2,to=4,by=0.05)
+prob_es <- c()
+for(i in 1:length(es)){
+prob_es[i] <- sum(MD_dmv<es[i])/length(MD_dmv)
+}
+ES_dmv.df <- data.frame(es,prob_es)
+
+
+#posterior plot of probability of having effect size < given number
+md_plot2 <- ggplot(ES_dmv.df, aes(x=es, y=prob_es)) +
+  geom_line(aes(x=es, y=prob_es), linewidth=0.8, colour='gold') + 
+  theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
+  geom_vline(xintercept=0, col="black") +
+  geom_vline(xintercept=mcid_dmv, col="black", lty = 3) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+
+ggarrange(md_plot2,md_plot1, nrow = 2, ncol = 1)
+
+```
+
+@fig-mdplot shows two graphs that summarise posterior inference about the effect size of interest, in this case the mean difference in 6MWT score between the arms. The upper plot displays the probabilities associated with observing an estimated effect size equal to or lower than a given value (Y axis) for a range of possible effect size values (X axis). The second plot displays the full posterior density of the estimated effect size. In both plots a solid ad dashed lines are drawn in correspondence with a null effect size and an effect size equal to the MCID, respectively.
+
+### Results from sensitivity analysis (literature-based prior)
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| cache-lazy: false
+
+#update hyper prior values for litptical version
+prior_md_ms <- c(-0.42,0.3) #means and sd for mean difference
+prior_md_mp <- c(-0.42,1/0.3^2) #means and precision for mean difference
+
+#re-fit model with same file but with updated prior values
+set.seed(3456)
+datalist<-list("N","L","dmv","trt","center","prior_md_mp") 
+inits <- function(){list()} 
+params<-c("beta0","beta1","sd.b0","mu.dmv","sd.dmv","dmv_rep","log_lik_dmv","coef") #list of parameters to save
+filein <- "model.mixture.dmv.txt" #name of file with model
+n.iter <- 10000 #number of iterations
+n.chains <- 2 #number of chains
+n.thin <- 1 #thinning interval
+
+model_mixture_dmv_lit <- jags(data=datalist,inits=inits,parameters.to.save=params,model.file=filein,n.chains=n.chains,n.iter=n.iter,n.thin=n.thin,DIC=TRUE)
+
+model_mixture_dmv_lit_sum <- round(jagsresults(x = model_mixture_dmv_lit, params = c('mu.dmv', 'dmv_rep','log_lik_dmv','deviance','coef'), invert = TRUE), digits = 3)
+
+#look at summary results
+print(model_mixture_dmv_lit_sum)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+
+#obtain all quantities of interest from the posterior estimates of the model via Monte Carlo integration
+
+#compute marginal means qol for each trt and mean difference
+mu.dmv_lit <- model_mixture_dmv_lit$BUGSoutput$sims.list$mu.dmv
+sd.dmv_lit <- model_mixture_dmv_lit$BUGSoutput$sims.list$sd.dmv
+mu0.dmv_lit <- mu.dmv_lit[,trt==0]
+mu1.dmv_lit <- mu.dmv_lit[,trt==1]
+K <- 10000 #n replications to be used for MC integration
+mm0.dmv_lit <- mm1.dmv_lit <- c()
+#generate many samples and take expectation across replications at each MCMC iteration to approximate marginal parameter values 
+set.seed(3456)
+for(i in 1:n.iter){
+  mm0.dmv_lit[i] <- mean(rnorm(K, mean = mu0.dmv_lit[i,], sd = sd.dmv_lit[i]))
+  mm1.dmv_lit[i] <- mean(rnorm(K, mean = mu1.dmv_lit[i,], sd = sd.dmv_lit[i]))
+}
+#compute all other quantities desired
+MD.dmv_lit <-  mm1.dmv_lit - mm0.dmv_lit
+
+#obtain summary statistics for all quantities (mean,sd,median,95%CI)
+library(HDInterval)
+#mean dmv in trt0 
+mean_dmv_trt0_lit <- round(mean(mm0.dmv_lit), 3)
+sd_dmv_trt0_lit <- round(sd(mm0.dmv_lit), 2)
+median_dmv_trt0_lit <- round(median(mm0.dmv_lit), 3)
+CI95_dmv_trt0_lit <- round(hdi(mm0.dmv_lit, credMass = 0.95), 3)
+#mean dmv in trt1 
+mean_dmv_trt1_lit <- round(mean(mm1.dmv_lit), 3)
+sd_dmv_trt1_lit <- round(sd(mm1.dmv_lit), 2)
+median_dmv_trt1_lit <- round(median(mm1.dmv_lit), 3)
+CI95_dmv_trt1_lit <- round(hdi(mm1.dmv_lit, credMass = 0.95), 3)
+#mean difference dmv 
+mean_MD_dmv_lit <- round(mean(MD.dmv_lit), 3)
+sd_MD_dmv_lit <- round(sd(MD.dmv_lit), 2)
+median_MD_dmv_lit <- round(median(MD.dmv_lit), 3)
+CI95_MD_dmv_lit <- round(hdi(MD.dmv_lit, credMass = 0.95), 3)
+#posterior probabilities in terms of dmv MD across all
+#any benefit P(MD>0)
+prob_MD_dmv_any_benefit_lit <- sum(MD.dmv_lit > 0)/length(MD.dmv_lit)
+#clinically important benefit P(MD>MCID)
+mcid_dmv <- 1
+prob_MD_dmv_MCID_lit <- sum(MD.dmv_lit > mcid_dmv)/length(MD.dmv_lit)
+#clinically important harm P(MD> -MCID)
+prob_MD_dmv_harm_lit <- sum(MD.dmv_lit < -mcid_dmv)/length(MD.dmv_lit)
+
+```
+
+We now inspect the posterior results for the parameters of interest. 
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: fig-mdplot-lit
+#| fig-cap: "Posterior probability of having a value equal or lower than a range of effect sizes (upper plot) and posterior density for the estimated effect size (lower plot)."
+
+#posterior distribution for adjusted mean difference in dmv between arms
+MD_dmv_lit <- MD.dmv_lit
+#convert into data frame for plotting
+MD_dmv.df_lit <- data.frame(MD_dmv_lit)
+
+#posterior density of mean difference
+#density estimation
+library(tidyverse)
+den_lit <- density(MD_dmv_lit, from = -2, to = 4)
+data_dens_plot_lit <- tibble(x = den_lit$x, y = den_lit$y) %>% 
+    mutate(variable = case_when(
+      (x >= mcid_dmv) ~ "On",
+      TRUE ~ NA_character_))
+
+md_plot1_lit <- ggplot(data_dens_plot_lit, aes(x, y)) + geom_line(col="gold") +
+  geom_area(data = filter(data_dens_plot_lit, variable == 'On'), fill = 'gold') +
+  theme_classic() + geom_vline(xintercept=0, col="black") +
+  geom_vline(xintercept=mcid_dmv, col="black", lty = 3) + 
+  xlim(-2,4) + xlab("MD") + ylab("") +
+  annotate("text", x = mcid_dmv+0.1, y = 0.05, label = "MCID") + 
+  coord_cartesian(ylim = c(0, 1.3), clip = "off") + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+
+#construct probability plot for given effect sizes
+es_lit <- seq(from=-2,to=4,by=0.05)
+prob_es_lit <- c()
+for(i in 1:length(es_lit)){
+prob_es_lit[i] <- sum(MD_dmv_lit<es_lit[i])/length(MD_dmv_lit)
+}
+ES_dmv.df_lit <- data.frame(es_lit,prob_es_lit)
+
+
+#posterior plot of probability of having effect size < given number
+md_plot2_lit <- ggplot(ES_dmv.df_lit, aes(x=es_lit, y=prob_es_lit)) +
+  geom_line(aes(x=es_lit, y=prob_es_lit), linewidth=0.8, colour='gold') + 
+  theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
+  geom_vline(xintercept=0, col="black") +
+  geom_vline(xintercept=mcid_dmv, col="black", lty = 3) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+
+ggarrange(md_plot2_lit,md_plot1_lit, nrow = 2, ncol = 1)
+
+```
+
+@fig-mdplot-lit shows two graphs that summarise posterior inference about the effect size of interest under the adoption of literature-based priors.
+
+### Results from sensitivity analysis (skeptical prior)
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| cache-lazy: false
+
+#update hyper prior values for skeptical version
+prior_md_ms <- c(0,0.78) #means and sd for mean difference
+prior_md_mp <- c(0,1/0.78^2) #means and precision for mean difference
+
+#re-fit model with same file but with updated prior values
+set.seed(3456)
+datalist<-list("N","L","dmv","trt","center","prior_md_mp") 
+inits <- function(){list()} 
+params<-c("beta0","beta1","sd.b0","mu.dmv","sd.dmv","dmv_rep","log_lik_dmv","coef") #list of parameters to save
+filein <- "model.mixture.dmv.txt" #name of file with model
+n.iter <- 10000 #number of iterations
+n.chains <- 2 #number of chains
+n.thin <- 1 #thinning interval
+
+model_mixture_dmv_ske <- jags(data=datalist,inits=inits,parameters.to.save=params,model.file=filein,n.chains=n.chains,n.iter=n.iter,n.thin=n.thin,DIC=TRUE)
+
+model_mixture_dmv_ske_sum <- round(jagsresults(x = model_mixture_dmv_ske, params = c('mu.dmv', 'dmv_rep','log_lik_dmv','deviance','coef'), invert = TRUE), digits = 3)
+
+#look at summary results
+print(model_mixture_dmv_ske_sum)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+
+#obtain all quantities of interest from the posterior estimates of the model via Monte Carlo integration
+
+#compute marginal means qol for each trt and mean difference
+mu.dmv_ske <- model_mixture_dmv_ske$BUGSoutput$sims.list$mu.dmv
+sd.dmv_ske <- model_mixture_dmv_ske$BUGSoutput$sims.list$sd.dmv
+mu0.dmv_ske <- mu.dmv_ske[,trt==0]
+mu1.dmv_ske <- mu.dmv_ske[,trt==1]
+K <- 10000 #n replications to be used for MC integration
+mm0.dmv_ske <- mm1.dmv_ske <- c()
+#generate many samples and take expectation across replications at each MCMC iteration to approximate marginal parameter values 
+set.seed(3456)
+for(i in 1:n.iter){
+  mm0.dmv_ske[i] <- mean(rnorm(K, mean = mu0.dmv_ske[i,], sd = sd.dmv_ske[i]))
+  mm1.dmv_ske[i] <- mean(rnorm(K, mean = mu1.dmv_ske[i,], sd = sd.dmv_ske[i]))
+}
+#compute all other quantities desired
+MD.dmv_ske <-  mm1.dmv_ske - mm0.dmv_ske
+
+#obtain summary statistics for all quantities (mean,sd,median,95%CI)
+library(HDInterval)
+#mean dmv in trt0 
+mean_dmv_trt0_ske <- round(mean(mm0.dmv_ske), 3)
+sd_dmv_trt0_ske <- round(sd(mm0.dmv_ske), 2)
+median_dmv_trt0_ske <- round(median(mm0.dmv_ske), 3)
+CI95_dmv_trt0_ske <- round(hdi(mm0.dmv_ske, credMass = 0.95), 3)
+#mean dmv in trt1 
+mean_dmv_trt1_ske <- round(mean(mm1.dmv_ske), 3)
+sd_dmv_trt1_ske <- round(sd(mm1.dmv_ske), 2)
+median_dmv_trt1_ske <- round(median(mm1.dmv_ske), 3)
+CI95_dmv_trt1_ske <- round(hdi(mm1.dmv_ske, credMass = 0.95), 3)
+#mean difference dmv 
+mean_MD_dmv_ske <- round(mean(MD.dmv_ske), 3)
+sd_MD_dmv_ske <- round(sd(MD.dmv_ske), 2)
+median_MD_dmv_ske <- round(median(MD.dmv_ske), 3)
+CI95_MD_dmv_ske <- round(hdi(MD.dmv_ske, credMass = 0.95), 3)
+#posterior probabilities in terms of dmv MD across all
+#any benefit P(MD>0)
+prob_MD_dmv_any_benefit_ske <- sum(MD.dmv_ske > 0)/length(MD.dmv_ske)
+#clinically important benefit P(MD>MCID)
+mcid_dmv <- 1
+prob_MD_dmv_MCID_ske <- sum(MD.dmv_ske > mcid_dmv)/length(MD.dmv_ske)
+#clinically important harm P(MD> -MCID)
+prob_MD_dmv_harm_ske <- sum(MD.dmv_ske < -mcid_dmv)/length(MD.dmv_ske)
+
+```
+
+We now inspect the posterior results for the parameters of interest. 
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: fig-mdplot-ske
+#| fig-cap: "Posterior probability of having a value equal or lower than a range of effect sizes (upper plot) and posterior density for the estimated effect size (lower plot)."
+
+#posterior distribution for adjusted mean difference in dmv between arms
+MD_dmv_ske <- MD.dmv_ske
+#convert into data frame for plotting
+MD_dmv.df_ske <- data.frame(MD_dmv_ske)
+
+#posterior density of mean difference
+#density estimation
+library(tidyverse)
+den_ske <- density(MD_dmv_ske, from = -2, to = 4)
+data_dens_plot_ske <- tibble(x = den_ske$x, y = den_ske$y) %>% 
+    mutate(variable = case_when(
+      (x >= mcid_dmv) ~ "On",
+      TRUE ~ NA_character_))
+
+md_plot1_ske <- ggplot(data_dens_plot_ske, aes(x, y)) + geom_line(col="gold") +
+  geom_area(data = filter(data_dens_plot_ske, variable == 'On'), fill = 'gold') +
+  theme_classic() + geom_vline(xintercept=0, col="black") +
+  geom_vline(xintercept=mcid_dmv, col="black", lty = 3) + 
+  xlim(-2,4) + xlab("MD") + ylab("") +
+  annotate("text", x = mcid_dmv+0.1, y = 0.05, label = "MCID") + 
+  coord_cartesian(ylim = c(0, 0.8), clip = "off") + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+
+#construct probability plot for given effect sizes
+es_ske <- seq(from=-2,to=4,by=0.05)
+prob_es_ske <- c()
+for(i in 1:length(es_ske)){
+prob_es_ske[i] <- sum(MD_dmv_ske<es_ske[i])/length(MD_dmv_ske)
+}
+ES_dmv.df_ske <- data.frame(es_ske,prob_es_ske)
+
+
+#posterior plot of probability of having effect size < given number
+md_plot2_ske <- ggplot(ES_dmv.df_ske, aes(x=es_ske, y=prob_es_ske)) +
+  geom_line(aes(x=es_ske, y=prob_es_ske), linewidth=0.8, colour='gold') + 
+  theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
+  geom_vline(xintercept=0, col="black") +
+  geom_vline(xintercept=mcid_dmv, col="black", lty = 3) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+
+ggarrange(md_plot2_ske,md_plot1_ske, nrow = 2, ncol = 1)
+
+```
+
+@fig-mdplot-ske shows two graphs that summarise posterior inference about the effect size of interest under the adoption of skeptical priors.
+
+### Results from sensitivity analysis (enthusiastic prior)
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| cache-lazy: false
+
+#update hyper prior values for entptical version
+prior_md_ms <- c(0,0.78) #means and sd for mean difference
+prior_md_mp <- c(2,1/0.78^2) #means and precision for mean difference
+
+#re-fit model with same file but with updated prior values
+set.seed(3456)
+datalist<-list("N","L","dmv","trt","center","prior_md_mp") 
+inits <- function(){list()} 
+params<-c("beta0","beta1","sd.b0","mu.dmv","sd.dmv","dmv_rep","log_lik_dmv","coef") #list of parameters to save
+filein <- "model.mixture.dmv.txt" #name of file with model
+n.iter <- 10000 #number of iterations
+n.chains <- 2 #number of chains
+n.thin <- 1 #thinning interval
+
+model_mixture_dmv_ent <- jags(data=datalist,inits=inits,parameters.to.save=params,model.file=filein,n.chains=n.chains,n.iter=n.iter,n.thin=n.thin,DIC=TRUE)
+
+model_mixture_dmv_ent_sum <- round(jagsresults(x = model_mixture_dmv_ent, params = c('mu.dmv', 'dmv_rep','log_lik_dmv','deviance','coef'), invert = TRUE), digits = 3)
+
+#look at summary results
+print(model_mixture_dmv_ent_sum)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+
+#obtain all quantities of interest from the posterior estimates of the model via Monte Carlo integration
+
+#compute marginal means qol for each trt and mean difference
+mu.dmv_ent <- model_mixture_dmv_ent$BUGSoutput$sims.list$mu.dmv
+sd.dmv_ent <- model_mixture_dmv_ent$BUGSoutput$sims.list$sd.dmv
+mu0.dmv_ent <- mu.dmv_ent[,trt==0]
+mu1.dmv_ent <- mu.dmv_ent[,trt==1]
+K <- 10000 #n replications to be used for MC integration
+mm0.dmv_ent <- mm1.dmv_ent <- c()
+#generate many samples and take expectation across replications at each MCMC iteration to approximate marginal parameter values 
+set.seed(3456)
+for(i in 1:n.iter){
+  mm0.dmv_ent[i] <- mean(rnorm(K, mean = mu0.dmv_ent[i,], sd = sd.dmv_ent[i]))
+  mm1.dmv_ent[i] <- mean(rnorm(K, mean = mu1.dmv_ent[i,], sd = sd.dmv_ent[i]))
+}
+#compute all other quantities desired
+MD.dmv_ent <-  mm1.dmv_ent - mm0.dmv_ent
+
+#obtain summary statistics for all quantities (mean,sd,median,95%CI)
+library(HDInterval)
+#mean dmv in trt0 
+mean_dmv_trt0_ent <- round(mean(mm0.dmv_ent), 3)
+sd_dmv_trt0_ent <- round(sd(mm0.dmv_ent), 2)
+median_dmv_trt0_ent <- round(median(mm0.dmv_ent), 3)
+CI95_dmv_trt0_ent <- round(hdi(mm0.dmv_ent, credMass = 0.95), 3)
+#mean dmv in trt1 
+mean_dmv_trt1_ent <- round(mean(mm1.dmv_ent), 3)
+sd_dmv_trt1_ent <- round(sd(mm1.dmv_ent), 2)
+median_dmv_trt1_ent <- round(median(mm1.dmv_ent), 3)
+CI95_dmv_trt1_ent <- round(hdi(mm1.dmv_ent, credMass = 0.95), 3)
+#mean difference dmv 
+mean_MD_dmv_ent <- round(mean(MD.dmv_ent), 3)
+sd_MD_dmv_ent <- round(sd(MD.dmv_ent), 2)
+median_MD_dmv_ent <- round(median(MD.dmv_ent), 3)
+CI95_MD_dmv_ent <- round(hdi(MD.dmv_ent, credMass = 0.95), 3)
+#posterior probabilities in terms of dmv MD across all
+#any benefit P(MD>0)
+prob_MD_dmv_any_benefit_ent <- sum(MD.dmv_ent > 0)/length(MD.dmv_ent)
+#clinically important benefit P(MD>MCID)
+mcid_dmv <- 1
+prob_MD_dmv_MCID_ent <- sum(MD.dmv_ent > mcid_dmv)/length(MD.dmv_ent)
+#clinically important harm P(MD> -MCID)
+prob_MD_dmv_harm_ent <- sum(MD.dmv_ent < -mcid_dmv)/length(MD.dmv_ent)
+
+```
+
+We now inspect the posterior results for the parameters of interest. 
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: fig-mdplot-ent
+#| fig-cap: "Posterior probability of having a value equal or lower than a range of effect sizes (upper plot) and posterior density for the estimated effect size (lower plot)."
+
+#posterior distribution for adjusted mean difference in dmv between arms
+MD_dmv_ent <- MD.dmv_ent
+#convert into data frame for plotting
+MD_dmv.df_ent <- data.frame(MD_dmv_ent)
+
+#posterior density of mean difference
+#density estimation
+library(tidyverse)
+den_ent <- density(MD_dmv_ent, from = -2, to = 4)
+data_dens_plot_ent <- tibble(x = den_ent$x, y = den_ent$y) %>% 
+    mutate(variable = case_when(
+      (x >= mcid_dmv) ~ "On",
+      TRUE ~ NA_character_))
+
+md_plot1_ent <- ggplot(data_dens_plot_ent, aes(x, y)) + geom_line(col="gold") +
+  geom_area(data = filter(data_dens_plot_ent, variable == 'On'), fill = 'gold') +
+  theme_classic() + geom_vline(xintercept=0, col="black") +
+  geom_vline(xintercept=mcid_dmv, col="black", lty = 3) + 
+  xlim(-2,4) + xlab("MD") + ylab("") +
+  annotate("text", x = mcid_dmv+0.1, y = 0.05, label = "MCID") + 
+  coord_cartesian(ylim = c(0, 0.8), clip = "off") + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+
+#construct probability plot for given effect sizes
+es_ent <- seq(from=-2,to=4,by=0.05)
+prob_es_ent <- c()
+for(i in 1:length(es_ent)){
+prob_es_ent[i] <- sum(MD_dmv_ent<es_ent[i])/length(MD_dmv_ent)
+}
+ES_dmv.df_ent <- data.frame(es_ent,prob_es_ent)
+
+
+#posterior plot of probability of having effect size < given number
+md_plot2_ent <- ggplot(ES_dmv.df_ent, aes(x=es_ent, y=prob_es_ent)) +
+  geom_line(aes(x=es_ent, y=prob_es_ent), linewidth=0.8, colour='gold') + 
+  theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
+  geom_vline(xintercept=0, col="black") +
+  geom_vline(xintercept=mcid_dmv, col="black", lty = 3) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+
+ggarrange(md_plot2_ent,md_plot1_ent, nrow = 2, ncol = 1)
+
+```
+
+@fig-mdplot-ent shows two graphs that summarise posterior inference about the effect size of interest under the adoption of enthusiastic priors.
+
+### Summary posterior results
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+
+#put summary statistics for posterior estimates of effect size for each model in tables
+tab_dmv_res <- matrix(NA,4,3)
+rownames(tab_dmv_res) <- c("mean(95%CI) dmv","P(>0)","P(>MCID)","P(>-MCID)")
+colnames(tab_dmv_res) <- c("standard protein","high protein","difference")
+tab_dmv_res[1,] <- c(paste(mean_dmv_trt0, "(",CI95_dmv_trt0[1],";",CI95_dmv_trt0[2],")", sep = ""),paste(mean_dmv_trt1,"(",CI95_dmv_trt1[1],";",CI95_dmv_trt1[2],")", sep = ""),paste(mean_MD_dmv,"(",CI95_MD_dmv[1],";",CI95_MD_dmv[2],")", sep = ""))
+tab_dmv_res[2,] <- c("","",prob_MD_dmv_any_benefit)
+tab_dmv_res[3,] <- c("","",prob_MD_dmv_MCID)
+tab_dmv_res[4,] <- c("","",prob_MD_dmv_harm)
+
+tab_dmv_res_lit <- matrix(NA,4,3)
+rownames(tab_dmv_res_lit) <- c("mean(95%CI) dmv","P(>0)","P(>MCID)","P(>-MCID)")
+colnames(tab_dmv_res_lit) <- c("standard protein","high protein","difference")
+tab_dmv_res_lit[1,] <- c(paste(mean_dmv_trt0_lit, "(",CI95_dmv_trt0_lit[1],";",CI95_dmv_trt0_lit[2],")", sep = ""),paste(mean_dmv_trt1_lit,"(",CI95_dmv_trt1_lit[1],";",CI95_dmv_trt1_lit[2],")", sep = ""),paste(mean_MD_dmv_lit,"(",CI95_MD_dmv_lit[1],";",CI95_MD_dmv_lit[2],")", sep = ""))
+tab_dmv_res_lit[2,] <- c("","",prob_MD_dmv_any_benefit_lit)
+tab_dmv_res_lit[3,] <- c("","",prob_MD_dmv_MCID_lit)
+tab_dmv_res_lit[4,] <- c("","",prob_MD_dmv_harm_lit)
+
+tab_dmv_res_ske <- matrix(NA,4,3)
+rownames(tab_dmv_res_ske) <- c("mean(95%CI) dmv","P(>0)","P(>MCID)","P(>-MCID)")
+colnames(tab_dmv_res_ske) <- c("standard protein","high protein","difference")
+tab_dmv_res_ske[1,] <- c(paste(mean_dmv_trt0_ske, "(",CI95_dmv_trt0_ske[1],";",CI95_dmv_trt0_ske[2],")", sep = ""),paste(mean_dmv_trt1_ske,"(",CI95_dmv_trt1_ske[1],";",CI95_dmv_trt1_ske[2],")", sep = ""),paste(mean_MD_dmv_ske,"(",CI95_MD_dmv_ske[1],";",CI95_MD_dmv_ske[2],")", sep = ""))
+tab_dmv_res_ske[2,] <- c("","",prob_MD_dmv_any_benefit_ske)
+tab_dmv_res_ske[3,] <- c("","",prob_MD_dmv_MCID_ske)
+tab_dmv_res_ske[4,] <- c("","",prob_MD_dmv_harm_ske)
+
+tab_dmv_res_ent <- matrix(NA,4,3)
+rownames(tab_dmv_res_ent) <- c("mean(95%CI) dmv","P(>0)","P(>MCID)","P(>-MCID)")
+colnames(tab_dmv_res_ent) <- c("standard protein","high protein","difference")
+tab_dmv_res_ent[1,] <- c(paste(mean_dmv_trt0_ent, "(",CI95_dmv_trt0_ent[1],";",CI95_dmv_trt0_ent[2],")", sep = ""),paste(mean_dmv_trt1_ent,"(",CI95_dmv_trt1_ent[1],";",CI95_dmv_trt1_ent[2],")", sep = ""),paste(mean_MD_dmv_ent,"(",CI95_MD_dmv_ent[1],";",CI95_MD_dmv_ent[2],")", sep = ""))
+tab_dmv_res_ent[2,] <- c("","",prob_MD_dmv_any_benefit_ent)
+tab_dmv_res_ent[3,] <- c("","",prob_MD_dmv_MCID_ent)
+tab_dmv_res_ent[4,] <- c("","",prob_MD_dmv_harm_ent)
+
+
+```
+
+@tbl-res1, @tbl-res2, @tbl-res3 and @tbl-res4 show key posterior summaries about the main quantities of interest under a weakly-informative, literature-baed, skeptical and enthusiastic prior specification, respectively. Posterior estimates are reported in terms of mean and $95\%$ credible intervals for each arm separately and in terms of MD and probability of having any benefit, a clinically important benefit and harm between the two arms.
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-res1
+#| tbl-cap: "Summary posterior estimates based on the model under weakly-informative priors: these include the mean dmv by treatment arm. In addition, estimates of key differential quantities between arms are reported: MD, probability of having any benefit, a clinically important benefit and harm."
+
+#print table of results
+library(kableExtra)
+kbl(tab_dmv_res, booktabs=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  scroll_box(width = "100%", height = "200px")
+
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-res2
+#| tbl-cap: "Summary posterior estimates based on the model under skeptical priors: these include the mean dmv by treatment arm. In addition, estimates of key differential quantities between arms are reported: MD, probability of having any benefit, a clinically important benefit and harm."
+
+#print table of results
+kbl(tab_dmv_res_lit, booktabs=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  scroll_box(width = "100%", height = "200px")
+
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-res3
+#| tbl-cap: "Summary posterior estimates based on the model under skeptical priors: these include the mean dmv by treatment arm. In addition, estimates of key differential quantities between arms are reported: MD, probability of having any benefit, a clinically important benefit and harm."
+
+#print table of results
+kbl(tab_dmv_res_ske, booktabs=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  scroll_box(width = "100%", height = "200px")
+
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: false
+#| label: tbl-res4
+#| tbl-cap: "Summary posterior estimates based on the model under enthusiastic priors: these include the mean dmv by treatment arm. In addition, estimates of key differential quantities between arms are reported: MD, probability of having any benefit, a clinically important benefit and harm."
+
+#print table of results
+kbl(tab_dmv_res_ent, booktabs=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  scroll_box(width = "100%", height = "200px")
+
+```
+

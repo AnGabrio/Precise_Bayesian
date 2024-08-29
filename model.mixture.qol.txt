@@ -1,0 +1,80 @@
+
+model{
+for(i in 1:Nt){
+ #qol model - non-zero
+      qol[i] ~ dnorm(mu.u[i], tau.u[zero_d[i]+1])
+      mu.u[i] <- a0[zero_d[i]+1,id[i]] + b0[zero_d[i]+1,center[i]] + beta0[zero_d[i]+1] + beta[1,zero_d[i]+1]*trt[i] + beta[2,zero_d[i]+1]*time[i] + beta[3,zero_d[i]+1]*trt[i]*time[i] + beta[4,zero_d[i]+1]*qol_base[i]
+ #eq5d model - zero
+      zero_d[i] ~ dbern(pi[i])
+      logit(pi[i]) <- gamma0 + gamma[1]*trt[i] + gamma[2]*qol_base[i]
+  }
+ #center random effects
+  for(l in 1:L){
+      b0[1,l] ~ dnorm(0, tau.b0[1])
+      b0[2,l] ~ dnorm(0, tau.b0[2])
+ }
+ #person within center random effects 
+ for(n in 1:N){
+      a0[1,n] ~ dnorm(0, tau.a0[1])
+      a0[2,n] ~ dnorm(0, tau.a0[2])
+ }
+ 
+ #convert precision to sd
+ for(d in 1:2){
+ tau.u[d] <- 1/var.u[d]
+ var.u[d] <- sd.u[d]*sd.u[d]
+ tau.a0[d] <- 1/var.a0[d]
+ var.a0[d] <- sd.a0[d]*sd.a0[d] 
+ tau.b0[d] <- 1/var.b0[d]
+ var.b0[d] <- sd.b0[d]*sd.b0[d]
+ }
+ 
+ #priors on non-zero
+ sd.u[1] ~ dunif(0,10)
+ sd.a0[1] ~ dunif(0,10)
+ sd.b0[1] ~ dunif(0,10)
+ beta0[1] ~ dnorm(0, 0.001)
+ beta[1,1] ~ dnorm(prior_md_mp[1],prior_md_mp[2])
+  for(p in 2:P){
+  beta[p,1] ~ dnorm(0,0.001)
+  }
+
+ #priors on zero
+ sd.a0[2] ~ dunif(0,0.0000001)
+ sd.b0[2] ~ dunif(0,0.0000001)
+ beta0[2] <- 0
+ sd.u[2] <- 0.0000001
+  for(p in 1:P){
+  beta[p,2] <- 0
+  }
+  
+ #priors on logistic model
+ gamma0 ~ dnorm(0,1)
+ gamma[1] ~ dnorm(prior_lor_mp[1],prior_lor_mp[2])
+ gamma[2] ~ dnorm(0,1)
+
+ #save log likelihood
+ for(i in 1:Nt){
+ log_lik_qol[i] <- logdensity.norm(qol[i], mu.u[i], tau.u[zero_d[i]+1])
+ log_lik_zero_d[i] <- logdensity.bern(zero_d[i], pi[i])
+ }
+ 
+ #obtain replications for pcc
+ for(i in 1:Nt){
+ qol_rep[i] ~ dnorm(mu.u[i], tau.u[zero_d[i]+1])
+ zero_d_rep[i] ~ dbern(pi[i])
+ }
+ 
+ #save parameters of interest
+ coef[1] <- beta0[1]
+ coef[2] <- beta[1,1]
+ coef[3] <- beta[2,1]
+ coef[4] <- beta[3,1]
+ coef[5] <- beta[4,1]
+ coef[6] <- gamma0[1]
+ coef[7] <- gamma[1]
+ coef[8] <- gamma[2]
+ 
+}
+
+

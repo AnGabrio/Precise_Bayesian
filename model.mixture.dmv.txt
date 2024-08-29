@@ -1,0 +1,38 @@
+
+model{
+for(i in 1:N){
+ #dmv model 
+      dmv[i] ~ dnorm(mu.dmv[i], tau.dmv)
+            mu.dmv[i] <- b0[center[i]] + beta0 + beta1*trt[i]
+  }
+ #center random effects
+  for(l in 1:L){
+      b0[l] ~ dnorm(0, tau.b0)
+ }
+ 
+ #convert precision to sd
+ tau.dmv <- 1/var.dmv
+ var.dmv <- sd.dmv*sd.dmv
+ tau.b0 <- 1/var.b0
+ var.b0 <- sd.b0*sd.b0
+ 
+ #priors 
+ sd.dmv ~ dunif(0,10)
+ sd.b0 ~ dunif(0,10)
+ beta0 ~ dnorm(0, 0.001)
+ beta1 ~ dnorm(prior_md_mp[1],prior_md_mp[2])
+
+ #save log likelihood
+ for(i in 1:N){
+ log_lik_dmv[i] <- logdensity.norm(dmv[i], mu.dmv[i], tau.dmv)
+ #obtain replications for pcc
+ dmv_rep[i] ~ dnorm(mu.dmv[i], tau.dmv)
+ }
+ 
+ #save parameters of interest
+ coef[1] <- beta0
+ coef[2] <- beta1
+ 
+}
+
+

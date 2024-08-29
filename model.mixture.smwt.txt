@@ -1,0 +1,53 @@
+
+model{
+for(i in 1:Nt){
+ #smwt model 
+      smwt[i] ~ dnorm(mu.smwt[i], tau.smwt)
+            mu.smwt[i] <- a0[id[i]] + b0[center[i]] + beta0 + beta[1]*trt[i] + beta[2]*time[i] + beta[3]*trt[i]*time[i]
+  }
+ #center random effects
+  for(l in 1:L){
+      b0[l] ~ dnorm(0, tau.b0)
+ }
+ #person within center random effects 
+ for(n in 1:N){
+      a0[n] ~ dnorm(0, tau.a0)
+ }
+ 
+ #convert precision to sd
+ tau.smwt <- 1/var.smwt
+ var.smwt <- sd.smwt*sd.smwt
+ tau.a0 <- 1/var.a0
+ var.a0 <- sd.a0*sd.a0 
+ tau.b0 <- 1/var.b0
+ var.b0 <- sd.b0*sd.b0
+ 
+ #priors on non-zero
+ sd.smwt ~ dunif(0,10)
+ sd.a0 ~ dunif(0,10)
+ sd.b0 ~ dunif(0,10)
+ beta0 ~ dnorm(0, 0.001)
+ beta[1] ~ dnorm(prior_md_mp[1],prior_md_mp[2])
+  for(p in 2:P){
+  beta[p] ~ dnorm(0,0.001)
+  }
+
+ #save log likelihood
+ for(i in 1:Nt){
+ log_lik_smwt[i] <- logdensity.norm(smwt[i], mu.smwt[i], tau.smwt)
+ }
+ 
+ #obtain replications for pcc
+ for(i in 1:Nt){
+ smwt_rep[i] ~ dnorm(mu.smwt[i], tau.smwt)
+ }
+ 
+ #save parameters of interest
+ coef[1] <- beta0
+ coef[2] <- beta[1]
+ coef[3] <- beta[2]
+ coef[4] <- beta[3]
+ 
+}
+
+
