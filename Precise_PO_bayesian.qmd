@@ -216,7 +216,7 @@ gt_sum_baseline <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -239,7 +239,7 @@ gt_sum_baseline_arm <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -258,7 +258,7 @@ gt_sum_fu <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -277,7 +277,7 @@ gt_sum_fu_arm <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -298,7 +298,7 @@ gt_sum_fu_aki <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -318,7 +318,7 @@ gt_sum_fu_aki0_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -334,7 +334,7 @@ gt_sum_fu_aki1_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -356,7 +356,7 @@ gt_sum_fu_sepsis <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -376,7 +376,7 @@ gt_sum_fu_sepsis0_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -392,7 +392,7 @@ gt_sum_fu_sepsis1_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -414,7 +414,7 @@ gt_sum_fu_failure <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -434,7 +434,7 @@ gt_sum_fu_failure0_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -450,7 +450,7 @@ gt_sum_fu_failure1_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -470,9 +470,12 @@ gt_sum_arm_gt_failure_final <- as_gt(gt_sum_arm_gt_failure)
 #| warning: false
 #| cache: false
 #| label: tbl-sum1
+#| tbl-cap: Summary statistics of key baseline variables in the study across arms.
 
-gt_sum_gt_baseline %>%
-tab_caption(caption = md("Summary statistics of key baseline variables in the study across arms."))
+gt_sum_gt_baseline
+
+#gt_sum_gt_baseline %>%
+#  tab_caption(caption = md("Summary statistics of key baseline variables in the study across arms."))
 ```
 
 ```{r}
@@ -482,9 +485,12 @@ tab_caption(caption = md("Summary statistics of key baseline variables in the st
 #| warning: false
 #| cache: false
 #| label: tbl-sum2
+#| tbl-cap: Summary statistics of key baseline variables in the study by treatment arm (0=standard,1=intervention).
 
-gt_sum_gt_baseline_arm %>%
-tab_caption(caption = md("Summary statistics of key baseline variables in the study by treatment arm (0=standard,1=intervention)."))
+gt_sum_gt_baseline_arm
+
+#gt_sum_gt_baseline_arm %>%
+#tab_caption(caption = md("Summary statistics of key baseline variables in the study by #treatment arm (0=standard,1=intervention)."))
 ```
 
 @tbl-sum3 and @tbl-sum4 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for key outcome variables collected in the study after baseline. These include: **EQ-5D utility score at 30, 90, 180 days, six-min walking test at 30, 90, 180 days, handgrip strength at 30, 90, 180 days, mortaility at 60 days, duration of mechanical ventilation**. The summary statistics displayed for each outcome variable include: number of unobserved values (unknown), mean (sd) for continuous variables, and number of observed values ($\%$) for categorical variables.
@@ -496,9 +502,12 @@ tab_caption(caption = md("Summary statistics of key baseline variables in the st
 #| warning: false
 #| cache: false
 #| label: tbl-sum3
+#| tbl-cap: Summary statistics of key follo-up outcome variables in the study across arms.
 
-gt_sum_gt_fu %>%
-tab_caption(caption = md("Summary statistics of key follo-up outcome variables in the study across arms."))
+gt_sum_gt_fu
+
+#gt_sum_gt_fu %>%
+#tab_caption(caption = md("Summary statistics of key follo-up outcome variables in the study #across arms."))
 ```
 
 ```{r}
@@ -508,9 +517,12 @@ tab_caption(caption = md("Summary statistics of key follo-up outcome variables i
 #| warning: false
 #| cache: false
 #| label: tbl-sum4
+#| tbl-cap: Summary statistics of key follow-up outcome variables in the study by treatment arm (0=standard,1=intervention).
 
-gt_sum_gt_fu_arm %>%
-tab_caption(caption = md("Summary statistics of key follow-up outcome variables in the study by treatment arm (0=standard,1=intervention)."))
+gt_sum_gt_fu_arm
+
+#gt_sum_gt_fu_arm %>%
+#tab_caption(caption = md("Summary statistics of key follow-up outcome variables in the #study by treatment arm (0=standard,1=intervention)."))
 ```
 
 ### Descriptives by subgroups
@@ -524,9 +536,12 @@ tab_caption(caption = md("Summary statistics of key follow-up outcome variables 
 #| warning: false
 #| cache: false
 #| label: tbl-sum5
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by AKI status (0=no,1=yes).
 
-gt_sum_gt_fu_aki %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by AKI status (0=no,1=yes)."))
+gt_sum_gt_fu_aki
+
+#gt_sum_gt_fu_aki %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by AKI status (0=no,1=yes)."))
 ```
 
 ```{r}
@@ -536,9 +551,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum6
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes).
 
-gt_sum_arm_gt_aki_final %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes)."))
+gt_sum_arm_gt_aki_final
+
+#gt_sum_arm_gt_aki_final %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by treatment arm (0=standard,1=intervention) and AKI status #(0=no,1=yes)."))
 ```
 
 @tbl-sum7 and @tbl-sum8 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on sepsis status (0=no,1=yes).
@@ -550,9 +568,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum7
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes).
 
-gt_sum_gt_fu_sepsis %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by sepsis status (0=no,1=yes)."))
+gt_sum_gt_fu_sepsis
+
+#gt_sum_gt_fu_sepsis %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by sepsis status (0=no,1=yes)."))
 ```
 
 ```{r}
@@ -562,9 +583,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum8
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and sepsis status (0=no,1=yes).
 
-gt_sum_arm_gt_sepsis_final %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and sepsis status (0=no,1=yes)."))
+gt_sum_arm_gt_sepsis_final
+
+#gt_sum_arm_gt_sepsis_final %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by treatment arm (0=standard,1=intervention) and sepsis status #(0=no,1=yes)."))
 ```
 
 @tbl-sum9 and @tbl-sum10 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on multi organ failure status (0=no,1=yes).
@@ -576,9 +600,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum9
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by multi organ failure status (0=no,1=yes).
 
-gt_sum_gt_fu_failure %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by multi organ failure status (0=no,1=yes)."))
+gt_sum_gt_fu_failure
+
+#gt_sum_gt_fu_failure %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by multi organ failure status (0=no,1=yes)."))
 ```
 
 ```{r}
@@ -588,9 +615,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum10
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure status (0=no,1=yes).
 
-gt_sum_arm_gt_failure_final %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure status (0=no,1=yes)."))
+gt_sum_arm_gt_failure_final
+
+#gt_sum_arm_gt_failure_final %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure #status (0=no,1=yes)."))
 ```
 
 ## Analysis of primary outcome - EQ-5D utility score at multiple times
@@ -868,6 +898,16 @@ model_mixture_qol_sum <- round(jagsresults(x = model_mixture_qol, params = c('mu
 
 #look at summary results
 print(model_mixture_qol_sum)
+
+#diagnostics
+#check model convergence
+library(ggmcmc)
+library(mcmcr)
+#extract posterior samples for all model parameters and convert them into mcmc object for inspection
+jagsModel2_mcmcobject <- coda::as.mcmc(model_mixture_qol)
+params_sel <- c("coef","sd.a0","sd.b0","sd.u")
+jagsModel2_mcmcsubset <- subset(jagsModel2_mcmcobject, pars = params_sel)
+jagsModel2_ggmcmc_object <- ggmcmc::ggs(jagsModel2_mcmcsubset)
 ```
 
 For all quantities of interest, convergence of the model does not appear to be a concern. This is indicated by values of the *potential scale reduction factor statistics* (R hat) being below pretty close to $1$ for every parameter, as well as values of the *effective sample sizes* being not too small and in many cases close to the total number of MCMC iterations ($`r n.iter`$). We note that, for some parameters, the occurrence of estimates of $0$ with no uncertainty do not represent an issue in that they were intentionally set to those values to denote the specification of the zero-component mixture within the hurdle approach as implemented in `JAGS`.
@@ -882,16 +922,6 @@ Next, we examine additional diagnostics to check for potential issues in model c
 #| cache: false
 #| label: fig-diagnostics1
 #| fig-cap: "Density plots to assess potential issues in convergence for the estimated mean difference in EQ-5D utility score between groups."
-
-#diagnostics
-#check model convergence
-library(ggmcmc)
-library(mcmcr)
-#extract posterior samples for all model parameters and convert them into mcmc object for inspection
-jagsModel2_mcmcobject <- coda::as.mcmc(model_mixture_qol)
-params_sel <- c("coef","sd.a0","sd.b0","sd.u")
-jagsModel2_mcmcsubset <- subset(jagsModel2_mcmcobject, pars = params_sel)
-jagsModel2_ggmcmc_object <- ggmcmc::ggs(jagsModel2_mcmcsubset)
 
 #density plots for key parameters
 ggmcmc::ggs_density(jagsModel2_ggmcmc_object, family = "coef")+theme_classic()
@@ -1059,11 +1089,18 @@ CI95_MD_qol <- round(hdi(MD.u.weighted, credMass = 0.95), 3)
 #any benefit P(MD>0)
 prob_MD_qol_any_benefit <- sum(MD.u.weighted > 0)/length(MD.u.weighted)
 #clinically important benefit P(MD>MCID)
-mcid_qol <- 0.06
-prob_MD_qol_MCID <- sum(MD.u.weighted > mcid_qol)/length(MD.u.weighted)
+mcid_qol <- c(0.06,0.04,0.05,0.07)
+prob_MD_qol_MCID <- sum(MD.u.weighted > mcid_qol[1])/length(MD.u.weighted)
 #clinically important harm P(MD> -MCID)
-prob_MD_qol_harm <- sum(MD.u.weighted < -mcid_qol)/length(MD.u.weighted)
+prob_MD_qol_harm <- sum(MD.u.weighted < -mcid_qol[1])/length(MD.u.weighted)
 
+#repeat for other thresholds
+prob_MD_qol_MCID4 <- sum(MD.u.weighted > mcid_qol[2])/length(MD.u.weighted)
+prob_MD_qol_harm4 <- sum(MD.u.weighted < -mcid_qol[2])/length(MD.u.weighted)
+prob_MD_qol_MCID5 <- sum(MD.u.weighted > mcid_qol[3])/length(MD.u.weighted)
+prob_MD_qol_harm5 <- sum(MD.u.weighted < -mcid_qol[3])/length(MD.u.weighted)
+prob_MD_qol_MCID7 <- sum(MD.u.weighted > mcid_qol[4])/length(MD.u.weighted)
+prob_MD_qol_harm7 <- sum(MD.u.weighted < -mcid_qol[4])/length(MD.u.weighted)
 ```
 
 ```{r}
@@ -1086,15 +1123,15 @@ library(tidyverse)
 den <- density(MD_qol_weight, from = -0.1, to = 0.1)
 data_dens_plot <- tibble(x = den$x, y = den$y) %>% 
     mutate(variable = case_when(
-      (x >= mcid_qol) ~ "On",
+      (x >= mcid_qol[1]) ~ "On",
       TRUE ~ NA_character_))
 
 md_plot1 <- ggplot(data_dens_plot, aes(x, y)) + geom_line(col="gold") +
   geom_area(data = filter(data_dens_plot, variable == 'On'), fill = 'gold') +
   theme_classic() + geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_qol, col="black", lty = 3) + 
+  geom_vline(xintercept=mcid_qol[1], col="black", lty = 3) + 
   xlim(-0.1,0.1) + xlab("MD") + ylab("") +
-  annotate("text", x = mcid_qol+0.015, y = 5, label = "MCID") + 
+  annotate("text", x = mcid_qol[1]+0.015, y = 5, label = "MCID") + 
   coord_cartesian(ylim = c(0, 30), clip = "off") + 
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
@@ -1112,7 +1149,7 @@ md_plot2 <- ggplot(ES_qol.df, aes(x=es, y=prob_es)) +
   geom_line(aes(x=es, y=prob_es), linewidth=0.8, colour='gold') + 
   theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
   geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_qol, col="black", lty = 3) +
+  geom_vline(xintercept=mcid_qol[1], col="black", lty = 3) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
 ggarrange(md_plot2,md_plot1, nrow = 2, ncol = 1)
@@ -1254,10 +1291,17 @@ CI95_MD_qol_ske <- round(hdi(MD.u.weighted_ske, credMass = 0.95), 3)
 #any benefit P(MD>0)
 prob_MD_qol_any_benefit_ske <- sum(MD.u.weighted_ske > 0)/length(MD.u.weighted_ske)
 #clinically important benefit P(MD>MCID)
-prob_MD_qol_MCID_ske <- sum(MD.u.weighted_ske > mcid_qol)/length(MD.u.weighted_ske)
+prob_MD_qol_MCID_ske <- sum(MD.u.weighted_ske > mcid_qol[1])/length(MD.u.weighted_ske)
 #clinically important harm P(MD> -MCID)
-prob_MD_qol_harm_ske <- sum(MD.u.weighted_ske < -mcid_qol)/length(MD.u.weighted_ske)
+prob_MD_qol_harm_ske <- sum(MD.u.weighted_ske < -mcid_qol[1])/length(MD.u.weighted_ske)
 
+#repeat for other thresholds
+prob_MD_qol_MCID4_ske <- sum(MD.u.weighted_ske > mcid_qol[2])/length(MD.u.weighted_ske)
+prob_MD_qol_harm4_ske <- sum(MD.u.weighted_ske < -mcid_qol[2])/length(MD.u.weighted_ske)
+prob_MD_qol_MCID5_ske <- sum(MD.u.weighted_ske > mcid_qol[3])/length(MD.u.weighted_ske)
+prob_MD_qol_harm5_ske <- sum(MD.u.weighted_ske < -mcid_qol[3])/length(MD.u.weighted_ske)
+prob_MD_qol_MCID7_ske <- sum(MD.u.weighted_ske > mcid_qol[4])/length(MD.u.weighted_ske)
+prob_MD_qol_harm7_ske <- sum(MD.u.weighted_ske < -mcid_qol[4])/length(MD.u.weighted_ske)
 ```
 
 We now inspect the posterior results for the parameters of interest. 
@@ -1281,15 +1325,15 @@ MD_qol_weight.df_ske <- data.frame(MD_qol_weight_ske)
 den_ske <- density(MD_qol_weight_ske, from = -0.1, to = 0.1)
 data_dens_plot_ske <- tibble(x = den_ske$x, y = den_ske$y) %>% 
     mutate(variable = case_when(
-      (x >= mcid_qol) ~ "On",
+      (x >= mcid_qol[1]) ~ "On",
       TRUE ~ NA_character_))
 
 md_plot1_ske <- ggplot(data_dens_plot_ske, aes(x, y)) + geom_line(col="gold") +
   geom_area(data = filter(data_dens_plot_ske, variable == 'On'), fill = 'gold') +
   theme_classic() + geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_qol, col="black", lty = 3) + 
+  geom_vline(xintercept=mcid_qol[1], col="black", lty = 3) + 
   xlim(-0.1,0.1) + xlab("MD") + ylab("") +
-  annotate("text", x = mcid_qol+0.015, y = 5, label = "MCID") + 
+  annotate("text", x = mcid_qol[1]+0.015, y = 5, label = "MCID") + 
   coord_cartesian(ylim = c(0, 30), clip = "off") + 
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
@@ -1307,7 +1351,7 @@ md_plot2_ske <- ggplot(ES_qol.df_ske, aes(x=es_ske, y=prob_es_ske)) +
   geom_line(aes(x=es_ske, y=prob_es_ske), linewidth=0.8, colour='gold') + 
   theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
   geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_qol, col="black", lty = 3) + 
+  geom_vline(xintercept=mcid_qol[1], col="black", lty = 3) + 
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
   
 
@@ -1449,10 +1493,17 @@ CI95_MD_qol_ent <- round(hdi(MD.u.weighted_ent, credMass = 0.95), 3)
 #any benefit P(MD>0)
 prob_MD_qol_any_benefit_ent <- sum(MD.u.weighted_ent > 0)/length(MD.u.weighted_ent)
 #clinically important benefit P(MD>MCID)
-prob_MD_qol_MCID_ent <- sum(MD.u.weighted_ent > mcid_qol)/length(MD.u.weighted_ent)
+prob_MD_qol_MCID_ent <- sum(MD.u.weighted_ent > mcid_qol[1])/length(MD.u.weighted_ent)
 #clinically important harm P(MD> -MCID)
-prob_MD_qol_harm_ent <- sum(MD.u.weighted_ent < -mcid_qol)/length(MD.u.weighted_ent)
+prob_MD_qol_harm_ent <- sum(MD.u.weighted_ent < -mcid_qol[1])/length(MD.u.weighted_ent)
 
+#repeat for other thresholds
+prob_MD_qol_MCID4_ent <- sum(MD.u.weighted_ent > mcid_qol[2])/length(MD.u.weighted_ent)
+prob_MD_qol_harm4_ent <- sum(MD.u.weighted_ent < -mcid_qol[2])/length(MD.u.weighted_ent)
+prob_MD_qol_MCID5_ent <- sum(MD.u.weighted_ent > mcid_qol[3])/length(MD.u.weighted_ent)
+prob_MD_qol_harm5_ent <- sum(MD.u.weighted_ent < -mcid_qol[3])/length(MD.u.weighted_ent)
+prob_MD_qol_MCID7_ent <- sum(MD.u.weighted_ent > mcid_qol[4])/length(MD.u.weighted_ent)
+prob_MD_qol_harm7_ent <- sum(MD.u.weighted_ent < -mcid_qol[4])/length(MD.u.weighted_ent)
 ```
 
 We now inspect the posterior results for the parameters of interest. 
@@ -1476,15 +1527,15 @@ MD_qol_weight.df_ent <- data.frame(MD_qol_weight_ent)
 den_ent <- density(MD_qol_weight_ent, from = -0.1, to = 0.1)
 data_dens_plot_ent <- tibble(x = den_ent$x, y = den_ent$y) %>% 
     mutate(variable = case_when(
-      (x >= mcid_qol) ~ "On",
+      (x >= mcid_qol[1]) ~ "On",
       TRUE ~ NA_character_))
 
 md_plot1_ent <- ggplot(data_dens_plot_ent, aes(x, y)) + geom_line(col="gold") +
   geom_area(data = filter(data_dens_plot_ent, variable == 'On'), fill = 'gold') +
   theme_classic() + geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_qol, col="black", lty = 3) + 
+  geom_vline(xintercept=mcid_qol[1], col="black", lty = 3) + 
   xlim(-0.1,0.1) + xlab("MD") + ylab("") +
-  annotate("text", x = mcid_qol, y = 5, label = "MCID") + 
+  annotate("text", x = mcid_qol[1], y = 5, label = "MCID") + 
   coord_cartesian(ylim = c(0, 30), clip = "off") + 
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
@@ -1502,7 +1553,7 @@ md_plot2_ent <- ggplot(ES_qol.df_ent, aes(x=es_ent, y=prob_es_ent)) +
   geom_line(aes(x=es_ent, y=prob_es_ent), linewidth=0.8, colour='gold') + 
   theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
   geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_qol, col="black", lty = 3) + 
+  geom_vline(xintercept=mcid_qol[1], col="black", lty = 3) + 
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
   
 
@@ -1522,8 +1573,8 @@ ggarrange(md_plot2_ent,md_plot1_ent, nrow = 2, ncol = 1)
 #| cache: false
 
 #put summary statistics for posterior estimates of effect size for each model in tables
-tab_qol_res <- matrix(NA,7,3)
-rownames(tab_qol_res) <- c("mean(95%CI) qol non-zero","mean(95%CI) p zero","mean(95%CI) odds zero","mean(95%CI) qol","P(>0)","P(>MCID)","P(>-MCID)")
+tab_qol_res <- matrix(NA,13,3)
+rownames(tab_qol_res) <- c("mean(95%CI) qol non-zero","mean(95%CI) p zero","mean(95%CI) odds zero","mean(95%CI) qol","P(>0)","P(>MCID=0.06)","P(>-MCID=0.06)","P(>MCID=0.04)","P(>-MCID=0.04)","P(>MCID=0.05)","P(>-MCID=0.05)","P(>MCID=0.07)","P(>-MCID=0.07)")
 colnames(tab_qol_res) <- c("standard protein","high protein","difference")
 
 tab_qol_res[1,] <- c(paste(mean_qol_trt0_non0, "(",CI95_qol_trt0_non0[1],";",CI95_qol_trt0_non0[2],")", sep = ""),paste(mean_qol_trt1_non0,"(",CI95_qol_trt1_non0[1],";",CI95_qol_trt1_non0[2],")", sep = ""),paste(mean_MD_qol_non0,"(",CI95_MD_qol_non0[1],";",CI95_MD_qol_non0[2],")", sep = ""))
@@ -1533,9 +1584,15 @@ tab_qol_res[4,] <- c(paste(mean_qol_trt0, "(",CI95_qol_trt0[1],";",CI95_qol_trt0
 tab_qol_res[5,] <- c("","",prob_MD_qol_any_benefit)
 tab_qol_res[6,] <- c("","",prob_MD_qol_MCID)
 tab_qol_res[7,] <- c("","",prob_MD_qol_harm)
+tab_qol_res[8,] <- c("","",prob_MD_qol_MCID4)
+tab_qol_res[9,] <- c("","",prob_MD_qol_harm4)
+tab_qol_res[10,] <- c("","",prob_MD_qol_MCID5)
+tab_qol_res[11,] <- c("","",prob_MD_qol_harm5)
+tab_qol_res[12,] <- c("","",prob_MD_qol_MCID7)
+tab_qol_res[13,] <- c("","",prob_MD_qol_harm7)
 
-tab_qol_res_ske <- matrix(NA,7,3)
-rownames(tab_qol_res_ske) <- c("mean(95%CI) qol non-zero","mean(95%CI) p zero","mean(95%CI) odds zero","mean(95%CI) qol","P(>0)","P(>MCID)","P(>-MCID)")
+tab_qol_res_ske <- matrix(NA,13,3)
+rownames(tab_qol_res_ske) <- c("mean(95%CI) qol non-zero","mean(95%CI) p zero","mean(95%CI) odds zero","mean(95%CI) qol","P(>0)","P(>MCID=0.06)","P(>-MCID=0.06)","P(>MCID=0.04)","P(>-MCID=0.04)","P(>MCID=0.05)","P(>-MCID=0.05)","P(>MCID=0.07)","P(>-MCID=0.07)")
 colnames(tab_qol_res_ske) <- c("standard protein","high protein","difference")
 tab_qol_res_ske[1,] <- c(paste(mean_qol_trt0_non0_ske, "(",CI95_qol_trt0_non0_ske[1],";",CI95_qol_trt0_non0_ske[2],")", sep = ""),paste(mean_qol_trt1_non0_ske,"(",CI95_qol_trt1_non0_ske[1],";",CI95_qol_trt1_non0_ske[2],")", sep = ""),paste(mean_MD_qol_non0_ske,"(",CI95_MD_qol_non0_ske[1],";",CI95_MD_qol_non0_ske[2],")", sep = ""))
 tab_qol_res_ske[2,] <- c(paste(mean_p_zero_trt0_ske, "(",CI95_p_zero_trt0_ske[1],";",CI95_p_zero_trt0_ske[2],")", sep = ""),paste(mean_p_zero_trt1_ske,"(",CI95_p_zero_trt1_ske[1],";",CI95_p_zero_trt1_ske[2],")", sep = ""),paste(mean_ARD_p_zero_ske,"(",CI95_ARD_p_zero_ske[1],";",CI95_ARD_p_zero_ske[2],")", sep = ""))
@@ -1544,10 +1601,15 @@ tab_qol_res_ske[4,] <- c(paste(mean_qol_trt0_ske, "(",CI95_qol_trt0_ske[1],";",C
 tab_qol_res_ske[5,] <- c("","",prob_MD_qol_any_benefit_ske)
 tab_qol_res_ske[6,] <- c("","",prob_MD_qol_MCID_ske)
 tab_qol_res_ske[7,] <- c("","",prob_MD_qol_harm_ske)
+tab_qol_res_ske[8,] <- c("","",prob_MD_qol_MCID4_ske)
+tab_qol_res_ske[9,] <- c("","",prob_MD_qol_harm4_ske)
+tab_qol_res_ske[10,] <- c("","",prob_MD_qol_MCID5_ske)
+tab_qol_res_ske[11,] <- c("","",prob_MD_qol_harm5_ske)
+tab_qol_res_ske[12,] <- c("","",prob_MD_qol_MCID7_ske)
+tab_qol_res_ske[13,] <- c("","",prob_MD_qol_harm7_ske)
 
-
-tab_qol_res_ent <- matrix(NA,7,3)
-rownames(tab_qol_res_ent) <- c("mean(95%CI) qol non-zero","mean(95%CI) p zero","mean(95%CI) odds zero","mean(95%CI) qol","P(>0)","P(>MCID)","P(>-MCID)")
+tab_qol_res_ent <- matrix(NA,13,3)
+rownames(tab_qol_res_ent) <- c("mean(95%CI) qol non-zero","mean(95%CI) p zero","mean(95%CI) odds zero","mean(95%CI) qol","P(>0)","P(>MCID=0.06)","P(>-MCID=0.06)","P(>MCID=0.04)","P(>-MCID=0.04)","P(>MCID=0.05)","P(>-MCID=0.05)","P(>MCID=0.07)","P(>-MCID=0.07)")
 colnames(tab_qol_res_ent) <- c("standard protein","high protein","difference")
 tab_qol_res_ent[1,] <- c(paste(mean_qol_trt0_non0_ent, "(",CI95_qol_trt0_non0_ent[1],";",CI95_qol_trt0_non0_ent[2],")", sep = ""),paste(mean_qol_trt1_non0_ent,"(",CI95_qol_trt1_non0_ent[1],";",CI95_qol_trt1_non0_ent[2],")", sep = ""),paste(mean_MD_qol_non0_ent,"(",CI95_MD_qol_non0_ent[1],";",CI95_MD_qol_non0_ent[2],")", sep = ""))
 tab_qol_res_ent[2,] <- c(paste(mean_p_zero_trt0_ent, "(",CI95_p_zero_trt0_ent[1],";",CI95_p_zero_trt0_ent[2],")", sep = ""),paste(mean_p_zero_trt1_ent,"(",CI95_p_zero_trt1_ent[1],";",CI95_p_zero_trt1_ent[2],")", sep = ""),paste(mean_ARD_p_zero_ent,"(",CI95_ARD_p_zero_ent[1],";",CI95_ARD_p_zero_ent[2],")", sep = ""))
@@ -1556,7 +1618,12 @@ tab_qol_res_ent[4,] <- c(paste(mean_qol_trt0_ent, "(",CI95_qol_trt0_ent[1],";",C
 tab_qol_res_ent[5,] <- c("","",prob_MD_qol_any_benefit_ent)
 tab_qol_res_ent[6,] <- c("","",prob_MD_qol_MCID_ent)
 tab_qol_res_ent[7,] <- c("","",prob_MD_qol_harm_ent)
-
+tab_qol_res_ent[8,] <- c("","",prob_MD_qol_MCID4_ent)
+tab_qol_res_ent[9,] <- c("","",prob_MD_qol_harm4_ent)
+tab_qol_res_ent[10,] <- c("","",prob_MD_qol_MCID5_ent)
+tab_qol_res_ent[11,] <- c("","",prob_MD_qol_harm5_ent)
+tab_qol_res_ent[12,] <- c("","",prob_MD_qol_MCID7_ent)
+tab_qol_res_ent[13,] <- c("","",prob_MD_qol_harm7_ent)
 ```
 
 @tbl-res1, @tbl-res2 and @tbl-res3 show key posterior summaries about the main quantities of interest under a weakly-informative, skeptical and enthusiastic prior specification, respectively. Posterior estimates are reported in terms of mean/median and $95\%$ credible intervals for each arm separately and in terms of MD/ARD/OR and probability of having any benefit, a clinically important benefit and harm between the two arms.

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,7 +59,7 @@ div.csl-indent {
 <link href="Precise_sub_bayesian_non_sepsis_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -144,13 +144,13 @@ window.Quarto = {
 <section id="priors" class="level3">
 <h3 class="anchored" data-anchor-id="priors">Priors</h3>
 <p>For each endpoint, an MCID is derived from the literature (<a href="#tbl-endpoint" class="quarto-xref">Table&nbsp;1</a>).</p>
-<div id="tbl-endpoint" class="quarto-float anchored">
+<div id="tbl-endpoint" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-endpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Prior distributions information and MCIDs
 </figcaption>
 <div aria-describedby="tbl-endpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">
@@ -253,7 +253,7 @@ Table&nbsp;1: Prior distributions information and MCIDs
 <p>For all analyses, we will use weakly informative priors centered around ‘no effect’ (for example a mean difference MD of 0, or an odds ratio OR of 1 0 on the log OR scale). For the binary outcomes (ORs, denoted as the log of the OR), a mean of 0 will be applied for the weakly informative prior, while the standard deviation (SD) will be set to 3 on the log OR scale, to capture all credible effect sizes. For the continuous outcomes (on the MD scale), we aim to be consistent and reproducible, but will also allow the distributions to capture all plausible effect sizes. As such, the standard deviation (SD) will be based on a multiplication of the MCID (x100). <a href="#tbl-endpoint" class="quarto-xref">Table&nbsp;1</a> presents the numerical values of these weakly informative priors. Skeptical and enthusiastic priors are defined following a modification of the approach suggested by de Grooth and Elbers (<span class="citation" data-cites="de2022pick">Grooth &amp; Elbers (<a href="#ref-de2022pick" role="doc-biblioref">2022</a>)</span>). Skeptical priors will be centered at a mean difference (MD) or log OR of 0. The distribution will incorporate a <span class="math inline">\(&lt;10\%\)</span> probability that the estimated treatment effect will exceed +1 MCID. Conversely, the enthusiastic priors are centered around an effect of +2 MCID, and will follow a similar distribution with a probability of <span class="math inline">\(&lt;10\%\)</span> that estimated effect size will be lower than +1 MCID (<a href="#fig-priors" class="quarto-xref">Figure&nbsp;1</a>).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-priors" class="quarto-figure quarto-figure-center quarto-float anchored" width="80%">
+<div id="fig-priors" class="quarto-float quarto-figure quarto-figure-center anchored" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-priors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./skep_ent_priors.png" id="fig-priors" class="img-fluid figure-img" style="width:80.0%">
@@ -280,31 +280,30 @@ Figure&nbsp;1
 <h2 class="anchored" data-anchor-id="data-description">Data Description</h2>
 <p><a href="#tbl-sum1" class="quarto-xref">Table&nbsp;2</a> and <a href="#tbl-sum2" class="quarto-xref">Table&nbsp;3</a> report summary statistics, either across or by treatment arm (0=standard,1=intervention), for key variables collected in the study at baseline. These include: <strong>center, sex (f/m), age (years), diabetes (y/n), admission type, covid (y/n), AKI (y/n), sepsis (y/n), multiple organ failure (y/n), weight (Kg), height (cm), BMI, EQ-5D utility score</strong>. The summary statistics displayed for each baseline variable include: number of unobserved values (unknown), mean (sd) for continuous variables, and number of observed values (<span class="math inline">\(\%\)</span>) for categorical variables.</p>
 <div class="cell">
-<div id="tbl-sum1" class="cell quarto-float anchored">
+<div id="tbl-sum1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Summary statistics of key baseline variables in the study across arms.
 </figcaption>
 <div aria-describedby="tbl-sum1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="trxcjqnijm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#trxcjqnijm table {
+<div id="hjvuuhivnb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hjvuuhivnb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#trxcjqnijm thead, #trxcjqnijm tbody, #trxcjqnijm tfoot, #trxcjqnijm tr, #trxcjqnijm td, #trxcjqnijm th {
+#hjvuuhivnb thead, #hjvuuhivnb tbody, #hjvuuhivnb tfoot, #hjvuuhivnb tr, #hjvuuhivnb td, #hjvuuhivnb th {
   border-style: none;
 }
 
-#trxcjqnijm p {
+#hjvuuhivnb p {
   margin: 0;
   padding: 0;
 }
 
-#trxcjqnijm .gt_table {
+#hjvuuhivnb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -330,12 +329,12 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-left-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_caption {
+#hjvuuhivnb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#trxcjqnijm .gt_title {
+#hjvuuhivnb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -347,7 +346,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-bottom-width: 0;
 }
 
-#trxcjqnijm .gt_subtitle {
+#hjvuuhivnb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -359,7 +358,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-top-width: 0;
 }
 
-#trxcjqnijm .gt_heading {
+#hjvuuhivnb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -371,13 +370,13 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-right-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_bottom_border {
+#hjvuuhivnb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_col_headings {
+#hjvuuhivnb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -392,7 +391,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-right-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_col_heading {
+#hjvuuhivnb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -412,7 +411,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   overflow-x: hidden;
 }
 
-#trxcjqnijm .gt_column_spanner_outer {
+#hjvuuhivnb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -424,15 +423,15 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   padding-right: 4px;
 }
 
-#trxcjqnijm .gt_column_spanner_outer:first-child {
+#hjvuuhivnb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#trxcjqnijm .gt_column_spanner_outer:last-child {
+#hjvuuhivnb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#trxcjqnijm .gt_column_spanner {
+#hjvuuhivnb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -444,11 +443,11 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   width: 100%;
 }
 
-#trxcjqnijm .gt_spanner_row {
+#hjvuuhivnb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#trxcjqnijm .gt_group_heading {
+#hjvuuhivnb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -474,7 +473,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   text-align: left;
 }
 
-#trxcjqnijm .gt_empty_group_heading {
+#hjvuuhivnb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -489,15 +488,15 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   vertical-align: middle;
 }
 
-#trxcjqnijm .gt_from_md > :first-child {
+#hjvuuhivnb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#trxcjqnijm .gt_from_md > :last-child {
+#hjvuuhivnb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#trxcjqnijm .gt_row {
+#hjvuuhivnb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -516,7 +515,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   overflow-x: hidden;
 }
 
-#trxcjqnijm .gt_stub {
+#hjvuuhivnb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -529,7 +528,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   padding-right: 5px;
 }
 
-#trxcjqnijm .gt_stub_row_group {
+#hjvuuhivnb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -543,15 +542,15 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   vertical-align: top;
 }
 
-#trxcjqnijm .gt_row_group_first td {
+#hjvuuhivnb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#trxcjqnijm .gt_row_group_first th {
+#hjvuuhivnb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#trxcjqnijm .gt_summary_row {
+#hjvuuhivnb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -561,16 +560,16 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   padding-right: 5px;
 }
 
-#trxcjqnijm .gt_first_summary_row {
+#hjvuuhivnb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_first_summary_row.thick {
+#hjvuuhivnb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#trxcjqnijm .gt_last_summary_row {
+#hjvuuhivnb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -580,7 +579,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-bottom-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_grand_summary_row {
+#hjvuuhivnb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -590,7 +589,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   padding-right: 5px;
 }
 
-#trxcjqnijm .gt_first_grand_summary_row {
+#hjvuuhivnb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -600,7 +599,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-top-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_last_grand_summary_row_top {
+#hjvuuhivnb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -610,11 +609,11 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-bottom-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_striped {
+#hjvuuhivnb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#trxcjqnijm .gt_table_body {
+#hjvuuhivnb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -623,7 +622,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-bottom-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_footnotes {
+#hjvuuhivnb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -637,7 +636,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-right-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_footnote {
+#hjvuuhivnb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -646,7 +645,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   padding-right: 5px;
 }
 
-#trxcjqnijm .gt_sourcenotes {
+#hjvuuhivnb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -660,7 +659,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   border-right-color: #D3D3D3;
 }
 
-#trxcjqnijm .gt_sourcenote {
+#hjvuuhivnb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -668,68 +667,77 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
   padding-right: 5px;
 }
 
-#trxcjqnijm .gt_left {
+#hjvuuhivnb .gt_left {
   text-align: left;
 }
 
-#trxcjqnijm .gt_center {
+#hjvuuhivnb .gt_center {
   text-align: center;
 }
 
-#trxcjqnijm .gt_right {
+#hjvuuhivnb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#trxcjqnijm .gt_font_normal {
+#hjvuuhivnb .gt_font_normal {
   font-weight: normal;
 }
 
-#trxcjqnijm .gt_font_bold {
+#hjvuuhivnb .gt_font_bold {
   font-weight: bold;
 }
 
-#trxcjqnijm .gt_font_italic {
+#hjvuuhivnb .gt_font_italic {
   font-style: italic;
 }
 
-#trxcjqnijm .gt_super {
+#hjvuuhivnb .gt_super {
   font-size: 65%;
 }
 
-#trxcjqnijm .gt_footnote_marks {
+#hjvuuhivnb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#trxcjqnijm .gt_asterisk {
+#hjvuuhivnb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#trxcjqnijm .gt_indent_1 {
+#hjvuuhivnb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#trxcjqnijm .gt_indent_2 {
+#hjvuuhivnb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#trxcjqnijm .gt_indent_3 {
+#hjvuuhivnb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#trxcjqnijm .gt_indent_4 {
+#hjvuuhivnb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#trxcjqnijm .gt_indent_5 {
+#hjvuuhivnb .gt_indent_5 {
   text-indent: 25px;
+}
+
+#hjvuuhivnb .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#hjvuuhivnb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -737,9 +745,13 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<strong>Variable</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variable</strong></th>
-<th id="<strong>N</strong> <strong>obs%</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong> <strong>obs%</strong></th>
-<th id="<strong>N = 935</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 935</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KipWYXJpYWJsZSoq&quot;><div class='gt_from_md'><p><strong>Variable</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>Variable</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOKiogKipvYnMlKio=&quot;><div class='gt_from_md'><p><strong>N</strong> <strong>obs%</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N</strong> <strong>obs%</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOID0gOTM1Kio=&quot;><div class='gt_from_md'><p><strong>N = 935</strong></p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N = 935</strong></p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -985,7 +997,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">failure_f</td>
-<td class="gt_row gt_center" headers="n">901 96%</td>
+<td class="gt_row gt_center" headers="n">935 96%</td>
 <td class="gt_row gt_center" headers="stat_0"><br>
 </td>
 </tr>
@@ -1042,7 +1054,7 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_base</td>
-<td class="gt_row gt_center" headers="n">785 84%</td>
+<td class="gt_row gt_center" headers="n">935 84%</td>
 <td class="gt_row gt_center" headers="stat_0">0.78 (0.25)</td>
 </tr>
 <tr class="even">
@@ -1053,7 +1065,8 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> n (%); Mean (SD)</td>
+<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span>
+<p>n (%); Mean (SD)</p></td>
 </tr>
 </tfoot>
 
@@ -1062,36 +1075,34 @@ Table&nbsp;2: Summary statistics of key baseline variables in the study across a
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <div class="cell">
-<div id="tbl-sum2" class="cell quarto-float anchored">
+<div id="tbl-sum2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3: Summary statistics of key baseline variables in the study by treatment arm (0=standard,1=intervention).
 </figcaption>
 <div aria-describedby="tbl-sum2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="lgjpzhjboh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lgjpzhjboh table {
+<div id="yltjqmybwz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yltjqmybwz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lgjpzhjboh thead, #lgjpzhjboh tbody, #lgjpzhjboh tfoot, #lgjpzhjboh tr, #lgjpzhjboh td, #lgjpzhjboh th {
+#yltjqmybwz thead, #yltjqmybwz tbody, #yltjqmybwz tfoot, #yltjqmybwz tr, #yltjqmybwz td, #yltjqmybwz th {
   border-style: none;
 }
 
-#lgjpzhjboh p {
+#yltjqmybwz p {
   margin: 0;
   padding: 0;
 }
 
-#lgjpzhjboh .gt_table {
+#yltjqmybwz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1117,12 +1128,12 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-left-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_caption {
+#yltjqmybwz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lgjpzhjboh .gt_title {
+#yltjqmybwz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1134,7 +1145,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-bottom-width: 0;
 }
 
-#lgjpzhjboh .gt_subtitle {
+#yltjqmybwz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1146,7 +1157,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-top-width: 0;
 }
 
-#lgjpzhjboh .gt_heading {
+#yltjqmybwz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1158,13 +1169,13 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-right-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_bottom_border {
+#yltjqmybwz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_col_headings {
+#yltjqmybwz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1179,7 +1190,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-right-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_col_heading {
+#yltjqmybwz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1199,7 +1210,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   overflow-x: hidden;
 }
 
-#lgjpzhjboh .gt_column_spanner_outer {
+#yltjqmybwz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1211,15 +1222,15 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   padding-right: 4px;
 }
 
-#lgjpzhjboh .gt_column_spanner_outer:first-child {
+#yltjqmybwz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lgjpzhjboh .gt_column_spanner_outer:last-child {
+#yltjqmybwz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lgjpzhjboh .gt_column_spanner {
+#yltjqmybwz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1231,11 +1242,11 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   width: 100%;
 }
 
-#lgjpzhjboh .gt_spanner_row {
+#yltjqmybwz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lgjpzhjboh .gt_group_heading {
+#yltjqmybwz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1261,7 +1272,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   text-align: left;
 }
 
-#lgjpzhjboh .gt_empty_group_heading {
+#yltjqmybwz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1276,15 +1287,15 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   vertical-align: middle;
 }
 
-#lgjpzhjboh .gt_from_md > :first-child {
+#yltjqmybwz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lgjpzhjboh .gt_from_md > :last-child {
+#yltjqmybwz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lgjpzhjboh .gt_row {
+#yltjqmybwz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1303,7 +1314,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   overflow-x: hidden;
 }
 
-#lgjpzhjboh .gt_stub {
+#yltjqmybwz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1316,7 +1327,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   padding-right: 5px;
 }
 
-#lgjpzhjboh .gt_stub_row_group {
+#yltjqmybwz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1330,15 +1341,15 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   vertical-align: top;
 }
 
-#lgjpzhjboh .gt_row_group_first td {
+#yltjqmybwz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lgjpzhjboh .gt_row_group_first th {
+#yltjqmybwz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lgjpzhjboh .gt_summary_row {
+#yltjqmybwz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1348,16 +1359,16 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   padding-right: 5px;
 }
 
-#lgjpzhjboh .gt_first_summary_row {
+#yltjqmybwz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_first_summary_row.thick {
+#yltjqmybwz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lgjpzhjboh .gt_last_summary_row {
+#yltjqmybwz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1367,7 +1378,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-bottom-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_grand_summary_row {
+#yltjqmybwz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1377,7 +1388,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   padding-right: 5px;
 }
 
-#lgjpzhjboh .gt_first_grand_summary_row {
+#yltjqmybwz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1387,7 +1398,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-top-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_last_grand_summary_row_top {
+#yltjqmybwz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1397,11 +1408,11 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-bottom-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_striped {
+#yltjqmybwz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lgjpzhjboh .gt_table_body {
+#yltjqmybwz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1410,7 +1421,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-bottom-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_footnotes {
+#yltjqmybwz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1424,7 +1435,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-right-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_footnote {
+#yltjqmybwz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1433,7 +1444,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   padding-right: 5px;
 }
 
-#lgjpzhjboh .gt_sourcenotes {
+#yltjqmybwz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1447,7 +1458,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   border-right-color: #D3D3D3;
 }
 
-#lgjpzhjboh .gt_sourcenote {
+#yltjqmybwz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1455,68 +1466,77 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
   padding-right: 5px;
 }
 
-#lgjpzhjboh .gt_left {
+#yltjqmybwz .gt_left {
   text-align: left;
 }
 
-#lgjpzhjboh .gt_center {
+#yltjqmybwz .gt_center {
   text-align: center;
 }
 
-#lgjpzhjboh .gt_right {
+#yltjqmybwz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lgjpzhjboh .gt_font_normal {
+#yltjqmybwz .gt_font_normal {
   font-weight: normal;
 }
 
-#lgjpzhjboh .gt_font_bold {
+#yltjqmybwz .gt_font_bold {
   font-weight: bold;
 }
 
-#lgjpzhjboh .gt_font_italic {
+#yltjqmybwz .gt_font_italic {
   font-style: italic;
 }
 
-#lgjpzhjboh .gt_super {
+#yltjqmybwz .gt_super {
   font-size: 65%;
 }
 
-#lgjpzhjboh .gt_footnote_marks {
+#yltjqmybwz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lgjpzhjboh .gt_asterisk {
+#yltjqmybwz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lgjpzhjboh .gt_indent_1 {
+#yltjqmybwz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lgjpzhjboh .gt_indent_2 {
+#yltjqmybwz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lgjpzhjboh .gt_indent_3 {
+#yltjqmybwz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lgjpzhjboh .gt_indent_4 {
+#yltjqmybwz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lgjpzhjboh .gt_indent_5 {
+#yltjqmybwz .gt_indent_5 {
   text-indent: 25px;
+}
+
+#yltjqmybwz .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#yltjqmybwz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -1525,10 +1545,20 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<strong>Variable</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variable</strong></th>
-<th id="<strong>N</strong> <strong>obs%</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong> <strong>obs%</strong></th>
-<th id="<strong>0</strong>, N = 465<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong>, N = 465<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>1</strong>, N = 470<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong>, N = 470<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KipWYXJpYWJsZSoq&quot;><div class='gt_from_md'><p><strong>Variable</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>Variable</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOKiogKipvYnMlKio=&quot;><div class='gt_from_md'><p><strong>N</strong> <strong>obs%</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N</strong> <strong>obs%</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KiowKiogIApOID0gNDY1&quot;><div class='gt_from_md'><p><strong>0</strong><br />
+N = 465</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>0</strong><br>
+N = 465</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KioxKiogIApOID0gNDcw&quot;><div class='gt_from_md'><p><strong>1</strong><br />
+N = 470</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>1</strong><br>
+N = 470</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -1793,7 +1823,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">failure_f</td>
-<td class="gt_row gt_center" headers="n">901 96%</td>
+<td class="gt_row gt_center" headers="n">935 96%</td>
 <td class="gt_row gt_center" headers="stat_1"><br>
 </td>
 <td class="gt_row gt_center" headers="stat_2"><br>
@@ -1861,7 +1891,7 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_base</td>
-<td class="gt_row gt_center" headers="n">785 84%</td>
+<td class="gt_row gt_center" headers="n">935 84%</td>
 <td class="gt_row gt_center" headers="stat_1">0.78 (0.25)</td>
 <td class="gt_row gt_center" headers="stat_2">0.77 (0.26)</td>
 </tr>
@@ -1874,7 +1904,8 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> n (%); Mean (SD)</td>
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span>
+<p>n (%); Mean (SD)</p></td>
 </tr>
 </tfoot>
 
@@ -1883,37 +1914,35 @@ Table&nbsp;3: Summary statistics of key baseline variables in the study by treat
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <p><a href="#tbl-sum3" class="quarto-xref">Table&nbsp;4</a> and <a href="#tbl-sum4" class="quarto-xref">Table&nbsp;5</a> report summary statistics, either across or by treatment arm (0=standard,1=intervention), for key outcome variables collected in the study after baseline. These include: <strong>EQ-5D utility score at 30, 90, 180 days, six-min walking test at 30, 90, 180 days, handgrip strength at 30, 90, 180 days, mortaility at 60 days, duration of mechanical ventilation</strong>. The summary statistics displayed for each outcome variable include: number of unobserved values (unknown), mean (sd) for continuous variables, and number of observed values (<span class="math inline">\(\%\)</span>) for categorical variables.</p>
 <div class="cell">
-<div id="tbl-sum3" class="cell quarto-float anchored">
+<div id="tbl-sum3" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study across arms.
 </figcaption>
 <div aria-describedby="tbl-sum3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="wqnhntbcmz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wqnhntbcmz table {
+<div id="fkfxfkfdzh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fkfxfkfdzh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wqnhntbcmz thead, #wqnhntbcmz tbody, #wqnhntbcmz tfoot, #wqnhntbcmz tr, #wqnhntbcmz td, #wqnhntbcmz th {
+#fkfxfkfdzh thead, #fkfxfkfdzh tbody, #fkfxfkfdzh tfoot, #fkfxfkfdzh tr, #fkfxfkfdzh td, #fkfxfkfdzh th {
   border-style: none;
 }
 
-#wqnhntbcmz p {
+#fkfxfkfdzh p {
   margin: 0;
   padding: 0;
 }
 
-#wqnhntbcmz .gt_table {
+#fkfxfkfdzh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1939,12 +1968,12 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-left-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_caption {
+#fkfxfkfdzh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wqnhntbcmz .gt_title {
+#fkfxfkfdzh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1956,7 +1985,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-bottom-width: 0;
 }
 
-#wqnhntbcmz .gt_subtitle {
+#fkfxfkfdzh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1968,7 +1997,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-top-width: 0;
 }
 
-#wqnhntbcmz .gt_heading {
+#fkfxfkfdzh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1980,13 +2009,13 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-right-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_bottom_border {
+#fkfxfkfdzh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_col_headings {
+#fkfxfkfdzh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2001,7 +2030,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-right-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_col_heading {
+#fkfxfkfdzh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2021,7 +2050,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   overflow-x: hidden;
 }
 
-#wqnhntbcmz .gt_column_spanner_outer {
+#fkfxfkfdzh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2033,15 +2062,15 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   padding-right: 4px;
 }
 
-#wqnhntbcmz .gt_column_spanner_outer:first-child {
+#fkfxfkfdzh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wqnhntbcmz .gt_column_spanner_outer:last-child {
+#fkfxfkfdzh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wqnhntbcmz .gt_column_spanner {
+#fkfxfkfdzh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2053,11 +2082,11 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   width: 100%;
 }
 
-#wqnhntbcmz .gt_spanner_row {
+#fkfxfkfdzh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wqnhntbcmz .gt_group_heading {
+#fkfxfkfdzh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2083,7 +2112,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   text-align: left;
 }
 
-#wqnhntbcmz .gt_empty_group_heading {
+#fkfxfkfdzh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2098,15 +2127,15 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   vertical-align: middle;
 }
 
-#wqnhntbcmz .gt_from_md > :first-child {
+#fkfxfkfdzh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wqnhntbcmz .gt_from_md > :last-child {
+#fkfxfkfdzh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wqnhntbcmz .gt_row {
+#fkfxfkfdzh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2125,7 +2154,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   overflow-x: hidden;
 }
 
-#wqnhntbcmz .gt_stub {
+#fkfxfkfdzh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2138,7 +2167,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   padding-right: 5px;
 }
 
-#wqnhntbcmz .gt_stub_row_group {
+#fkfxfkfdzh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2152,15 +2181,15 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   vertical-align: top;
 }
 
-#wqnhntbcmz .gt_row_group_first td {
+#fkfxfkfdzh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wqnhntbcmz .gt_row_group_first th {
+#fkfxfkfdzh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wqnhntbcmz .gt_summary_row {
+#fkfxfkfdzh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2170,16 +2199,16 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   padding-right: 5px;
 }
 
-#wqnhntbcmz .gt_first_summary_row {
+#fkfxfkfdzh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_first_summary_row.thick {
+#fkfxfkfdzh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wqnhntbcmz .gt_last_summary_row {
+#fkfxfkfdzh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2189,7 +2218,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-bottom-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_grand_summary_row {
+#fkfxfkfdzh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2199,7 +2228,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   padding-right: 5px;
 }
 
-#wqnhntbcmz .gt_first_grand_summary_row {
+#fkfxfkfdzh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2209,7 +2238,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-top-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_last_grand_summary_row_top {
+#fkfxfkfdzh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2219,11 +2248,11 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-bottom-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_striped {
+#fkfxfkfdzh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wqnhntbcmz .gt_table_body {
+#fkfxfkfdzh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2232,7 +2261,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-bottom-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_footnotes {
+#fkfxfkfdzh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2246,7 +2275,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-right-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_footnote {
+#fkfxfkfdzh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2255,7 +2284,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   padding-right: 5px;
 }
 
-#wqnhntbcmz .gt_sourcenotes {
+#fkfxfkfdzh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2269,7 +2298,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   border-right-color: #D3D3D3;
 }
 
-#wqnhntbcmz .gt_sourcenote {
+#fkfxfkfdzh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2277,68 +2306,77 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
   padding-right: 5px;
 }
 
-#wqnhntbcmz .gt_left {
+#fkfxfkfdzh .gt_left {
   text-align: left;
 }
 
-#wqnhntbcmz .gt_center {
+#fkfxfkfdzh .gt_center {
   text-align: center;
 }
 
-#wqnhntbcmz .gt_right {
+#fkfxfkfdzh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wqnhntbcmz .gt_font_normal {
+#fkfxfkfdzh .gt_font_normal {
   font-weight: normal;
 }
 
-#wqnhntbcmz .gt_font_bold {
+#fkfxfkfdzh .gt_font_bold {
   font-weight: bold;
 }
 
-#wqnhntbcmz .gt_font_italic {
+#fkfxfkfdzh .gt_font_italic {
   font-style: italic;
 }
 
-#wqnhntbcmz .gt_super {
+#fkfxfkfdzh .gt_super {
   font-size: 65%;
 }
 
-#wqnhntbcmz .gt_footnote_marks {
+#fkfxfkfdzh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wqnhntbcmz .gt_asterisk {
+#fkfxfkfdzh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wqnhntbcmz .gt_indent_1 {
+#fkfxfkfdzh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wqnhntbcmz .gt_indent_2 {
+#fkfxfkfdzh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wqnhntbcmz .gt_indent_3 {
+#fkfxfkfdzh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wqnhntbcmz .gt_indent_4 {
+#fkfxfkfdzh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wqnhntbcmz .gt_indent_5 {
+#fkfxfkfdzh .gt_indent_5 {
   text-indent: 25px;
+}
+
+#fkfxfkfdzh .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#fkfxfkfdzh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -2346,15 +2384,19 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<strong>Variable</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variable</strong></th>
-<th id="<strong>N</strong> <strong>obs%</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong> <strong>obs%</strong></th>
-<th id="<strong>N = 935</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 935</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KipWYXJpYWJsZSoq&quot;><div class='gt_from_md'><p><strong>Variable</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>Variable</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOKiogKipvYnMlKio=&quot;><div class='gt_from_md'><p><strong>N</strong> <strong>obs%</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N</strong> <strong>obs%</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOID0gOTM1Kio=&quot;><div class='gt_from_md'><p><strong>N = 935</strong></p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N = 935</strong></p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="n">805 86%</td>
+<td class="gt_row gt_center" headers="n">935 86%</td>
 <td class="gt_row gt_center" headers="stat_0">0.31 (0.32)</td>
 </tr>
 <tr class="even">
@@ -2365,7 +2407,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="n">782 84%</td>
+<td class="gt_row gt_center" headers="n">935 84%</td>
 <td class="gt_row gt_center" headers="stat_0">0.36 (0.38)</td>
 </tr>
 <tr class="even">
@@ -2376,7 +2418,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="n">787 84%</td>
+<td class="gt_row gt_center" headers="n">935 84%</td>
 <td class="gt_row gt_center" headers="stat_0">0.37 (0.40)</td>
 </tr>
 <tr class="even">
@@ -2387,7 +2429,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">hand_1</td>
-<td class="gt_row gt_center" headers="n">280 30%</td>
+<td class="gt_row gt_center" headers="n">935 30%</td>
 <td class="gt_row gt_center" headers="stat_0">67.59 (31.69)</td>
 </tr>
 <tr class="even">
@@ -2398,7 +2440,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">hand_2</td>
-<td class="gt_row gt_center" headers="n">288 31%</td>
+<td class="gt_row gt_center" headers="n">935 31%</td>
 <td class="gt_row gt_center" headers="stat_0">79.12 (30.96)</td>
 </tr>
 <tr class="even">
@@ -2409,7 +2451,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">hand_3</td>
-<td class="gt_row gt_center" headers="n">261 28%</td>
+<td class="gt_row gt_center" headers="n">935 28%</td>
 <td class="gt_row gt_center" headers="stat_0">91.25 (31.06)</td>
 </tr>
 <tr class="even">
@@ -2420,7 +2462,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">smwt_1</td>
-<td class="gt_row gt_center" headers="n">130 14%</td>
+<td class="gt_row gt_center" headers="n">935 14%</td>
 <td class="gt_row gt_center" headers="stat_0">61.12 (23.97)</td>
 </tr>
 <tr class="even">
@@ -2431,7 +2473,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">smwt_2</td>
-<td class="gt_row gt_center" headers="n">207 22%</td>
+<td class="gt_row gt_center" headers="n">935 22%</td>
 <td class="gt_row gt_center" headers="stat_0">70.79 (27.27)</td>
 </tr>
 <tr class="even">
@@ -2442,7 +2484,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">smwt_3</td>
-<td class="gt_row gt_center" headers="n">213 23%</td>
+<td class="gt_row gt_center" headers="n">935 23%</td>
 <td class="gt_row gt_center" headers="stat_0">76.61 (24.61)</td>
 </tr>
 <tr class="even">
@@ -2453,7 +2495,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">mort60_f</td>
-<td class="gt_row gt_center" headers="n">860 92%</td>
+<td class="gt_row gt_center" headers="n">935 92%</td>
 <td class="gt_row gt_center" headers="stat_0"><br>
 </td>
 </tr>
@@ -2477,7 +2519,7 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">mv_dur</td>
-<td class="gt_row gt_center" headers="n">904 97%</td>
+<td class="gt_row gt_center" headers="n">935 97%</td>
 <td class="gt_row gt_center" headers="stat_0">13.67 (12.87)</td>
 </tr>
 <tr class="even">
@@ -2488,7 +2530,8 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD); n (%)</td>
+<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span>
+<p>Mean (SD); n (%)</p></td>
 </tr>
 </tfoot>
 
@@ -2497,36 +2540,34 @@ Table&nbsp;4: Summary statistics of key follo-up outcome variables in the study 
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <div class="cell">
-<div id="tbl-sum4" class="cell quarto-float anchored">
+<div id="tbl-sum4" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study by treatment arm (0=standard,1=intervention).
 </figcaption>
 <div aria-describedby="tbl-sum4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="bjkxhbzbxy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bjkxhbzbxy table {
+<div id="pciinrqopf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pciinrqopf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bjkxhbzbxy thead, #bjkxhbzbxy tbody, #bjkxhbzbxy tfoot, #bjkxhbzbxy tr, #bjkxhbzbxy td, #bjkxhbzbxy th {
+#pciinrqopf thead, #pciinrqopf tbody, #pciinrqopf tfoot, #pciinrqopf tr, #pciinrqopf td, #pciinrqopf th {
   border-style: none;
 }
 
-#bjkxhbzbxy p {
+#pciinrqopf p {
   margin: 0;
   padding: 0;
 }
 
-#bjkxhbzbxy .gt_table {
+#pciinrqopf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2552,12 +2593,12 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-left-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_caption {
+#pciinrqopf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bjkxhbzbxy .gt_title {
+#pciinrqopf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2569,7 +2610,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-bottom-width: 0;
 }
 
-#bjkxhbzbxy .gt_subtitle {
+#pciinrqopf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2581,7 +2622,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-top-width: 0;
 }
 
-#bjkxhbzbxy .gt_heading {
+#pciinrqopf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2593,13 +2634,13 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-right-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_bottom_border {
+#pciinrqopf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_col_headings {
+#pciinrqopf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2614,7 +2655,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-right-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_col_heading {
+#pciinrqopf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2634,7 +2675,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   overflow-x: hidden;
 }
 
-#bjkxhbzbxy .gt_column_spanner_outer {
+#pciinrqopf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2646,15 +2687,15 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   padding-right: 4px;
 }
 
-#bjkxhbzbxy .gt_column_spanner_outer:first-child {
+#pciinrqopf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bjkxhbzbxy .gt_column_spanner_outer:last-child {
+#pciinrqopf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bjkxhbzbxy .gt_column_spanner {
+#pciinrqopf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2666,11 +2707,11 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   width: 100%;
 }
 
-#bjkxhbzbxy .gt_spanner_row {
+#pciinrqopf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bjkxhbzbxy .gt_group_heading {
+#pciinrqopf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2696,7 +2737,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   text-align: left;
 }
 
-#bjkxhbzbxy .gt_empty_group_heading {
+#pciinrqopf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2711,15 +2752,15 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   vertical-align: middle;
 }
 
-#bjkxhbzbxy .gt_from_md > :first-child {
+#pciinrqopf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bjkxhbzbxy .gt_from_md > :last-child {
+#pciinrqopf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bjkxhbzbxy .gt_row {
+#pciinrqopf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2738,7 +2779,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   overflow-x: hidden;
 }
 
-#bjkxhbzbxy .gt_stub {
+#pciinrqopf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2751,7 +2792,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   padding-right: 5px;
 }
 
-#bjkxhbzbxy .gt_stub_row_group {
+#pciinrqopf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2765,15 +2806,15 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   vertical-align: top;
 }
 
-#bjkxhbzbxy .gt_row_group_first td {
+#pciinrqopf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bjkxhbzbxy .gt_row_group_first th {
+#pciinrqopf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bjkxhbzbxy .gt_summary_row {
+#pciinrqopf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2783,16 +2824,16 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   padding-right: 5px;
 }
 
-#bjkxhbzbxy .gt_first_summary_row {
+#pciinrqopf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_first_summary_row.thick {
+#pciinrqopf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bjkxhbzbxy .gt_last_summary_row {
+#pciinrqopf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2802,7 +2843,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-bottom-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_grand_summary_row {
+#pciinrqopf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2812,7 +2853,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   padding-right: 5px;
 }
 
-#bjkxhbzbxy .gt_first_grand_summary_row {
+#pciinrqopf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2822,7 +2863,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-top-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_last_grand_summary_row_top {
+#pciinrqopf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2832,11 +2873,11 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-bottom-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_striped {
+#pciinrqopf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bjkxhbzbxy .gt_table_body {
+#pciinrqopf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2845,7 +2886,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-bottom-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_footnotes {
+#pciinrqopf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2859,7 +2900,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-right-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_footnote {
+#pciinrqopf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2868,7 +2909,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   padding-right: 5px;
 }
 
-#bjkxhbzbxy .gt_sourcenotes {
+#pciinrqopf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2882,7 +2923,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   border-right-color: #D3D3D3;
 }
 
-#bjkxhbzbxy .gt_sourcenote {
+#pciinrqopf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2890,68 +2931,77 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
   padding-right: 5px;
 }
 
-#bjkxhbzbxy .gt_left {
+#pciinrqopf .gt_left {
   text-align: left;
 }
 
-#bjkxhbzbxy .gt_center {
+#pciinrqopf .gt_center {
   text-align: center;
 }
 
-#bjkxhbzbxy .gt_right {
+#pciinrqopf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bjkxhbzbxy .gt_font_normal {
+#pciinrqopf .gt_font_normal {
   font-weight: normal;
 }
 
-#bjkxhbzbxy .gt_font_bold {
+#pciinrqopf .gt_font_bold {
   font-weight: bold;
 }
 
-#bjkxhbzbxy .gt_font_italic {
+#pciinrqopf .gt_font_italic {
   font-style: italic;
 }
 
-#bjkxhbzbxy .gt_super {
+#pciinrqopf .gt_super {
   font-size: 65%;
 }
 
-#bjkxhbzbxy .gt_footnote_marks {
+#pciinrqopf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bjkxhbzbxy .gt_asterisk {
+#pciinrqopf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bjkxhbzbxy .gt_indent_1 {
+#pciinrqopf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bjkxhbzbxy .gt_indent_2 {
+#pciinrqopf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bjkxhbzbxy .gt_indent_3 {
+#pciinrqopf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bjkxhbzbxy .gt_indent_4 {
+#pciinrqopf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bjkxhbzbxy .gt_indent_5 {
+#pciinrqopf .gt_indent_5 {
   text-indent: 25px;
+}
+
+#pciinrqopf .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#pciinrqopf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -2960,16 +3010,26 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<strong>Variable</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variable</strong></th>
-<th id="<strong>N</strong> <strong>obs%</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong> <strong>obs%</strong></th>
-<th id="<strong>0</strong>, N = 465<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong>, N = 465<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>1</strong>, N = 470<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong>, N = 470<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KipWYXJpYWJsZSoq&quot;><div class='gt_from_md'><p><strong>Variable</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>Variable</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOKiogKipvYnMlKio=&quot;><div class='gt_from_md'><p><strong>N</strong> <strong>obs%</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N</strong> <strong>obs%</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KiowKiogIApOID0gNDY1&quot;><div class='gt_from_md'><p><strong>0</strong><br />
+N = 465</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>0</strong><br>
+N = 465</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KioxKiogIApOID0gNDcw&quot;><div class='gt_from_md'><p><strong>1</strong><br />
+N = 470</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>1</strong><br>
+N = 470</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="n">805 86%</td>
+<td class="gt_row gt_center" headers="n">935 86%</td>
 <td class="gt_row gt_center" headers="stat_1">0.33 (0.33)</td>
 <td class="gt_row gt_center" headers="stat_2">0.29 (0.32)</td>
 </tr>
@@ -2982,7 +3042,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="n">782 84%</td>
+<td class="gt_row gt_center" headers="n">935 84%</td>
 <td class="gt_row gt_center" headers="stat_1">0.38 (0.38)</td>
 <td class="gt_row gt_center" headers="stat_2">0.34 (0.38)</td>
 </tr>
@@ -2995,7 +3055,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="n">787 84%</td>
+<td class="gt_row gt_center" headers="n">935 84%</td>
 <td class="gt_row gt_center" headers="stat_1">0.39 (0.39)</td>
 <td class="gt_row gt_center" headers="stat_2">0.36 (0.40)</td>
 </tr>
@@ -3008,7 +3068,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">hand_1</td>
-<td class="gt_row gt_center" headers="n">280 30%</td>
+<td class="gt_row gt_center" headers="n">935 30%</td>
 <td class="gt_row gt_center" headers="stat_1">66.80 (32.25)</td>
 <td class="gt_row gt_center" headers="stat_2">68.49 (31.15)</td>
 </tr>
@@ -3021,7 +3081,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">hand_2</td>
-<td class="gt_row gt_center" headers="n">288 31%</td>
+<td class="gt_row gt_center" headers="n">935 31%</td>
 <td class="gt_row gt_center" headers="stat_1">83.01 (30.11)</td>
 <td class="gt_row gt_center" headers="stat_2">75.01 (31.41)</td>
 </tr>
@@ -3034,7 +3094,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">hand_3</td>
-<td class="gt_row gt_center" headers="n">261 28%</td>
+<td class="gt_row gt_center" headers="n">935 28%</td>
 <td class="gt_row gt_center" headers="stat_1">92.76 (31.37)</td>
 <td class="gt_row gt_center" headers="stat_2">89.51 (30.74)</td>
 </tr>
@@ -3047,7 +3107,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">smwt_1</td>
-<td class="gt_row gt_center" headers="n">130 14%</td>
+<td class="gt_row gt_center" headers="n">935 14%</td>
 <td class="gt_row gt_center" headers="stat_1">60.65 (23.87)</td>
 <td class="gt_row gt_center" headers="stat_2">61.59 (24.24)</td>
 </tr>
@@ -3060,7 +3120,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">smwt_2</td>
-<td class="gt_row gt_center" headers="n">207 22%</td>
+<td class="gt_row gt_center" headers="n">935 22%</td>
 <td class="gt_row gt_center" headers="stat_1">68.01 (28.31)</td>
 <td class="gt_row gt_center" headers="stat_2">73.95 (25.82)</td>
 </tr>
@@ -3073,7 +3133,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">smwt_3</td>
-<td class="gt_row gt_center" headers="n">213 23%</td>
+<td class="gt_row gt_center" headers="n">935 23%</td>
 <td class="gt_row gt_center" headers="stat_1">72.57 (24.86)</td>
 <td class="gt_row gt_center" headers="stat_2">81.81 (23.40)</td>
 </tr>
@@ -3086,7 +3146,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">mort60_f</td>
-<td class="gt_row gt_center" headers="n">860 92%</td>
+<td class="gt_row gt_center" headers="n">935 92%</td>
 <td class="gt_row gt_center" headers="stat_1"><br>
 </td>
 <td class="gt_row gt_center" headers="stat_2"><br>
@@ -3115,7 +3175,7 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">mv_dur</td>
-<td class="gt_row gt_center" headers="n">904 97%</td>
+<td class="gt_row gt_center" headers="n">935 97%</td>
 <td class="gt_row gt_center" headers="stat_1">13.21 (12.92)</td>
 <td class="gt_row gt_center" headers="stat_2">14.12 (12.83)</td>
 </tr>
@@ -3128,13 +3188,13 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD); n (%)</td>
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span>
+<p>Mean (SD); n (%)</p></td>
 </tr>
 </tfoot>
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -3145,31 +3205,30 @@ Table&nbsp;5: Summary statistics of key follow-up outcome variables in the study
 <h3 class="anchored" data-anchor-id="descriptives-by-subgroups">Descriptives by subgroups</h3>
 <p><a href="#tbl-sum5" class="quarto-xref">Table&nbsp;6</a> and <a href="#tbl-sum6" class="quarto-xref">Table&nbsp;7</a> report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on AKI status (0=no,1=yes).</p>
 <div class="cell">
-<div id="tbl-sum5" class="cell quarto-float anchored">
+<div id="tbl-sum5" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by AKI status (0=no,1=yes).
 </figcaption>
 <div aria-describedby="tbl-sum5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="bfoaoplgzt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bfoaoplgzt table {
+<div id="ykvxftbwcg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ykvxftbwcg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bfoaoplgzt thead, #bfoaoplgzt tbody, #bfoaoplgzt tfoot, #bfoaoplgzt tr, #bfoaoplgzt td, #bfoaoplgzt th {
+#ykvxftbwcg thead, #ykvxftbwcg tbody, #ykvxftbwcg tfoot, #ykvxftbwcg tr, #ykvxftbwcg td, #ykvxftbwcg th {
   border-style: none;
 }
 
-#bfoaoplgzt p {
+#ykvxftbwcg p {
   margin: 0;
   padding: 0;
 }
 
-#bfoaoplgzt .gt_table {
+#ykvxftbwcg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3195,12 +3254,12 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-left-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_caption {
+#ykvxftbwcg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bfoaoplgzt .gt_title {
+#ykvxftbwcg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3212,7 +3271,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-width: 0;
 }
 
-#bfoaoplgzt .gt_subtitle {
+#ykvxftbwcg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3224,7 +3283,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-top-width: 0;
 }
 
-#bfoaoplgzt .gt_heading {
+#ykvxftbwcg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3236,13 +3295,13 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_bottom_border {
+#ykvxftbwcg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_col_headings {
+#ykvxftbwcg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3257,7 +3316,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_col_heading {
+#ykvxftbwcg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3277,7 +3336,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   overflow-x: hidden;
 }
 
-#bfoaoplgzt .gt_column_spanner_outer {
+#ykvxftbwcg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3289,15 +3348,15 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 4px;
 }
 
-#bfoaoplgzt .gt_column_spanner_outer:first-child {
+#ykvxftbwcg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bfoaoplgzt .gt_column_spanner_outer:last-child {
+#ykvxftbwcg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bfoaoplgzt .gt_column_spanner {
+#ykvxftbwcg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3309,11 +3368,11 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   width: 100%;
 }
 
-#bfoaoplgzt .gt_spanner_row {
+#ykvxftbwcg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bfoaoplgzt .gt_group_heading {
+#ykvxftbwcg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3339,7 +3398,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   text-align: left;
 }
 
-#bfoaoplgzt .gt_empty_group_heading {
+#ykvxftbwcg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3354,15 +3413,15 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   vertical-align: middle;
 }
 
-#bfoaoplgzt .gt_from_md > :first-child {
+#ykvxftbwcg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bfoaoplgzt .gt_from_md > :last-child {
+#ykvxftbwcg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bfoaoplgzt .gt_row {
+#ykvxftbwcg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3381,7 +3440,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   overflow-x: hidden;
 }
 
-#bfoaoplgzt .gt_stub {
+#ykvxftbwcg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3394,7 +3453,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#bfoaoplgzt .gt_stub_row_group {
+#ykvxftbwcg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3408,15 +3467,15 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   vertical-align: top;
 }
 
-#bfoaoplgzt .gt_row_group_first td {
+#ykvxftbwcg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bfoaoplgzt .gt_row_group_first th {
+#ykvxftbwcg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bfoaoplgzt .gt_summary_row {
+#ykvxftbwcg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3426,16 +3485,16 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#bfoaoplgzt .gt_first_summary_row {
+#ykvxftbwcg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_first_summary_row.thick {
+#ykvxftbwcg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bfoaoplgzt .gt_last_summary_row {
+#ykvxftbwcg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3445,7 +3504,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_grand_summary_row {
+#ykvxftbwcg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3455,7 +3514,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#bfoaoplgzt .gt_first_grand_summary_row {
+#ykvxftbwcg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3465,7 +3524,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-top-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_last_grand_summary_row_top {
+#ykvxftbwcg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3475,11 +3534,11 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_striped {
+#ykvxftbwcg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bfoaoplgzt .gt_table_body {
+#ykvxftbwcg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3488,7 +3547,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_footnotes {
+#ykvxftbwcg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3502,7 +3561,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_footnote {
+#ykvxftbwcg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3511,7 +3570,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#bfoaoplgzt .gt_sourcenotes {
+#ykvxftbwcg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3525,7 +3584,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#bfoaoplgzt .gt_sourcenote {
+#ykvxftbwcg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3533,68 +3592,77 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#bfoaoplgzt .gt_left {
+#ykvxftbwcg .gt_left {
   text-align: left;
 }
 
-#bfoaoplgzt .gt_center {
+#ykvxftbwcg .gt_center {
   text-align: center;
 }
 
-#bfoaoplgzt .gt_right {
+#ykvxftbwcg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bfoaoplgzt .gt_font_normal {
+#ykvxftbwcg .gt_font_normal {
   font-weight: normal;
 }
 
-#bfoaoplgzt .gt_font_bold {
+#ykvxftbwcg .gt_font_bold {
   font-weight: bold;
 }
 
-#bfoaoplgzt .gt_font_italic {
+#ykvxftbwcg .gt_font_italic {
   font-style: italic;
 }
 
-#bfoaoplgzt .gt_super {
+#ykvxftbwcg .gt_super {
   font-size: 65%;
 }
 
-#bfoaoplgzt .gt_footnote_marks {
+#ykvxftbwcg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bfoaoplgzt .gt_asterisk {
+#ykvxftbwcg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bfoaoplgzt .gt_indent_1 {
+#ykvxftbwcg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bfoaoplgzt .gt_indent_2 {
+#ykvxftbwcg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bfoaoplgzt .gt_indent_3 {
+#ykvxftbwcg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bfoaoplgzt .gt_indent_4 {
+#ykvxftbwcg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bfoaoplgzt .gt_indent_5 {
+#ykvxftbwcg .gt_indent_5 {
   text-indent: 25px;
+}
+
+#ykvxftbwcg .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ykvxftbwcg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -3603,16 +3671,26 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<strong>Variable</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variable</strong></th>
-<th id="<strong>N</strong> <strong>obs%</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong> <strong>obs%</strong></th>
-<th id="<strong>0</strong>, N = 733<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong>, N = 733<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>1</strong>, N = 202<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong>, N = 202<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KipWYXJpYWJsZSoq&quot;><div class='gt_from_md'><p><strong>Variable</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>Variable</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOKiogKipvYnMlKio=&quot;><div class='gt_from_md'><p><strong>N</strong> <strong>obs%</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N</strong> <strong>obs%</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KiowKiogIApOID0gNzMz&quot;><div class='gt_from_md'><p><strong>0</strong><br />
+N = 733</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>0</strong><br>
+N = 733</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KioxKiogIApOID0gMjAy&quot;><div class='gt_from_md'><p><strong>1</strong><br />
+N = 202</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>1</strong><br>
+N = 202</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="n">805 86%</td>
+<td class="gt_row gt_center" headers="n">935 86%</td>
 <td class="gt_row gt_center" headers="stat_1">0.33 (0.32)</td>
 <td class="gt_row gt_center" headers="stat_2">0.23 (0.30)</td>
 </tr>
@@ -3625,7 +3703,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="n">782 84%</td>
+<td class="gt_row gt_center" headers="n">935 84%</td>
 <td class="gt_row gt_center" headers="stat_1">0.38 (0.38)</td>
 <td class="gt_row gt_center" headers="stat_2">0.27 (0.36)</td>
 </tr>
@@ -3638,7 +3716,7 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="n">787 84%</td>
+<td class="gt_row gt_center" headers="n">935 84%</td>
 <td class="gt_row gt_center" headers="stat_1">0.40 (0.40)</td>
 <td class="gt_row gt_center" headers="stat_2">0.27 (0.38)</td>
 </tr>
@@ -3651,7 +3729,8 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD)</td>
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span>
+<p>Mean (SD)</p></td>
 </tr>
 </tfoot>
 
@@ -3660,36 +3739,34 @@ Table&nbsp;6: Summary statistics of EQ-5D utility score follow-up outcome variab
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <div class="cell">
-<div id="tbl-sum6" class="cell quarto-float anchored">
+<div id="tbl-sum6" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes).
 </figcaption>
 <div aria-describedby="tbl-sum6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="srqkopncbl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#srqkopncbl table {
+<div id="spstjpayle" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#spstjpayle table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#srqkopncbl thead, #srqkopncbl tbody, #srqkopncbl tfoot, #srqkopncbl tr, #srqkopncbl td, #srqkopncbl th {
+#spstjpayle thead, #spstjpayle tbody, #spstjpayle tfoot, #spstjpayle tr, #spstjpayle td, #spstjpayle th {
   border-style: none;
 }
 
-#srqkopncbl p {
+#spstjpayle p {
   margin: 0;
   padding: 0;
 }
 
-#srqkopncbl .gt_table {
+#spstjpayle .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3715,12 +3792,12 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-left-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_caption {
+#spstjpayle .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#srqkopncbl .gt_title {
+#spstjpayle .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3732,7 +3809,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-width: 0;
 }
 
-#srqkopncbl .gt_subtitle {
+#spstjpayle .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3744,7 +3821,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-top-width: 0;
 }
 
-#srqkopncbl .gt_heading {
+#spstjpayle .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3756,13 +3833,13 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_bottom_border {
+#spstjpayle .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_col_headings {
+#spstjpayle .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3777,7 +3854,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_col_heading {
+#spstjpayle .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3797,7 +3874,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   overflow-x: hidden;
 }
 
-#srqkopncbl .gt_column_spanner_outer {
+#spstjpayle .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3809,15 +3886,15 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 4px;
 }
 
-#srqkopncbl .gt_column_spanner_outer:first-child {
+#spstjpayle .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#srqkopncbl .gt_column_spanner_outer:last-child {
+#spstjpayle .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#srqkopncbl .gt_column_spanner {
+#spstjpayle .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3829,11 +3906,11 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   width: 100%;
 }
 
-#srqkopncbl .gt_spanner_row {
+#spstjpayle .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#srqkopncbl .gt_group_heading {
+#spstjpayle .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3859,7 +3936,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   text-align: left;
 }
 
-#srqkopncbl .gt_empty_group_heading {
+#spstjpayle .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3874,15 +3951,15 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   vertical-align: middle;
 }
 
-#srqkopncbl .gt_from_md > :first-child {
+#spstjpayle .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#srqkopncbl .gt_from_md > :last-child {
+#spstjpayle .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#srqkopncbl .gt_row {
+#spstjpayle .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3901,7 +3978,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   overflow-x: hidden;
 }
 
-#srqkopncbl .gt_stub {
+#spstjpayle .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3914,7 +3991,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#srqkopncbl .gt_stub_row_group {
+#spstjpayle .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3928,15 +4005,15 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   vertical-align: top;
 }
 
-#srqkopncbl .gt_row_group_first td {
+#spstjpayle .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#srqkopncbl .gt_row_group_first th {
+#spstjpayle .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#srqkopncbl .gt_summary_row {
+#spstjpayle .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3946,16 +4023,16 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#srqkopncbl .gt_first_summary_row {
+#spstjpayle .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_first_summary_row.thick {
+#spstjpayle .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#srqkopncbl .gt_last_summary_row {
+#spstjpayle .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3965,7 +4042,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_grand_summary_row {
+#spstjpayle .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3975,7 +4052,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#srqkopncbl .gt_first_grand_summary_row {
+#spstjpayle .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3985,7 +4062,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-top-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_last_grand_summary_row_top {
+#spstjpayle .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3995,11 +4072,11 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_striped {
+#spstjpayle .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#srqkopncbl .gt_table_body {
+#spstjpayle .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4008,7 +4085,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_footnotes {
+#spstjpayle .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4022,7 +4099,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_footnote {
+#spstjpayle .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4031,7 +4108,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#srqkopncbl .gt_sourcenotes {
+#spstjpayle .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4045,7 +4122,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#srqkopncbl .gt_sourcenote {
+#spstjpayle .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4053,68 +4130,77 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#srqkopncbl .gt_left {
+#spstjpayle .gt_left {
   text-align: left;
 }
 
-#srqkopncbl .gt_center {
+#spstjpayle .gt_center {
   text-align: center;
 }
 
-#srqkopncbl .gt_right {
+#spstjpayle .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#srqkopncbl .gt_font_normal {
+#spstjpayle .gt_font_normal {
   font-weight: normal;
 }
 
-#srqkopncbl .gt_font_bold {
+#spstjpayle .gt_font_bold {
   font-weight: bold;
 }
 
-#srqkopncbl .gt_font_italic {
+#spstjpayle .gt_font_italic {
   font-style: italic;
 }
 
-#srqkopncbl .gt_super {
+#spstjpayle .gt_super {
   font-size: 65%;
 }
 
-#srqkopncbl .gt_footnote_marks {
+#spstjpayle .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#srqkopncbl .gt_asterisk {
+#spstjpayle .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#srqkopncbl .gt_indent_1 {
+#spstjpayle .gt_indent_1 {
   text-indent: 5px;
 }
 
-#srqkopncbl .gt_indent_2 {
+#spstjpayle .gt_indent_2 {
   text-indent: 10px;
 }
 
-#srqkopncbl .gt_indent_3 {
+#spstjpayle .gt_indent_3 {
   text-indent: 15px;
 }
 
-#srqkopncbl .gt_indent_4 {
+#spstjpayle .gt_indent_4 {
   text-indent: 20px;
 }
 
-#srqkopncbl .gt_indent_5 {
+#spstjpayle .gt_indent_5 {
   text-indent: 25px;
+}
+
+#spstjpayle .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#spstjpayle div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -4123,10 +4209,20 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<strong>Variable</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variable</strong></th>
-<th id="<strong>N</strong> <strong>obs%</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong> <strong>obs%</strong></th>
-<th id="<strong>0</strong>, N = 368<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong>, N = 368<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>1</strong>, N = 365<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong>, N = 365<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KipWYXJpYWJsZSoq&quot;><div class='gt_from_md'><p><strong>Variable</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>Variable</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOKiogKipvYnMlKio=&quot;><div class='gt_from_md'><p><strong>N</strong> <strong>obs%</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N</strong> <strong>obs%</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KiowKiogIApOID0gMzY4&quot;><div class='gt_from_md'><p><strong>0</strong><br />
+N = 368</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>0</strong><br>
+N = 368</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KioxKiogIApOID0gMzY1&quot;><div class='gt_from_md'><p><strong>1</strong><br />
+N = 365</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>1</strong><br>
+N = 365</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -4135,7 +4231,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="even gt_row_group_first">
 <td class="gt_row gt_left" headers="trt=0  label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="trt=0  n">624 85%</td>
+<td class="gt_row gt_center" headers="trt=0  n">733 85%</td>
 <td class="gt_row gt_center" headers="trt=0  stat_1">0.35 (0.33)</td>
 <td class="gt_row gt_center" headers="trt=0  stat_2">0.31 (0.32)</td>
 </tr>
@@ -4148,7 +4244,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="trt=0  label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="trt=0  n">604 82%</td>
+<td class="gt_row gt_center" headers="trt=0  n">733 82%</td>
 <td class="gt_row gt_center" headers="trt=0  stat_1">0.41 (0.38)</td>
 <td class="gt_row gt_center" headers="trt=0  stat_2">0.36 (0.39)</td>
 </tr>
@@ -4161,7 +4257,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="trt=0  label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="trt=0  n">610 83%</td>
+<td class="gt_row gt_center" headers="trt=0  n">733 83%</td>
 <td class="gt_row gt_center" headers="trt=0  stat_1">0.42 (0.39)</td>
 <td class="gt_row gt_center" headers="trt=0  stat_2">0.38 (0.41)</td>
 </tr>
@@ -4177,7 +4273,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="odd gt_row_group_first">
 <td class="gt_row gt_left" headers="trt=1  label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="trt=1  n">181 90%</td>
+<td class="gt_row gt_center" headers="trt=1  n">202 90%</td>
 <td class="gt_row gt_center" headers="trt=1  stat_1">0.23 (0.30)</td>
 <td class="gt_row gt_center" headers="trt=1  stat_2">0.24 (0.31)</td>
 </tr>
@@ -4190,7 +4286,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="trt=1  label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="trt=1  n">178 88%</td>
+<td class="gt_row gt_center" headers="trt=1  n">202 88%</td>
 <td class="gt_row gt_center" headers="trt=1  stat_1">0.28 (0.36)</td>
 <td class="gt_row gt_center" headers="trt=1  stat_2">0.27 (0.36)</td>
 </tr>
@@ -4203,7 +4299,7 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="trt=1  label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="trt=1  n">177 88%</td>
+<td class="gt_row gt_center" headers="trt=1  n">202 88%</td>
 <td class="gt_row gt_center" headers="trt=1  stat_1">0.28 (0.38)</td>
 <td class="gt_row gt_center" headers="trt=1  stat_2">0.27 (0.38)</td>
 </tr>
@@ -4216,7 +4312,8 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD)</td>
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span>
+<p>Mean (SD)</p></td>
 </tr>
 </tfoot>
 
@@ -4225,37 +4322,35 @@ Table&nbsp;7: Summary statistics of EQ-5D utility score follow-up outcome variab
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <p><a href="#tbl-sum7" class="quarto-xref">Table&nbsp;8</a> and <a href="#tbl-sum8" class="quarto-xref">Table&nbsp;9</a> report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on sepsis status (0=no,1=yes).</p>
 <div class="cell">
-<div id="tbl-sum7" class="cell quarto-float anchored">
+<div id="tbl-sum7" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by sepsis status (0=no,1=yes).
+Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes).
 </figcaption>
 <div aria-describedby="tbl-sum7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="ycoltyfoau" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ycoltyfoau table {
+<div id="mglkowhdmc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mglkowhdmc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ycoltyfoau thead, #ycoltyfoau tbody, #ycoltyfoau tfoot, #ycoltyfoau tr, #ycoltyfoau td, #ycoltyfoau th {
+#mglkowhdmc thead, #mglkowhdmc tbody, #mglkowhdmc tfoot, #mglkowhdmc tr, #mglkowhdmc td, #mglkowhdmc th {
   border-style: none;
 }
 
-#ycoltyfoau p {
+#mglkowhdmc p {
   margin: 0;
   padding: 0;
 }
 
-#ycoltyfoau .gt_table {
+#mglkowhdmc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4281,12 +4376,12 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-left-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_caption {
+#mglkowhdmc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ycoltyfoau .gt_title {
+#mglkowhdmc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4298,7 +4393,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-width: 0;
 }
 
-#ycoltyfoau .gt_subtitle {
+#mglkowhdmc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4310,7 +4405,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-top-width: 0;
 }
 
-#ycoltyfoau .gt_heading {
+#mglkowhdmc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4322,13 +4417,13 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_bottom_border {
+#mglkowhdmc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_col_headings {
+#mglkowhdmc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4343,7 +4438,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_col_heading {
+#mglkowhdmc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4363,7 +4458,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   overflow-x: hidden;
 }
 
-#ycoltyfoau .gt_column_spanner_outer {
+#mglkowhdmc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4375,15 +4470,15 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 4px;
 }
 
-#ycoltyfoau .gt_column_spanner_outer:first-child {
+#mglkowhdmc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ycoltyfoau .gt_column_spanner_outer:last-child {
+#mglkowhdmc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ycoltyfoau .gt_column_spanner {
+#mglkowhdmc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4395,11 +4490,11 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   width: 100%;
 }
 
-#ycoltyfoau .gt_spanner_row {
+#mglkowhdmc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ycoltyfoau .gt_group_heading {
+#mglkowhdmc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4425,7 +4520,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   text-align: left;
 }
 
-#ycoltyfoau .gt_empty_group_heading {
+#mglkowhdmc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4440,15 +4535,15 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   vertical-align: middle;
 }
 
-#ycoltyfoau .gt_from_md > :first-child {
+#mglkowhdmc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ycoltyfoau .gt_from_md > :last-child {
+#mglkowhdmc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ycoltyfoau .gt_row {
+#mglkowhdmc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4467,7 +4562,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   overflow-x: hidden;
 }
 
-#ycoltyfoau .gt_stub {
+#mglkowhdmc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4480,7 +4575,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#ycoltyfoau .gt_stub_row_group {
+#mglkowhdmc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4494,15 +4589,15 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   vertical-align: top;
 }
 
-#ycoltyfoau .gt_row_group_first td {
+#mglkowhdmc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ycoltyfoau .gt_row_group_first th {
+#mglkowhdmc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ycoltyfoau .gt_summary_row {
+#mglkowhdmc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4512,16 +4607,16 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#ycoltyfoau .gt_first_summary_row {
+#mglkowhdmc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_first_summary_row.thick {
+#mglkowhdmc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ycoltyfoau .gt_last_summary_row {
+#mglkowhdmc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4531,7 +4626,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_grand_summary_row {
+#mglkowhdmc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4541,7 +4636,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#ycoltyfoau .gt_first_grand_summary_row {
+#mglkowhdmc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4551,7 +4646,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-top-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_last_grand_summary_row_top {
+#mglkowhdmc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4561,11 +4656,11 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_striped {
+#mglkowhdmc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ycoltyfoau .gt_table_body {
+#mglkowhdmc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4574,7 +4669,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_footnotes {
+#mglkowhdmc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4588,7 +4683,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_footnote {
+#mglkowhdmc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4597,7 +4692,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#ycoltyfoau .gt_sourcenotes {
+#mglkowhdmc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4611,7 +4706,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#ycoltyfoau .gt_sourcenote {
+#mglkowhdmc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4619,68 +4714,77 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#ycoltyfoau .gt_left {
+#mglkowhdmc .gt_left {
   text-align: left;
 }
 
-#ycoltyfoau .gt_center {
+#mglkowhdmc .gt_center {
   text-align: center;
 }
 
-#ycoltyfoau .gt_right {
+#mglkowhdmc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ycoltyfoau .gt_font_normal {
+#mglkowhdmc .gt_font_normal {
   font-weight: normal;
 }
 
-#ycoltyfoau .gt_font_bold {
+#mglkowhdmc .gt_font_bold {
   font-weight: bold;
 }
 
-#ycoltyfoau .gt_font_italic {
+#mglkowhdmc .gt_font_italic {
   font-style: italic;
 }
 
-#ycoltyfoau .gt_super {
+#mglkowhdmc .gt_super {
   font-size: 65%;
 }
 
-#ycoltyfoau .gt_footnote_marks {
+#mglkowhdmc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ycoltyfoau .gt_asterisk {
+#mglkowhdmc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ycoltyfoau .gt_indent_1 {
+#mglkowhdmc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ycoltyfoau .gt_indent_2 {
+#mglkowhdmc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ycoltyfoau .gt_indent_3 {
+#mglkowhdmc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ycoltyfoau .gt_indent_4 {
+#mglkowhdmc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ycoltyfoau .gt_indent_5 {
+#mglkowhdmc .gt_indent_5 {
   text-indent: 25px;
+}
+
+#mglkowhdmc .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#mglkowhdmc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -4689,16 +4793,26 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<strong>Variable</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variable</strong></th>
-<th id="<strong>N</strong> <strong>obs%</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong> <strong>obs%</strong></th>
-<th id="<strong>0</strong>, N = 476<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong>, N = 476<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>1</strong>, N = 459<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong>, N = 459<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KipWYXJpYWJsZSoq&quot;><div class='gt_from_md'><p><strong>Variable</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>Variable</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOKiogKipvYnMlKio=&quot;><div class='gt_from_md'><p><strong>N</strong> <strong>obs%</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N</strong> <strong>obs%</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KiowKiogIApOID0gNDc2&quot;><div class='gt_from_md'><p><strong>0</strong><br />
+N = 476</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>0</strong><br>
+N = 476</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KioxKiogIApOID0gNDU5&quot;><div class='gt_from_md'><p><strong>1</strong><br />
+N = 459</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>1</strong><br>
+N = 459</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="n">805 86%</td>
+<td class="gt_row gt_center" headers="n">935 86%</td>
 <td class="gt_row gt_center" headers="stat_1">0.31 (0.33)</td>
 <td class="gt_row gt_center" headers="stat_2">0.30 (0.32)</td>
 </tr>
@@ -4711,7 +4825,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="n">782 84%</td>
+<td class="gt_row gt_center" headers="n">935 84%</td>
 <td class="gt_row gt_center" headers="stat_1">0.37 (0.39)</td>
 <td class="gt_row gt_center" headers="stat_2">0.35 (0.38)</td>
 </tr>
@@ -4724,7 +4838,7 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="n">787 84%</td>
+<td class="gt_row gt_center" headers="n">935 84%</td>
 <td class="gt_row gt_center" headers="stat_1">0.38 (0.40)</td>
 <td class="gt_row gt_center" headers="stat_2">0.37 (0.40)</td>
 </tr>
@@ -4737,7 +4851,8 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD)</td>
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span>
+<p>Mean (SD)</p></td>
 </tr>
 </tfoot>
 
@@ -4746,36 +4861,34 @@ Table&nbsp;8: Summary statistics of EQ-5D utility score follow-up outcome variab
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <div class="cell">
-<div id="tbl-sum8" class="cell quarto-float anchored">
+<div id="tbl-sum8" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and sepsis status (0=no,1=yes).
 </figcaption>
 <div aria-describedby="tbl-sum8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="dofroixiru" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dofroixiru table {
+<div id="mjjvlqwcwz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mjjvlqwcwz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dofroixiru thead, #dofroixiru tbody, #dofroixiru tfoot, #dofroixiru tr, #dofroixiru td, #dofroixiru th {
+#mjjvlqwcwz thead, #mjjvlqwcwz tbody, #mjjvlqwcwz tfoot, #mjjvlqwcwz tr, #mjjvlqwcwz td, #mjjvlqwcwz th {
   border-style: none;
 }
 
-#dofroixiru p {
+#mjjvlqwcwz p {
   margin: 0;
   padding: 0;
 }
 
-#dofroixiru .gt_table {
+#mjjvlqwcwz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4801,12 +4914,12 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-left-color: #D3D3D3;
 }
 
-#dofroixiru .gt_caption {
+#mjjvlqwcwz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dofroixiru .gt_title {
+#mjjvlqwcwz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4818,7 +4931,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-width: 0;
 }
 
-#dofroixiru .gt_subtitle {
+#mjjvlqwcwz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4830,7 +4943,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-top-width: 0;
 }
 
-#dofroixiru .gt_heading {
+#mjjvlqwcwz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4842,13 +4955,13 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#dofroixiru .gt_bottom_border {
+#mjjvlqwcwz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dofroixiru .gt_col_headings {
+#mjjvlqwcwz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4863,7 +4976,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#dofroixiru .gt_col_heading {
+#mjjvlqwcwz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4883,7 +4996,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   overflow-x: hidden;
 }
 
-#dofroixiru .gt_column_spanner_outer {
+#mjjvlqwcwz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4895,15 +5008,15 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 4px;
 }
 
-#dofroixiru .gt_column_spanner_outer:first-child {
+#mjjvlqwcwz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dofroixiru .gt_column_spanner_outer:last-child {
+#mjjvlqwcwz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dofroixiru .gt_column_spanner {
+#mjjvlqwcwz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4915,11 +5028,11 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   width: 100%;
 }
 
-#dofroixiru .gt_spanner_row {
+#mjjvlqwcwz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dofroixiru .gt_group_heading {
+#mjjvlqwcwz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4945,7 +5058,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   text-align: left;
 }
 
-#dofroixiru .gt_empty_group_heading {
+#mjjvlqwcwz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4960,15 +5073,15 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   vertical-align: middle;
 }
 
-#dofroixiru .gt_from_md > :first-child {
+#mjjvlqwcwz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dofroixiru .gt_from_md > :last-child {
+#mjjvlqwcwz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dofroixiru .gt_row {
+#mjjvlqwcwz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4987,7 +5100,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   overflow-x: hidden;
 }
 
-#dofroixiru .gt_stub {
+#mjjvlqwcwz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5000,7 +5113,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#dofroixiru .gt_stub_row_group {
+#mjjvlqwcwz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5014,15 +5127,15 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   vertical-align: top;
 }
 
-#dofroixiru .gt_row_group_first td {
+#mjjvlqwcwz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dofroixiru .gt_row_group_first th {
+#mjjvlqwcwz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dofroixiru .gt_summary_row {
+#mjjvlqwcwz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5032,16 +5145,16 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#dofroixiru .gt_first_summary_row {
+#mjjvlqwcwz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dofroixiru .gt_first_summary_row.thick {
+#mjjvlqwcwz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dofroixiru .gt_last_summary_row {
+#mjjvlqwcwz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5051,7 +5164,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#dofroixiru .gt_grand_summary_row {
+#mjjvlqwcwz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5061,7 +5174,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#dofroixiru .gt_first_grand_summary_row {
+#mjjvlqwcwz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5071,7 +5184,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-top-color: #D3D3D3;
 }
 
-#dofroixiru .gt_last_grand_summary_row_top {
+#mjjvlqwcwz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5081,11 +5194,11 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#dofroixiru .gt_striped {
+#mjjvlqwcwz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dofroixiru .gt_table_body {
+#mjjvlqwcwz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5094,7 +5207,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-bottom-color: #D3D3D3;
 }
 
-#dofroixiru .gt_footnotes {
+#mjjvlqwcwz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5108,7 +5221,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#dofroixiru .gt_footnote {
+#mjjvlqwcwz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5117,7 +5230,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#dofroixiru .gt_sourcenotes {
+#mjjvlqwcwz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5131,7 +5244,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   border-right-color: #D3D3D3;
 }
 
-#dofroixiru .gt_sourcenote {
+#mjjvlqwcwz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5139,68 +5252,77 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
   padding-right: 5px;
 }
 
-#dofroixiru .gt_left {
+#mjjvlqwcwz .gt_left {
   text-align: left;
 }
 
-#dofroixiru .gt_center {
+#mjjvlqwcwz .gt_center {
   text-align: center;
 }
 
-#dofroixiru .gt_right {
+#mjjvlqwcwz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dofroixiru .gt_font_normal {
+#mjjvlqwcwz .gt_font_normal {
   font-weight: normal;
 }
 
-#dofroixiru .gt_font_bold {
+#mjjvlqwcwz .gt_font_bold {
   font-weight: bold;
 }
 
-#dofroixiru .gt_font_italic {
+#mjjvlqwcwz .gt_font_italic {
   font-style: italic;
 }
 
-#dofroixiru .gt_super {
+#mjjvlqwcwz .gt_super {
   font-size: 65%;
 }
 
-#dofroixiru .gt_footnote_marks {
+#mjjvlqwcwz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dofroixiru .gt_asterisk {
+#mjjvlqwcwz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dofroixiru .gt_indent_1 {
+#mjjvlqwcwz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dofroixiru .gt_indent_2 {
+#mjjvlqwcwz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dofroixiru .gt_indent_3 {
+#mjjvlqwcwz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dofroixiru .gt_indent_4 {
+#mjjvlqwcwz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dofroixiru .gt_indent_5 {
+#mjjvlqwcwz .gt_indent_5 {
   text-indent: 25px;
+}
+
+#mjjvlqwcwz .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#mjjvlqwcwz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -5209,10 +5331,20 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<strong>Variable</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variable</strong></th>
-<th id="<strong>N</strong> <strong>obs%</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong> <strong>obs%</strong></th>
-<th id="<strong>0</strong>, N = 236<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong>, N = 236<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>1</strong>, N = 240<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong>, N = 240<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KipWYXJpYWJsZSoq&quot;><div class='gt_from_md'><p><strong>Variable</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>Variable</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOKiogKipvYnMlKio=&quot;><div class='gt_from_md'><p><strong>N</strong> <strong>obs%</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N</strong> <strong>obs%</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KiowKiogIApOID0gMjM2&quot;><div class='gt_from_md'><p><strong>0</strong><br />
+N = 236</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>0</strong><br>
+N = 236</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KioxKiogIApOID0gMjQw&quot;><div class='gt_from_md'><p><strong>1</strong><br />
+N = 240</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>1</strong><br>
+N = 240</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -5221,7 +5353,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="even gt_row_group_first">
 <td class="gt_row gt_left" headers="trt=0  label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="trt=0  n">414 87%</td>
+<td class="gt_row gt_center" headers="trt=0  n">476 87%</td>
 <td class="gt_row gt_center" headers="trt=0  stat_1">0.35 (0.33)</td>
 <td class="gt_row gt_center" headers="trt=0  stat_2">0.28 (0.32)</td>
 </tr>
@@ -5234,7 +5366,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="trt=0  label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="trt=0  n">400 84%</td>
+<td class="gt_row gt_center" headers="trt=0  n">476 84%</td>
 <td class="gt_row gt_center" headers="trt=0  stat_1">0.40 (0.38)</td>
 <td class="gt_row gt_center" headers="trt=0  stat_2">0.34 (0.39)</td>
 </tr>
@@ -5247,7 +5379,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="trt=0  label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="trt=0  n">399 84%</td>
+<td class="gt_row gt_center" headers="trt=0  n">476 84%</td>
 <td class="gt_row gt_center" headers="trt=0  stat_1">0.40 (0.40)</td>
 <td class="gt_row gt_center" headers="trt=0  stat_2">0.35 (0.40)</td>
 </tr>
@@ -5263,7 +5395,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="odd gt_row_group_first">
 <td class="gt_row gt_left" headers="trt=1  label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="trt=1  n">391 85%</td>
+<td class="gt_row gt_center" headers="trt=1  n">459 85%</td>
 <td class="gt_row gt_center" headers="trt=1  stat_1">0.31 (0.32)</td>
 <td class="gt_row gt_center" headers="trt=1  stat_2">0.30 (0.32)</td>
 </tr>
@@ -5276,7 +5408,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="trt=1  label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="trt=1  n">382 83%</td>
+<td class="gt_row gt_center" headers="trt=1  n">459 83%</td>
 <td class="gt_row gt_center" headers="trt=1  stat_1">0.36 (0.37)</td>
 <td class="gt_row gt_center" headers="trt=1  stat_2">0.34 (0.38)</td>
 </tr>
@@ -5289,7 +5421,7 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="trt=1  label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="trt=1  n">388 85%</td>
+<td class="gt_row gt_center" headers="trt=1  n">459 85%</td>
 <td class="gt_row gt_center" headers="trt=1  stat_1">0.37 (0.39)</td>
 <td class="gt_row gt_center" headers="trt=1  stat_2">0.36 (0.41)</td>
 </tr>
@@ -5302,7 +5434,8 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD)</td>
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span>
+<p>Mean (SD)</p></td>
 </tr>
 </tfoot>
 
@@ -5311,37 +5444,35 @@ Table&nbsp;9: Summary statistics of EQ-5D utility score follow-up outcome variab
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <p><a href="#tbl-sum9" class="quarto-xref">Table&nbsp;10</a> and <a href="#tbl-sum10" class="quarto-xref">Table&nbsp;11</a> report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on multi organ failure status (0=no,1=yes).</p>
 <div class="cell">
-<div id="tbl-sum9" class="cell quarto-float anchored">
+<div id="tbl-sum9" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by multi organ failure status (0=no,1=yes).
 </figcaption>
 <div aria-describedby="tbl-sum9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="xghlwxuadw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xghlwxuadw table {
+<div id="jatgdzsjfv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jatgdzsjfv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xghlwxuadw thead, #xghlwxuadw tbody, #xghlwxuadw tfoot, #xghlwxuadw tr, #xghlwxuadw td, #xghlwxuadw th {
+#jatgdzsjfv thead, #jatgdzsjfv tbody, #jatgdzsjfv tfoot, #jatgdzsjfv tr, #jatgdzsjfv td, #jatgdzsjfv th {
   border-style: none;
 }
 
-#xghlwxuadw p {
+#jatgdzsjfv p {
   margin: 0;
   padding: 0;
 }
 
-#xghlwxuadw .gt_table {
+#jatgdzsjfv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5367,12 +5498,12 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-left-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_caption {
+#jatgdzsjfv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xghlwxuadw .gt_title {
+#jatgdzsjfv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5384,7 +5515,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-bottom-width: 0;
 }
 
-#xghlwxuadw .gt_subtitle {
+#jatgdzsjfv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5396,7 +5527,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-top-width: 0;
 }
 
-#xghlwxuadw .gt_heading {
+#jatgdzsjfv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5408,13 +5539,13 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-right-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_bottom_border {
+#jatgdzsjfv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_col_headings {
+#jatgdzsjfv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5429,7 +5560,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-right-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_col_heading {
+#jatgdzsjfv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5449,7 +5580,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   overflow-x: hidden;
 }
 
-#xghlwxuadw .gt_column_spanner_outer {
+#jatgdzsjfv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5461,15 +5592,15 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 4px;
 }
 
-#xghlwxuadw .gt_column_spanner_outer:first-child {
+#jatgdzsjfv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xghlwxuadw .gt_column_spanner_outer:last-child {
+#jatgdzsjfv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xghlwxuadw .gt_column_spanner {
+#jatgdzsjfv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5481,11 +5612,11 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   width: 100%;
 }
 
-#xghlwxuadw .gt_spanner_row {
+#jatgdzsjfv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xghlwxuadw .gt_group_heading {
+#jatgdzsjfv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5511,7 +5642,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   text-align: left;
 }
 
-#xghlwxuadw .gt_empty_group_heading {
+#jatgdzsjfv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5526,15 +5657,15 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   vertical-align: middle;
 }
 
-#xghlwxuadw .gt_from_md > :first-child {
+#jatgdzsjfv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xghlwxuadw .gt_from_md > :last-child {
+#jatgdzsjfv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xghlwxuadw .gt_row {
+#jatgdzsjfv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5553,7 +5684,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   overflow-x: hidden;
 }
 
-#xghlwxuadw .gt_stub {
+#jatgdzsjfv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5566,7 +5697,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 5px;
 }
 
-#xghlwxuadw .gt_stub_row_group {
+#jatgdzsjfv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5580,15 +5711,15 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   vertical-align: top;
 }
 
-#xghlwxuadw .gt_row_group_first td {
+#jatgdzsjfv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xghlwxuadw .gt_row_group_first th {
+#jatgdzsjfv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xghlwxuadw .gt_summary_row {
+#jatgdzsjfv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5598,16 +5729,16 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 5px;
 }
 
-#xghlwxuadw .gt_first_summary_row {
+#jatgdzsjfv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_first_summary_row.thick {
+#jatgdzsjfv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xghlwxuadw .gt_last_summary_row {
+#jatgdzsjfv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5617,7 +5748,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-bottom-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_grand_summary_row {
+#jatgdzsjfv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5627,7 +5758,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 5px;
 }
 
-#xghlwxuadw .gt_first_grand_summary_row {
+#jatgdzsjfv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5637,7 +5768,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-top-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_last_grand_summary_row_top {
+#jatgdzsjfv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5647,11 +5778,11 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-bottom-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_striped {
+#jatgdzsjfv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xghlwxuadw .gt_table_body {
+#jatgdzsjfv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5660,7 +5791,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-bottom-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_footnotes {
+#jatgdzsjfv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5674,7 +5805,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-right-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_footnote {
+#jatgdzsjfv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5683,7 +5814,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 5px;
 }
 
-#xghlwxuadw .gt_sourcenotes {
+#jatgdzsjfv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5697,7 +5828,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-right-color: #D3D3D3;
 }
 
-#xghlwxuadw .gt_sourcenote {
+#jatgdzsjfv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5705,68 +5836,77 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 5px;
 }
 
-#xghlwxuadw .gt_left {
+#jatgdzsjfv .gt_left {
   text-align: left;
 }
 
-#xghlwxuadw .gt_center {
+#jatgdzsjfv .gt_center {
   text-align: center;
 }
 
-#xghlwxuadw .gt_right {
+#jatgdzsjfv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xghlwxuadw .gt_font_normal {
+#jatgdzsjfv .gt_font_normal {
   font-weight: normal;
 }
 
-#xghlwxuadw .gt_font_bold {
+#jatgdzsjfv .gt_font_bold {
   font-weight: bold;
 }
 
-#xghlwxuadw .gt_font_italic {
+#jatgdzsjfv .gt_font_italic {
   font-style: italic;
 }
 
-#xghlwxuadw .gt_super {
+#jatgdzsjfv .gt_super {
   font-size: 65%;
 }
 
-#xghlwxuadw .gt_footnote_marks {
+#jatgdzsjfv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xghlwxuadw .gt_asterisk {
+#jatgdzsjfv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xghlwxuadw .gt_indent_1 {
+#jatgdzsjfv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xghlwxuadw .gt_indent_2 {
+#jatgdzsjfv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xghlwxuadw .gt_indent_3 {
+#jatgdzsjfv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xghlwxuadw .gt_indent_4 {
+#jatgdzsjfv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xghlwxuadw .gt_indent_5 {
+#jatgdzsjfv .gt_indent_5 {
   text-indent: 25px;
+}
+
+#jatgdzsjfv .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jatgdzsjfv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -5775,16 +5915,26 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<strong>Variable</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variable</strong></th>
-<th id="<strong>N</strong> <strong>obs%</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong> <strong>obs%</strong></th>
-<th id="<strong>0</strong>, N = 361<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong>, N = 361<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>1</strong>, N = 540<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong>, N = 540<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KipWYXJpYWJsZSoq&quot;><div class='gt_from_md'><p><strong>Variable</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>Variable</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOKiogKipvYnMlKio=&quot;><div class='gt_from_md'><p><strong>N</strong> <strong>obs%</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N</strong> <strong>obs%</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KiowKiogIApOID0gMzYx&quot;><div class='gt_from_md'><p><strong>0</strong><br />
+N = 361</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>0</strong><br>
+N = 361</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KioxKiogIApOID0gNTQw&quot;><div class='gt_from_md'><p><strong>1</strong><br />
+N = 540</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>1</strong><br>
+N = 540</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="n">780 87%</td>
+<td class="gt_row gt_center" headers="n">901 87%</td>
 <td class="gt_row gt_center" headers="stat_1">0.37 (0.33)</td>
 <td class="gt_row gt_center" headers="stat_2">0.27 (0.31)</td>
 </tr>
@@ -5797,7 +5947,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="n">757 84%</td>
+<td class="gt_row gt_center" headers="n">901 84%</td>
 <td class="gt_row gt_center" headers="stat_1">0.42 (0.39)</td>
 <td class="gt_row gt_center" headers="stat_2">0.32 (0.37)</td>
 </tr>
@@ -5810,7 +5960,7 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="n">761 84%</td>
+<td class="gt_row gt_center" headers="n">901 84%</td>
 <td class="gt_row gt_center" headers="stat_1">0.45 (0.40)</td>
 <td class="gt_row gt_center" headers="stat_2">0.32 (0.39)</td>
 </tr>
@@ -5823,7 +5973,8 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD)</td>
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span>
+<p>Mean (SD)</p></td>
 </tr>
 </tfoot>
 
@@ -5832,36 +5983,34 @@ Table&nbsp;10: Summary statistics of EQ-5D utility score follow-up outcome varia
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <div class="cell">
-<div id="tbl-sum10" class="cell quarto-float anchored">
+<div id="tbl-sum10" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sum10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure status (0=no,1=yes).
 </figcaption>
 <div aria-describedby="tbl-sum10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="qplcscllbi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qplcscllbi table {
+<div id="gqmjmjmglm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gqmjmjmglm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qplcscllbi thead, #qplcscllbi tbody, #qplcscllbi tfoot, #qplcscllbi tr, #qplcscllbi td, #qplcscllbi th {
+#gqmjmjmglm thead, #gqmjmjmglm tbody, #gqmjmjmglm tfoot, #gqmjmjmglm tr, #gqmjmjmglm td, #gqmjmjmglm th {
   border-style: none;
 }
 
-#qplcscllbi p {
+#gqmjmjmglm p {
   margin: 0;
   padding: 0;
 }
 
-#qplcscllbi .gt_table {
+#gqmjmjmglm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5887,12 +6036,12 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-left-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_caption {
+#gqmjmjmglm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qplcscllbi .gt_title {
+#gqmjmjmglm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5904,7 +6053,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-bottom-width: 0;
 }
 
-#qplcscllbi .gt_subtitle {
+#gqmjmjmglm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5916,7 +6065,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-top-width: 0;
 }
 
-#qplcscllbi .gt_heading {
+#gqmjmjmglm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5928,13 +6077,13 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-right-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_bottom_border {
+#gqmjmjmglm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_col_headings {
+#gqmjmjmglm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5949,7 +6098,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-right-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_col_heading {
+#gqmjmjmglm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5969,7 +6118,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   overflow-x: hidden;
 }
 
-#qplcscllbi .gt_column_spanner_outer {
+#gqmjmjmglm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5981,15 +6130,15 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 4px;
 }
 
-#qplcscllbi .gt_column_spanner_outer:first-child {
+#gqmjmjmglm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qplcscllbi .gt_column_spanner_outer:last-child {
+#gqmjmjmglm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qplcscllbi .gt_column_spanner {
+#gqmjmjmglm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6001,11 +6150,11 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   width: 100%;
 }
 
-#qplcscllbi .gt_spanner_row {
+#gqmjmjmglm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qplcscllbi .gt_group_heading {
+#gqmjmjmglm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6031,7 +6180,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   text-align: left;
 }
 
-#qplcscllbi .gt_empty_group_heading {
+#gqmjmjmglm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6046,15 +6195,15 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   vertical-align: middle;
 }
 
-#qplcscllbi .gt_from_md > :first-child {
+#gqmjmjmglm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qplcscllbi .gt_from_md > :last-child {
+#gqmjmjmglm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qplcscllbi .gt_row {
+#gqmjmjmglm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6073,7 +6222,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   overflow-x: hidden;
 }
 
-#qplcscllbi .gt_stub {
+#gqmjmjmglm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6086,7 +6235,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 5px;
 }
 
-#qplcscllbi .gt_stub_row_group {
+#gqmjmjmglm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6100,15 +6249,15 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   vertical-align: top;
 }
 
-#qplcscllbi .gt_row_group_first td {
+#gqmjmjmglm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qplcscllbi .gt_row_group_first th {
+#gqmjmjmglm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qplcscllbi .gt_summary_row {
+#gqmjmjmglm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6118,16 +6267,16 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 5px;
 }
 
-#qplcscllbi .gt_first_summary_row {
+#gqmjmjmglm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_first_summary_row.thick {
+#gqmjmjmglm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qplcscllbi .gt_last_summary_row {
+#gqmjmjmglm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6137,7 +6286,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-bottom-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_grand_summary_row {
+#gqmjmjmglm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6147,7 +6296,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 5px;
 }
 
-#qplcscllbi .gt_first_grand_summary_row {
+#gqmjmjmglm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6157,7 +6306,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-top-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_last_grand_summary_row_top {
+#gqmjmjmglm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6167,11 +6316,11 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-bottom-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_striped {
+#gqmjmjmglm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qplcscllbi .gt_table_body {
+#gqmjmjmglm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6180,7 +6329,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-bottom-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_footnotes {
+#gqmjmjmglm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6194,7 +6343,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-right-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_footnote {
+#gqmjmjmglm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6203,7 +6352,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 5px;
 }
 
-#qplcscllbi .gt_sourcenotes {
+#gqmjmjmglm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6217,7 +6366,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   border-right-color: #D3D3D3;
 }
 
-#qplcscllbi .gt_sourcenote {
+#gqmjmjmglm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6225,68 +6374,77 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
   padding-right: 5px;
 }
 
-#qplcscllbi .gt_left {
+#gqmjmjmglm .gt_left {
   text-align: left;
 }
 
-#qplcscllbi .gt_center {
+#gqmjmjmglm .gt_center {
   text-align: center;
 }
 
-#qplcscllbi .gt_right {
+#gqmjmjmglm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qplcscllbi .gt_font_normal {
+#gqmjmjmglm .gt_font_normal {
   font-weight: normal;
 }
 
-#qplcscllbi .gt_font_bold {
+#gqmjmjmglm .gt_font_bold {
   font-weight: bold;
 }
 
-#qplcscllbi .gt_font_italic {
+#gqmjmjmglm .gt_font_italic {
   font-style: italic;
 }
 
-#qplcscllbi .gt_super {
+#gqmjmjmglm .gt_super {
   font-size: 65%;
 }
 
-#qplcscllbi .gt_footnote_marks {
+#gqmjmjmglm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qplcscllbi .gt_asterisk {
+#gqmjmjmglm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qplcscllbi .gt_indent_1 {
+#gqmjmjmglm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qplcscllbi .gt_indent_2 {
+#gqmjmjmglm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qplcscllbi .gt_indent_3 {
+#gqmjmjmglm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qplcscllbi .gt_indent_4 {
+#gqmjmjmglm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qplcscllbi .gt_indent_5 {
+#gqmjmjmglm .gt_indent_5 {
   text-indent: 25px;
+}
+
+#gqmjmjmglm .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#gqmjmjmglm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -6295,10 +6453,20 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<strong>Variable</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Variable</strong></th>
-<th id="<strong>N</strong> <strong>obs%</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong> <strong>obs%</strong></th>
-<th id="<strong>0</strong>, N = 174<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong>, N = 174<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<strong>1</strong>, N = 187<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong>, N = 187<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KipWYXJpYWJsZSoq&quot;><div class='gt_from_md'><p><strong>Variable</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><p><strong>Variable</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KipOKiogKipvYnMlKio=&quot;><div class='gt_from_md'><p><strong>N</strong> <strong>obs%</strong></p>
+</div></div>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>N</strong> <strong>obs%</strong></p></th>
+<th id="<div data-qmd-base64=&quot;KiowKiogIApOID0gMTc0&quot;><div class='gt_from_md'><p><strong>0</strong><br />
+N = 174</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>0</strong><br>
+N = 174</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
+<th id="<div data-qmd-base64=&quot;KioxKiogIApOID0gMTg3&quot;><div class='gt_from_md'><p><strong>1</strong><br />
+N = 187</p>
+</div></div><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><p><strong>1</strong><br>
+N = 187</p>
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -6307,7 +6475,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
 </tr>
 <tr class="even gt_row_group_first">
 <td class="gt_row gt_left" headers="trt=0  label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="trt=0  n">308 85%</td>
+<td class="gt_row gt_center" headers="trt=0  n">361 85%</td>
 <td class="gt_row gt_center" headers="trt=0  stat_1">0.41 (0.32)</td>
 <td class="gt_row gt_center" headers="trt=0  stat_2">0.34 (0.33)</td>
 </tr>
@@ -6320,7 +6488,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="trt=0  label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="trt=0  n">292 81%</td>
+<td class="gt_row gt_center" headers="trt=0  n">361 81%</td>
 <td class="gt_row gt_center" headers="trt=0  stat_1">0.45 (0.38)</td>
 <td class="gt_row gt_center" headers="trt=0  stat_2">0.39 (0.39)</td>
 </tr>
@@ -6333,7 +6501,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="trt=0  label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="trt=0  n">294 81%</td>
+<td class="gt_row gt_center" headers="trt=0  n">361 81%</td>
 <td class="gt_row gt_center" headers="trt=0  stat_1">0.46 (0.39)</td>
 <td class="gt_row gt_center" headers="trt=0  stat_2">0.44 (0.41)</td>
 </tr>
@@ -6349,7 +6517,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
 </tr>
 <tr class="odd gt_row_group_first">
 <td class="gt_row gt_left" headers="trt=1  label" style="font-weight: bold">qol_1</td>
-<td class="gt_row gt_center" headers="trt=1  n">472 87%</td>
+<td class="gt_row gt_center" headers="trt=1  n">540 87%</td>
 <td class="gt_row gt_center" headers="trt=1  stat_1">0.28 (0.32)</td>
 <td class="gt_row gt_center" headers="trt=1  stat_2">0.26 (0.31)</td>
 </tr>
@@ -6362,7 +6530,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="trt=1  label" style="font-weight: bold">qol_2</td>
-<td class="gt_row gt_center" headers="trt=1  n">465 86%</td>
+<td class="gt_row gt_center" headers="trt=1  n">540 86%</td>
 <td class="gt_row gt_center" headers="trt=1  stat_1">0.33 (0.37)</td>
 <td class="gt_row gt_center" headers="trt=1  stat_2">0.30 (0.37)</td>
 </tr>
@@ -6375,7 +6543,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="trt=1  label" style="font-weight: bold">qol_3</td>
-<td class="gt_row gt_center" headers="trt=1  n">467 86%</td>
+<td class="gt_row gt_center" headers="trt=1  n">540 86%</td>
 <td class="gt_row gt_center" headers="trt=1  stat_1">0.34 (0.39)</td>
 <td class="gt_row gt_center" headers="trt=1  stat_2">0.30 (0.39)</td>
 </tr>
@@ -6388,13 +6556,13 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Mean (SD)</td>
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height: 0;"><sup>1</sup></span>
+<p>Mean (SD)</p></td>
 </tr>
 </tfoot>
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -6408,7 +6576,7 @@ Table&nbsp;11: Summary statistics of EQ-5D utility score follow-up outcome varia
 <p>In this section the results from a longitudinal analysis conducted on the EQ-5D utility scores measured at <span class="math inline">\(t_1=30\)</span>, <span class="math inline">\(t_2=90\)</span> and <span class="math inline">\(t_3=180\)</span> days are reported. For this analysis, a linear mixed-effects regression model is used to estimate the average difference in utility score between treatment arms over the study period, after controlling baseline utility values and the clustering effects at centres level. A potential issues when implementing this modelling strategy is the typical asymmetry of EQ-5D utility score data, which in the current study is particularly exacerbated by the considerable number of zero values observed at any time point. More specifically, the number (proportions) of observed individuals associated with a zero utility score at each follow-up time across arms are: <span class="math inline">\(135 (33\%)\)</span> at 30 days, <span class="math inline">\(135 (34\%)\)</span> at 90 days, <span class="math inline">\(135 (34\%)\)</span> at 180 days. <a href="#fig-histqol" class="quarto-xref">Figure&nbsp;2</a> shows histograms of the observed distributions of EQ-5D utility scores at each follow-up point in the study.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-histqol" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-histqol" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-histqol-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Precise_sub_bayesian_non_sepsis_files/figure-html/fig-histqol-1.png" class="img-fluid figure-img" width="672">
@@ -6508,7 +6676,7 @@ sd.u[2]    0.000 0.000  0.000  0.000  0.000  0.000  0.000 1.000     1</code></pr
 <p>Next, we examine additional diagnostics to check for potential issues in model convergence or fit to the observed data. This can be achieved, for example, by looking at visual diagnostics such as <em>posterior density</em> and <em>trace plots</em>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-diagnostics1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-diagnostics1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagnostics1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Precise_sub_bayesian_non_sepsis_files/figure-html/fig-diagnostics1-1.png" class="img-fluid figure-img" width="672">
@@ -6522,7 +6690,7 @@ Figure&nbsp;3: Density plots to assess potential issues in convergence for the e
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-diagnostics2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-diagnostics2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diagnostics2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Precise_sub_bayesian_non_sepsis_files/figure-html/fig-diagnostics2-1.png" class="img-fluid figure-img" width="672">
@@ -6537,7 +6705,7 @@ Figure&nbsp;4: Trace plots to assess potential issues in convergence for the est
 <p>All visual diagnostics in <a href="#fig-diagnostics1" class="quarto-xref">Figure&nbsp;3</a> and <a href="#fig-diagnostics2" class="quarto-xref">Figure&nbsp;4</a> do not show any clear evidence of issues related to model convergence with relatively well-behaved densities and a good mixing of the MCMC chains for the parameter of interest. Next, we proceed to check model fit in absolute terms via <em>Posterior Predictive Checks</em> (PPCs), whose purpose is to check the plausibility of the predictions generated from the model with respect to the observed data. Although different ways to perform PPCs exist, we decided to rely on a visual comparison of model-based replicated outcome data and the original observed outcome data. The lack of deviations of the replicated data from the observed data provides some reassurance about the interpretability of the results from the model.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-ppcs" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-ppcs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ppcs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Precise_sub_bayesian_non_sepsis_files/figure-html/fig-ppcs-1.png" class="img-fluid figure-img" width="672">
@@ -6552,7 +6720,7 @@ Figure&nbsp;5: Posterior predictive checks based on the visual comparison of his
 <p>Once model performance and fit have been assessed and no major issues in the model is identified, as suggested by <a href="#fig-ppcs" class="quarto-xref">Figure&nbsp;5</a>, we can proceed to inspect the posterior results for the parameters of interest. More specifically, for the primary outcome, we are interested in the posterior distribution of the mean difference in EQ-5D utility score between the treatment arms over time.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-mdplot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-mdplot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mdplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Precise_sub_bayesian_non_sepsis_files/figure-html/fig-mdplot-1.png" class="img-fluid figure-img" width="672">
@@ -6606,7 +6774,7 @@ sd.u[2]    0.000 0.000  0.000  0.000  0.000  0.000  0.000 1.000     1</code></pr
 <p>We now inspect the posterior results for the parameters of interest.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-mdplot-ske" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-mdplot-ske" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mdplot-ske-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Precise_sub_bayesian_non_sepsis_files/figure-html/fig-mdplot-ske-1.png" class="img-fluid figure-img" width="672">
@@ -6660,7 +6828,7 @@ sd.u[2]    0.000 0.000  0.000  0.000  0.000  0.000  0.000 1.000     1</code></pr
 <p>We now inspect the posterior results for the parameters of interest.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-mdplot-ent" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-mdplot-ent" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mdplot-ent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Precise_sub_bayesian_non_sepsis_files/figure-html/fig-mdplot-ent-1.png" class="img-fluid figure-img" width="672">
@@ -6678,17 +6846,16 @@ Figure&nbsp;8: Posterior probability of having a value equal or lower than a ran
 <h3 class="anchored" data-anchor-id="summary-posterior-results">Summary posterior results</h3>
 <p><a href="#tbl-res1" class="quarto-xref">Table&nbsp;12</a>, <a href="#tbl-res2" class="quarto-xref">Table&nbsp;13</a> and <a href="#tbl-res3" class="quarto-xref">Table&nbsp;14</a> show key posterior summaries about the main quantities of interest under a weakly-informative, skeptical and enthusiastic prior specification, respectively. Posterior estimates are reported in terms of mean/median and <span class="math inline">\(95\%\)</span> credible intervals for each arm separately and in terms of MD/ARD/OR and probability of having any benefit, a clinically important benefit and harm between the two arms.</p>
 <div class="cell">
-<div id="tbl-res1" class="cell quarto-float anchored">
+<div id="tbl-res1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-res1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;12: Summary posterior estimates based on the model under weakly-informative priors: these include the mean of non-zero utility, probability of having a zero utility, mean utility by treatment arm. In addition, estimates of key differential quantities between arms are reported: MD among non-zero utility, ARD and OR for having a zero utility, MD utility,probability of having any benefit, a clinically important benefit and harm.
 </figcaption>
 <div aria-describedby="tbl-res1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <div class="table-responsive">
-<table class="table table-striped table-hover table-condensed do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;"></th>
@@ -6747,22 +6914,20 @@ Table&nbsp;12: Summary posterior estimates based on the model under weakly-infor
 
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <div class="cell">
-<div id="tbl-res2" class="cell quarto-float anchored">
+<div id="tbl-res2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-res2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;13: Summary posterior estimates based on the model under skeptical priors: these include the mean of non-zero utility, probability of having a zero utility, mean utility by treatment arm. In addition, estimates of key differential quantities between arms are reported: MD among non-zero utility, ARD and OR for having a zero utility, MD utility,probability of having any benefit, a clinically important benefit and harm.
 </figcaption>
 <div aria-describedby="tbl-res2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <div class="table-responsive">
-<table class="table table-striped table-hover table-condensed do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;"></th>
@@ -6821,22 +6986,20 @@ Table&nbsp;13: Summary posterior estimates based on the model under skeptical pr
 
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
 <div class="cell">
-<div id="tbl-res3" class="cell quarto-float anchored">
+<div id="tbl-res3" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-res3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;14: Summary posterior estimates based on the model under enthusiastic priors: these include the mean of non-zero utility, probability of having a zero utility, mean utility by treatment arm. In addition, estimates of key differential quantities between arms are reported: MD among non-zero utility, ARD and OR for having a zero utility, MD utility,probability of having any benefit, a clinically important benefit and harm.
 </figcaption>
 <div aria-describedby="tbl-res3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <div class="table-responsive">
-<table class="table table-striped table-hover table-condensed do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;"></th>
@@ -6893,7 +7056,6 @@ Table&nbsp;14: Summary posterior estimates based on the model under enthusiastic
 </div>
 </div>
 
-</div>
 </div>
 </div>
 </figure>
@@ -6974,18 +7136,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -7017,7 +7168,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -7025,7 +7198,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

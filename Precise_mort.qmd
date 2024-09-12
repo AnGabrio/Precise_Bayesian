@@ -210,7 +210,7 @@ gt_sum_baseline <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -233,7 +233,7 @@ gt_sum_baseline_arm <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -252,7 +252,7 @@ gt_sum_fu <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -271,7 +271,7 @@ gt_sum_fu_arm <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -292,7 +292,7 @@ gt_sum_fu_aki <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -312,7 +312,7 @@ gt_sum_fu_aki0_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -328,7 +328,7 @@ gt_sum_fu_aki1_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -350,7 +350,7 @@ gt_sum_fu_sepsis <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -370,7 +370,7 @@ gt_sum_fu_sepsis0_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -386,7 +386,7 @@ gt_sum_fu_sepsis1_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -408,7 +408,7 @@ gt_sum_fu_failure <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -428,7 +428,7 @@ gt_sum_fu_failure0_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -444,7 +444,7 @@ gt_sum_fu_failure1_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -464,9 +464,12 @@ gt_sum_arm_gt_failure_final <- as_gt(gt_sum_arm_gt_failure)
 #| warning: false
 #| cache: false
 #| label: tbl-sum1
+#| tbl-cap: Summary statistics of key baseline variables in the study across arms.
 
-gt_sum_gt_baseline %>%
-tab_caption(caption = md("Summary statistics of key baseline variables in the study across arms."))
+gt_sum_gt_baseline
+
+#gt_sum_gt_baseline %>%
+#  tab_caption(caption = md("Summary statistics of key baseline variables in the study across arms."))
 ```
 
 ```{r}
@@ -476,9 +479,12 @@ tab_caption(caption = md("Summary statistics of key baseline variables in the st
 #| warning: false
 #| cache: false
 #| label: tbl-sum2
+#| tbl-cap: Summary statistics of key baseline variables in the study by treatment arm (0=standard,1=intervention).
 
-gt_sum_gt_baseline_arm %>%
-tab_caption(caption = md("Summary statistics of key baseline variables in the study by treatment arm (0=standard,1=intervention)."))
+gt_sum_gt_baseline_arm
+
+#gt_sum_gt_baseline_arm %>%
+#tab_caption(caption = md("Summary statistics of key baseline variables in the study by #treatment arm (0=standard,1=intervention)."))
 ```
 
 @tbl-sum3 and @tbl-sum4 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for key outcome variables collected in the study after baseline. These include: **EQ-5D utility score at 30, 90, 180 days, six-min walking test at 30, 90, 180 days, handgrip strength at 30, 90, 180 days, mortaility at 60 days, duration of mechanical ventilation**. The summary statistics displayed for each outcome variable include: number of unobserved values (unknown), mean (sd) for continuous variables, and number of observed values ($\%$) for categorical variables.
@@ -490,9 +496,12 @@ tab_caption(caption = md("Summary statistics of key baseline variables in the st
 #| warning: false
 #| cache: false
 #| label: tbl-sum3
+#| tbl-cap: Summary statistics of key follo-up outcome variables in the study across arms.
 
-gt_sum_gt_fu %>%
-tab_caption(caption = md("Summary statistics of key follo-up outcome variables in the study across arms."))
+gt_sum_gt_fu
+
+#gt_sum_gt_fu %>%
+#tab_caption(caption = md("Summary statistics of key follo-up outcome variables in the study #across arms."))
 ```
 
 ```{r}
@@ -502,9 +511,12 @@ tab_caption(caption = md("Summary statistics of key follo-up outcome variables i
 #| warning: false
 #| cache: false
 #| label: tbl-sum4
+#| tbl-cap: Summary statistics of key follow-up outcome variables in the study by treatment arm (0=standard,1=intervention).
 
-gt_sum_gt_fu_arm %>%
-tab_caption(caption = md("Summary statistics of key follow-up outcome variables in the study by treatment arm (0=standard,1=intervention)."))
+gt_sum_gt_fu_arm
+
+#gt_sum_gt_fu_arm %>%
+#tab_caption(caption = md("Summary statistics of key follow-up outcome variables in the #study by treatment arm (0=standard,1=intervention)."))
 ```
 
 ### Descriptives by subgroups
@@ -518,9 +530,12 @@ tab_caption(caption = md("Summary statistics of key follow-up outcome variables 
 #| warning: false
 #| cache: false
 #| label: tbl-sum5
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by AKI status (0=no,1=yes).
 
-gt_sum_gt_fu_aki %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by AKI status (0=no,1=yes)."))
+gt_sum_gt_fu_aki
+
+#gt_sum_gt_fu_aki %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by AKI status (0=no,1=yes)."))
 ```
 
 ```{r}
@@ -530,9 +545,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum6
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes).
 
-gt_sum_arm_gt_aki_final %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes)."))
+gt_sum_arm_gt_aki_final
+
+#gt_sum_arm_gt_aki_final %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by treatment arm (0=standard,1=intervention) and AKI status #(0=no,1=yes)."))
 ```
 
 @tbl-sum7 and @tbl-sum8 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on sepsis status (0=no,1=yes).
@@ -544,9 +562,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum7
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes).
 
-gt_sum_gt_fu_sepsis %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by sepsis status (0=no,1=yes)."))
+gt_sum_gt_fu_sepsis
+
+#gt_sum_gt_fu_sepsis %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by sepsis status (0=no,1=yes)."))
 ```
 
 ```{r}
@@ -556,9 +577,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum8
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and sepsis status (0=no,1=yes).
 
-gt_sum_arm_gt_sepsis_final %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and sepsis status (0=no,1=yes)."))
+gt_sum_arm_gt_sepsis_final
+
+#gt_sum_arm_gt_sepsis_final %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by treatment arm (0=standard,1=intervention) and sepsis status #(0=no,1=yes)."))
 ```
 
 @tbl-sum9 and @tbl-sum10 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on multi organ failure status (0=no,1=yes).
@@ -570,9 +594,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum9
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by multi organ failure status (0=no,1=yes).
 
-gt_sum_gt_fu_failure %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by multi organ failure status (0=no,1=yes)."))
+gt_sum_gt_fu_failure
+
+#gt_sum_gt_fu_failure %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by multi organ failure status (0=no,1=yes)."))
 ```
 
 ```{r}
@@ -582,9 +609,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum10
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure status (0=no,1=yes).
 
-gt_sum_arm_gt_failure_final %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure status (0=no,1=yes)."))
+gt_sum_arm_gt_failure_final
+
+#gt_sum_arm_gt_failure_final %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure #status (0=no,1=yes)."))
 ```
 
 ## Analysis of secondary outcome - 60 day mortality
@@ -749,6 +779,16 @@ model_mixture_mort_sum <- round(jagsresults(x = model_mixture_mort, params = c('
 
 #look at summary results
 print(model_mixture_mort_sum)
+
+#diagnostics
+#check model convergence
+library(ggmcmc)
+library(mcmcr)
+#extract posterior samples for all model parameters and convert them into mcmc object for inspection
+jagsModel2_mcmcobject <- coda::as.mcmc(model_mixture_mort)
+params_sel <- c("coef","sd.b0")
+jagsModel2_mcmcsubset <- subset(jagsModel2_mcmcobject, pars = params_sel)
+jagsModel2_ggmcmc_object <- ggmcmc::ggs(jagsModel2_mcmcsubset)
 ```
 
 For all quantities of interest, convergence of the model does not appear to be a concern. This is indicated by values of the *potential scale reduction factor statistics* (R hat) being below pretty close to $1$ for every parameter, as well as values of the *effective sample sizes* being not too small and in many cases close to the total number of MCMC iterations ($`r n.iter`$). 
@@ -763,16 +803,6 @@ Next, we examine additional diagnostics to check for potential issues in model c
 #| cache: false
 #| label: fig-diagnostics1
 #| fig-cap: "Density plots to assess potential issues in convergence for the estimated OR in mortality between groups."
-
-#diagnostics
-#check model convergence
-library(ggmcmc)
-library(mcmcr)
-#extract posterior samples for all model parameters and convert them into mcmc object for inspection
-jagsModel2_mcmcobject <- coda::as.mcmc(model_mixture_mort)
-params_sel <- c("coef","sd.b0")
-jagsModel2_mcmcsubset <- subset(jagsModel2_mcmcobject, pars = params_sel)
-jagsModel2_ggmcmc_object <- ggmcmc::ggs(jagsModel2_mcmcsubset)
 
 #density plots for key parameters
 gg1 <- ggmcmc::ggs_density(jagsModel2_ggmcmc_object, family = "coef")+theme_classic()
@@ -887,10 +917,14 @@ CI95_ARD_mort <- round(hdi(ARD.mort, credMass = 0.95), 3)
 #any benefit P(ARD>0)
 prob_ARD_mort_any_benefit <- sum(ARD.mort > 0)/length(ARD.mort)
 #clinically important benefit P(ARD>MCID)
-mcid_mort <- 0.05
-prob_ARD_mort_MCID <- sum(ARD.mort > mcid_mort)/length(ARD.mort)
+mcid_mort <- c(0.05,-0.05)
+prob_ARD_mort_MCID <- sum(ARD.mort > mcid_mort[1])/length(ARD.mort)
 #clinically important harm P(ARD> -MCID)
-prob_ARD_mort_harm <- sum(ARD.mort < -mcid_mort)/length(ARD.mort)
+prob_ARD_mort_harm <- sum(ARD.mort < -mcid_mort[1])/length(ARD.mort)
+
+#opposite sign
+prob_ARD_mort_MCIDneg <- sum(ARD.mort > mcid_mort[2])/length(ARD.mort)
+prob_ARD_mort_harmneg <- sum(ARD.mort < -mcid_mort[2])/length(ARD.mort)
 
 ```
 
@@ -914,15 +948,17 @@ library(tidyverse)
 den <- density(ARD_mort, from = -0.1, to = 0.2)
 data_dens_plot <- tibble(x = den$x, y = den$y) %>% 
     mutate(variable = case_when(
-      (x >= mcid_mort) ~ "On",
+      (x >= mcid_mort[1]) ~ "On",
       TRUE ~ NA_character_))
 
 md_plot1 <- ggplot(data_dens_plot, aes(x, y)) + geom_line(col="gold") +
   geom_area(data = filter(data_dens_plot, variable == 'On'), fill = 'gold') +
   theme_classic() + geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_mort, col="black", lty = 3) + 
-  xlim(-0.1,0.2) + xlab("ARD") + ylab("") +
-  annotate("text", x = mcid_mort+0.001, y = 1, label = "MCID") + 
+  geom_vline(xintercept=mcid_mort[1], col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[2], col="black", lty = 3) + 
+  xlim(-0.2,0.2) + xlab("ARD") + ylab("") +
+  annotate("text", x = mcid_mort[1]+0.001, y = 1, label = "MCID") +
+  annotate("text", x = mcid_mort[2]+0.001, y = 1, label = "- MCID") + 
   coord_cartesian(ylim = c(0, 12), clip = "off") + 
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
@@ -940,7 +976,8 @@ md_plot2 <- ggplot(ES_mort.df, aes(x=es, y=prob_es)) +
   geom_line(aes(x=es, y=prob_es), linewidth=0.8, colour='gold') + 
   theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
   geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_mort, col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[1], col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[2], col="black", lty = 3) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
 ggarrange(md_plot2,md_plot1, nrow = 2, ncol = 1)
@@ -1034,11 +1071,14 @@ CI95_ARD_mort_lit <- round(hdi(ARD.mort_lit, credMass = 0.95), 3)
 #any benefit P(ARD>0)
 prob_ARD_mort_any_benefit_lit <- sum(ARD.mort_lit > 0)/length(ARD.mort_lit)
 #clinically important benefit P(ARD>MCID)
-mcid_mort_lit <- 0.05
-prob_ARD_mort_MCID_lit <- sum(ARD.mort_lit > mcid_mort_lit)/length(ARD.mort_lit)
+mcid_mort_lit <- c(0.05,-0.05)
+prob_ARD_mort_MCID_lit <- sum(ARD.mort_lit > mcid_mort_lit[1])/length(ARD.mort_lit)
 #clinically important harm P(ARD> -MCID)
-prob_ARD_mort_harm_lit <- sum(ARD.mort_lit < -mcid_mort_lit)/length(ARD.mort_lit)
+prob_ARD_mort_harm_lit <- sum(ARD.mort_lit < -mcid_mort_lit[1])/length(ARD.mort_lit)
 
+#opposite sign
+prob_ARD_mort_MCIDneg_lit <- sum(ARD.mort_lit > mcid_mort_lit[2])/length(ARD.mort_lit)
+prob_ARD_mort_harmneg_lit <- sum(ARD.mort_lit < -mcid_mort_lit[2])/length(ARD.mort_lit)
 ```
 
 We now inspect the posterior results for the parameters of interest. 
@@ -1063,15 +1103,17 @@ library(tidyverse)
 den_lit <- density(ARD_mort_lit, from = -0.1, to = 0.2)
 data_dens_plot_lit <- tibble(x = den_lit$x, y = den_lit$y) %>% 
     mutate(variable = case_when(
-      (x >= mcid_mort) ~ "On",
+      (x >= mcid_mort[1]) ~ "On",
       TRUE ~ NA_character_))
 
 md_plot1_lit <- ggplot(data_dens_plot_lit, aes(x, y)) + geom_line(col="gold") +
   geom_area(data = filter(data_dens_plot_lit, variable == 'On'), fill = 'gold') +
   theme_classic() + geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_mort, col="black", lty = 3) + 
+  geom_vline(xintercept=mcid_mort[1], col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[2], col="black", lty = 3) + 
   xlim(-0.1,0.2) + xlab("ARD") + ylab("") +
-  annotate("text", x = mcid_mort+0.001, y = 10, label = "MCID") + 
+  annotate("text", x = mcid_mort[1]+0.001, y = 10, label = "MCID") +
+  annotate("text", x = mcid_mort[2]+0.001, y = 10, label = "- MCID") + 
   coord_cartesian(ylim = c(0, 24), clip = "off") + 
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
@@ -1089,7 +1131,8 @@ md_plot2_lit <- ggplot(ES_mort.df_lit, aes(x=es_lit, y=prob_es_lit)) +
   geom_line(aes(x=es_lit, y=prob_es_lit), linewidth=0.8, colour='gold') + 
   theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
   geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_mort, col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[1], col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[2], col="black", lty = 3) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
 ggarrange(md_plot2_lit,md_plot1_lit, nrow = 2, ncol = 1)
@@ -1183,11 +1226,13 @@ CI95_ARD_mort_ske <- round(hdi(ARD.mort_ske, credMass = 0.95), 3)
 #any benefit P(ARD>0)
 prob_ARD_mort_any_benefit_ske <- sum(ARD.mort_ske > 0)/length(ARD.mort_ske)
 #clinically important benefit P(ARD>MCID)
-mcid_mort_ske <- 0.05
-prob_ARD_mort_MCID_ske <- sum(ARD.mort_ske > mcid_mort_ske)/length(ARD.mort_ske)
+mcid_mort_ske <- c(0.05,-0.05)
+prob_ARD_mort_MCID_ske <- sum(ARD.mort_ske > mcid_mort_ske[1])/length(ARD.mort_ske)
 #clinically important harm P(ARD> -MCID)
-prob_ARD_mort_harm_ske <- sum(ARD.mort_ske < -mcid_mort_ske)/length(ARD.mort_ske)
+prob_ARD_mort_harm_ske <- sum(ARD.mort_ske < -mcid_mort_ske[1])/length(ARD.mort_ske)
 
+prob_ARD_mort_MCIDneg_ske <- sum(ARD.mort_ske > mcid_mort_ske[2])/length(ARD.mort_ske)
+prob_ARD_mort_harmneg_ske <- sum(ARD.mort_ske < -mcid_mort_ske[2])/length(ARD.mort_ske)
 ```
 
 We now inspect the posterior results for the parameters of interest. 
@@ -1212,15 +1257,17 @@ library(tidyverse)
 den_ske <- density(ARD_mort_ske, from = -0.1, to = 0.2)
 data_dens_plot_ske <- tibble(x = den_ske$x, y = den_ske$y) %>% 
     mutate(variable = case_when(
-      (x >= mcid_mort) ~ "On",
+      (x >= mcid_mort[1]) ~ "On",
       TRUE ~ NA_character_))
 
 md_plot1_ske <- ggplot(data_dens_plot_ske, aes(x, y)) + geom_line(col="gold") +
   geom_area(data = filter(data_dens_plot_ske, variable == 'On'), fill = 'gold') +
   theme_classic() + geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_mort, col="black", lty = 3) + 
+  geom_vline(xintercept=mcid_mort[1], col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[2], col="black", lty = 3) + 
   xlim(-0.1,0.2) + xlab("ARD") + ylab("") +
-  annotate("text", x = mcid_mort+0.001, y = 1, label = "MCID") + 
+  annotate("text", x = mcid_mort[1]+0.001, y = 1, label = "MCID") +
+  annotate("text", x = mcid_mort[2]+0.001, y = 1, label = "MCID") + 
   coord_cartesian(ylim = c(0, 15), clip = "off") + 
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
@@ -1238,7 +1285,8 @@ md_plot2_ske <- ggplot(ES_mort.df_ske, aes(x=es_ske, y=prob_es_ske)) +
   geom_line(aes(x=es_ske, y=prob_es_ske), linewidth=0.8, colour='gold') + 
   theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
   geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_mort, col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[1], col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[2], col="black", lty = 3) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
 ggarrange(md_plot2_ske,md_plot1_ske, nrow = 2, ncol = 1)
@@ -1332,11 +1380,13 @@ CI95_ARD_mort_ent <- round(hdi(ARD.mort_ent, credMass = 0.95), 3)
 #any benefit P(ARD>0)
 prob_ARD_mort_any_benefit_ent <- sum(ARD.mort_ent > 0)/length(ARD.mort_ent)
 #clinically important benefit P(ARD>MCID)
-mcid_mort_ent <- 0.05
-prob_ARD_mort_MCID_ent <- sum(ARD.mort_ent > mcid_mort_ent)/length(ARD.mort_ent)
+mcid_mort_ent <- c(0.05,-0.05)
+prob_ARD_mort_MCID_ent <- sum(ARD.mort_ent > mcid_mort_ent[1])/length(ARD.mort_ent)
 #clinically important harm P(ARD> -MCID)
-prob_ARD_mort_harm_ent <- sum(ARD.mort_ent < -mcid_mort_ent)/length(ARD.mort_ent)
+prob_ARD_mort_harm_ent <- sum(ARD.mort_ent < -mcid_mort_ent[1])/length(ARD.mort_ent)
 
+prob_ARD_mort_MCIDneg_ent <- sum(ARD.mort_ent > mcid_mort_ent[2])/length(ARD.mort_ent)
+prob_ARD_mort_harmneg_ent <- sum(ARD.mort_ent < -mcid_mort_ent[2])/length(ARD.mort_ent)
 ```
 
 We now inspect the posterior results for the parameters of interest. 
@@ -1361,15 +1411,17 @@ library(tidyverse)
 den_ent <- density(ARD_mort_ent, from = -0.1, to = 0.2)
 data_dens_plot_ent <- tibble(x = den_ent$x, y = den_ent$y) %>% 
     mutate(variable = case_when(
-      (x >= mcid_mort) ~ "On",
+      (x >= mcid_mort[1]) ~ "On",
       TRUE ~ NA_character_))
 
 md_plot1_ent <- ggplot(data_dens_plot_ent, aes(x, y)) + geom_line(col="gold") +
   geom_area(data = filter(data_dens_plot_ent, variable == 'On'), fill = 'gold') +
   theme_classic() + geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_mort, col="black", lty = 3) + 
+  geom_vline(xintercept=mcid_mort[1], col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[2], col="black", lty = 3) + 
   xlim(-0.1,0.2) + xlab("ARD") + ylab("") +
-  annotate("text", x = mcid_mort+0.001, y = 1, label = "MCID") + 
+  annotate("text", x = mcid_mort[1]+0.001, y = 1, label = "MCID") +
+  annotate("text", x = mcid_mort[2]+0.001, y = 1, label = "MCID") + 
   coord_cartesian(ylim = c(0, 15), clip = "off") + 
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
@@ -1387,7 +1439,8 @@ md_plot2_ent <- ggplot(ES_mort.df_ent, aes(x=es_ent, y=prob_es_ent)) +
   geom_line(aes(x=es_ent, y=prob_es_ent), linewidth=0.8, colour='gold') + 
   theme_classic() + xlab("") + ylab("Prob (effect size < X)") +
   geom_vline(xintercept=0, col="black") +
-  geom_vline(xintercept=mcid_mort, col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[1], col="black", lty = 3) +
+  geom_vline(xintercept=mcid_mort[2], col="black", lty = 3) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
 ggarrange(md_plot2_ent,md_plot1_ent, nrow = 2, ncol = 1)
@@ -1406,43 +1459,50 @@ ggarrange(md_plot2_ent,md_plot1_ent, nrow = 2, ncol = 1)
 #| cache: false
 
 #put summary statistics for posterior estimates of effect size for each model in tables
-tab_mort_res <- matrix(NA,5,3)
-rownames(tab_mort_res) <- c("risk(95%CI) mort","OR(95%CI) mort","P(>0)","P(>MCID)","P(>-MCID)")
+tab_mort_res <- matrix(NA,7,3)
+rownames(tab_mort_res) <- c("risk(95%CI) mort","OR(95%CI) mort","P(>0)","P(>MCID)","P(>-MCID)","P(>neg MCID)","P(> -neg MCID)")
 colnames(tab_mort_res) <- c("standard protein","high protein","difference")
 tab_mort_res[1,] <- c(paste(mean_mort_trt0, "(",CI95_mort_trt0[1],";",CI95_mort_trt0[2],")", sep = ""),paste(mean_mort_trt1,"(",CI95_mort_trt1[1],";",CI95_mort_trt1[2],")", sep = ""),paste(mean_ARD_mort,"(",CI95_ARD_mort[1],";",CI95_ARD_mort[2],")", sep = ""))
 tab_mort_res[2,] <- c("","",paste(mean_OR_mort,"(",CI95_OR_mort[1],";",CI95_OR_mort[2],")", sep = ""))
 tab_mort_res[3,] <- c("","",prob_ARD_mort_any_benefit)
 tab_mort_res[4,] <- c("","",prob_ARD_mort_MCID)
 tab_mort_res[5,] <- c("","",prob_ARD_mort_harm)
+tab_mort_res[6,] <- c("","",prob_ARD_mort_MCIDneg)
+tab_mort_res[7,] <- c("","",prob_ARD_mort_harmneg)
 
-tab_mort_res_lit <- matrix(NA,5,3)
-rownames(tab_mort_res_lit) <- c("risk(95%CI) mort","OR(95%CI) mort","P(>0)","P(>MCID)","P(>-MCID)")
+
+tab_mort_res_lit <- matrix(NA,7,3)
+rownames(tab_mort_res_lit) <- c("risk(95%CI) mort","OR(95%CI) mort","P(>0)","P(>MCID)","P(>-MCID)","P(>neg MCID)","P(> -neg MCID)")
 colnames(tab_mort_res_lit) <- c("standard protein","high protein","difference")
 tab_mort_res_lit[1,] <- c(paste(mean_mort_trt0_lit, "(",CI95_mort_trt0_lit[1],";",CI95_mort_trt0_lit[2],")", sep = ""),paste(mean_mort_trt1_lit,"(",CI95_mort_trt1_lit[1],";",CI95_mort_trt1_lit[2],")", sep = ""),paste(mean_ARD_mort_lit,"(",CI95_ARD_mort_lit[1],";",CI95_ARD_mort_lit[2],")", sep = ""))
 tab_mort_res_lit[2,] <- c("","",paste(mean_OR_mort_lit,"(",CI95_OR_mort_lit[1],";",CI95_OR_mort_lit[2],")", sep = ""))
 tab_mort_res_lit[3,] <- c("","",prob_ARD_mort_any_benefit_lit)
 tab_mort_res_lit[4,] <- c("","",prob_ARD_mort_MCID_lit)
 tab_mort_res_lit[5,] <- c("","",prob_ARD_mort_harm_lit)
+tab_mort_res_lit[6,] <- c("","",prob_ARD_mort_MCIDneg_lit)
+tab_mort_res_lit[7,] <- c("","",prob_ARD_mort_harmneg_lit)
 
-tab_mort_res_ske <- matrix(NA,5,3)
-rownames(tab_mort_res_ske) <- c("risk(95%CI) mort","OR(95%CI) mort","P(>0)","P(>MCID)","P(>-MCID)")
+tab_mort_res_ske <- matrix(NA,7,3)
+rownames(tab_mort_res_ske) <- c("risk(95%CI) mort","OR(95%CI) mort","P(>0)","P(>MCID)","P(>-MCID)","P(>neg MCID)","P(> -neg MCID)")
 colnames(tab_mort_res_ske) <- c("standard protein","high protein","difference")
 tab_mort_res_ske[1,] <- c(paste(mean_mort_trt0_ske, "(",CI95_mort_trt0_ske[1],";",CI95_mort_trt0_ske[2],")", sep = ""),paste(mean_mort_trt1_ske,"(",CI95_mort_trt1_ske[1],";",CI95_mort_trt1_ske[2],")", sep = ""),paste(mean_ARD_mort_ske,"(",CI95_ARD_mort_ske[1],";",CI95_ARD_mort_ske[2],")", sep = ""))
 tab_mort_res_ske[2,] <- c("","",paste(mean_OR_mort_ske,"(",CI95_OR_mort_ske[1],";",CI95_OR_mort_ske[2],")", sep = ""))
 tab_mort_res_ske[3,] <- c("","",prob_ARD_mort_any_benefit_ske)
 tab_mort_res_ske[4,] <- c("","",prob_ARD_mort_MCID_ske)
 tab_mort_res_ske[5,] <- c("","",prob_ARD_mort_harm_ske)
+tab_mort_res_ske[6,] <- c("","",prob_ARD_mort_MCIDneg_ske)
+tab_mort_res_ske[7,] <- c("","",prob_ARD_mort_harmneg_ske)
 
-
-tab_mort_res_ent <- matrix(NA,5,3)
-rownames(tab_mort_res_ent) <- c("risk(95%CI) mort","OR(95%CI) mort","P(>0)","P(>MCID)","P(>-MCID)")
+tab_mort_res_ent <- matrix(NA,7,3)
+rownames(tab_mort_res_ent) <- c("risk(95%CI) mort","OR(95%CI) mort","P(>0)","P(>MCID)","P(>-MCID)","P(>neg MCID)","P(> -neg MCID)")
 colnames(tab_mort_res_ent) <- c("standard protein","high protein","difference")
 tab_mort_res_ent[1,] <- c(paste(mean_mort_trt0_ent, "(",CI95_mort_trt0_ent[1],";",CI95_mort_trt0_ent[2],")", sep = ""),paste(mean_mort_trt1_ent,"(",CI95_mort_trt1_ent[1],";",CI95_mort_trt1_ent[2],")", sep = ""),paste(mean_ARD_mort_ent,"(",CI95_ARD_mort_ent[1],";",CI95_ARD_mort_ent[2],")", sep = ""))
 tab_mort_res_ent[2,] <- c("","",paste(mean_OR_mort_ent,"(",CI95_OR_mort_ent[1],";",CI95_OR_mort_ent[2],")", sep = ""))
 tab_mort_res_ent[3,] <- c("","",prob_ARD_mort_any_benefit_ent)
 tab_mort_res_ent[4,] <- c("","",prob_ARD_mort_MCID_ent)
 tab_mort_res_ent[5,] <- c("","",prob_ARD_mort_harm_ent)
-
+tab_mort_res_ent[6,] <- c("","",prob_ARD_mort_MCIDneg_ent)
+tab_mort_res_ent[7,] <- c("","",prob_ARD_mort_harmneg_ent)
 
 ```
 

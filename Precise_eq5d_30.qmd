@@ -210,7 +210,7 @@ gt_sum_baseline <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -233,7 +233,7 @@ gt_sum_baseline_arm <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -252,7 +252,7 @@ gt_sum_fu <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -271,7 +271,7 @@ gt_sum_fu_arm <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -292,7 +292,7 @@ gt_sum_fu_aki <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -312,7 +312,7 @@ gt_sum_fu_aki0_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -328,7 +328,7 @@ gt_sum_fu_aki1_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -350,7 +350,7 @@ gt_sum_fu_sepsis <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -370,7 +370,7 @@ gt_sum_fu_sepsis0_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -386,7 +386,7 @@ gt_sum_fu_sepsis1_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -408,7 +408,7 @@ gt_sum_fu_failure <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -428,7 +428,7 @@ gt_sum_fu_failure0_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -444,7 +444,7 @@ gt_sum_fu_failure1_trt <-
     digits = all_continuous() ~ 2,
     missing = "always" # don't list missing data separately
   ) %>%
-  add_n(statistic = "{n} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
+  add_n(statistic = "{N_obs} {p_nonmiss}%", col_label = "**N** **obs%**") %>% # add column with total number of non-missing observations
   modify_header(label = "**Variable**") %>% # update the column header
   bold_labels() 
 
@@ -464,9 +464,12 @@ gt_sum_arm_gt_failure_final <- as_gt(gt_sum_arm_gt_failure)
 #| warning: false
 #| cache: false
 #| label: tbl-sum1
+#| tbl-cap: Summary statistics of key baseline variables in the study across arms.
 
-gt_sum_gt_baseline %>%
-tab_caption(caption = md("Summary statistics of key baseline variables in the study across arms."))
+gt_sum_gt_baseline
+
+#gt_sum_gt_baseline %>%
+#  tab_caption(caption = md("Summary statistics of key baseline variables in the study across arms."))
 ```
 
 ```{r}
@@ -476,9 +479,12 @@ tab_caption(caption = md("Summary statistics of key baseline variables in the st
 #| warning: false
 #| cache: false
 #| label: tbl-sum2
+#| tbl-cap: Summary statistics of key baseline variables in the study by treatment arm (0=standard,1=intervention).
 
-gt_sum_gt_baseline_arm %>%
-tab_caption(caption = md("Summary statistics of key baseline variables in the study by treatment arm (0=standard,1=intervention)."))
+gt_sum_gt_baseline_arm
+
+#gt_sum_gt_baseline_arm %>%
+#tab_caption(caption = md("Summary statistics of key baseline variables in the study by #treatment arm (0=standard,1=intervention)."))
 ```
 
 @tbl-sum3 and @tbl-sum4 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for key outcome variables collected in the study after baseline. These include: **EQ-5D utility score at 30, 90, 180 days, six-min walking test at 30, 90, 180 days, handgrip strength at 30, 90, 180 days, mortaility at 60 days, duration of mechanical ventilation**. The summary statistics displayed for each outcome variable include: number of unobserved values (unknown), mean (sd) for continuous variables, and number of observed values ($\%$) for categorical variables.
@@ -490,9 +496,12 @@ tab_caption(caption = md("Summary statistics of key baseline variables in the st
 #| warning: false
 #| cache: false
 #| label: tbl-sum3
+#| tbl-cap: Summary statistics of key follo-up outcome variables in the study across arms.
 
-gt_sum_gt_fu %>%
-tab_caption(caption = md("Summary statistics of key follo-up outcome variables in the study across arms."))
+gt_sum_gt_fu
+
+#gt_sum_gt_fu %>%
+#tab_caption(caption = md("Summary statistics of key follo-up outcome variables in the study #across arms."))
 ```
 
 ```{r}
@@ -502,9 +511,12 @@ tab_caption(caption = md("Summary statistics of key follo-up outcome variables i
 #| warning: false
 #| cache: false
 #| label: tbl-sum4
+#| tbl-cap: Summary statistics of key follow-up outcome variables in the study by treatment arm (0=standard,1=intervention).
 
-gt_sum_gt_fu_arm %>%
-tab_caption(caption = md("Summary statistics of key follow-up outcome variables in the study by treatment arm (0=standard,1=intervention)."))
+gt_sum_gt_fu_arm
+
+#gt_sum_gt_fu_arm %>%
+#tab_caption(caption = md("Summary statistics of key follow-up outcome variables in the #study by treatment arm (0=standard,1=intervention)."))
 ```
 
 ### Descriptives by subgroups
@@ -518,9 +530,12 @@ tab_caption(caption = md("Summary statistics of key follow-up outcome variables 
 #| warning: false
 #| cache: false
 #| label: tbl-sum5
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by AKI status (0=no,1=yes).
 
-gt_sum_gt_fu_aki %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by AKI status (0=no,1=yes)."))
+gt_sum_gt_fu_aki
+
+#gt_sum_gt_fu_aki %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by AKI status (0=no,1=yes)."))
 ```
 
 ```{r}
@@ -530,9 +545,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum6
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes).
 
-gt_sum_arm_gt_aki_final %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes)."))
+gt_sum_arm_gt_aki_final
+
+#gt_sum_arm_gt_aki_final %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by treatment arm (0=standard,1=intervention) and AKI status #(0=no,1=yes)."))
 ```
 
 @tbl-sum7 and @tbl-sum8 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on sepsis status (0=no,1=yes).
@@ -544,9 +562,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum7
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and AKI status (0=no,1=yes).
 
-gt_sum_gt_fu_sepsis %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by sepsis status (0=no,1=yes)."))
+gt_sum_gt_fu_sepsis
+
+#gt_sum_gt_fu_sepsis %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by sepsis status (0=no,1=yes)."))
 ```
 
 ```{r}
@@ -556,9 +577,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum8
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and sepsis status (0=no,1=yes).
 
-gt_sum_arm_gt_sepsis_final %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and sepsis status (0=no,1=yes)."))
+gt_sum_arm_gt_sepsis_final
+
+#gt_sum_arm_gt_sepsis_final %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by treatment arm (0=standard,1=intervention) and sepsis status #(0=no,1=yes)."))
 ```
 
 @tbl-sum9 and @tbl-sum10 report summary statistics, either across or by treatment arm (0=standard,1=intervention), for EQ-5D utility score variables collected in the study after baseline separated for different subgroups based on multi organ failure status (0=no,1=yes).
@@ -570,9 +594,12 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum9
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by multi organ failure status (0=no,1=yes).
 
-gt_sum_gt_fu_failure %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by multi organ failure status (0=no,1=yes)."))
+gt_sum_gt_fu_failure
+
+#gt_sum_gt_fu_failure %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by multi organ failure status (0=no,1=yes)."))
 ```
 
 ```{r}
@@ -582,10 +609,14 @@ tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up ou
 #| warning: false
 #| cache: false
 #| label: tbl-sum10
+#| tbl-cap: Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure status (0=no,1=yes).
 
-gt_sum_arm_gt_failure_final %>%
-tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure status (0=no,1=yes)."))
+gt_sum_arm_gt_failure_final
+
+#gt_sum_arm_gt_failure_final %>%
+#tab_caption(caption = md("Summary statistics of EQ-5D utility score follow-up outcome #variables in the study by treatment arm (0=standard,1=intervention) and multi organ failure #status (0=no,1=yes)."))
 ```
+
 
 ## Analysis of primary outcome - EQ-5D utility score at 30 days
 
